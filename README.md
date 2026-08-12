@@ -26,6 +26,37 @@ Both are public feeds documented at bnr.ro. If they're unreachable (e.g. no
 outbound network access), the app falls back to bundled sample data and
 labels it as such in the UI.
 
+## Automatic daily refresh
+
+BNR republishes rates once a day, usually between 13:00 and 13:15 Europe/Bucharest
+time. Two mechanisms keep the site in sync with no manual steps:
+
+1. **Time-based fallback (works on any host).** Fetches to the BNR feeds are
+   cached for 5 minutes (rates) / 1 hour (history) via Next.js's fetch cache
+   (`src/lib/bnr.ts`). The first request after that window expires
+   automatically refetches BNR in the background. No cron needed — worst case
+   the site is a few minutes stale.
+2. **Instant refresh via `/api/revalidate` (optional, for precise timing).**
+   This route calls `revalidateTag`/`revalidatePath` to invalidate the cache
+   immediately. `vercel.json` schedules it twice a day, at 10:15 and 11:15 UTC
+   — one of those always lands at ~13:15 Bucharest time regardless of
+   DST (EEST in summer, EET in winter), so it self-adjusts across the
+   March/October clock changes without editing the schedule.
+
+To enable step 2 on Vercel: set a `CRON_SECRET` environment variable in the
+project settings (any random string). Vercel automatically sends it as
+`Authorization: Bearer <CRON_SECRET>` when it triggers the cron, and the route
+checks it before revalidating. On another host, hit the same URL from your
+own scheduler instead, e.g.:
+
+```bash
+curl "https://your-domain.com/api/revalidate?secret=$CRON_SECRET"
+```
+
+Without `CRON_SECRET` set, `/api/revalidate` responds `500` and the site
+still updates fine via mechanism 1, just within a 5-minute window instead of
+instantly.
+
 ## Getting started
 
 ```bash

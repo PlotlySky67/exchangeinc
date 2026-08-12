@@ -59,9 +59,19 @@ function toArray<T>(value: T | T[] | undefined): T[] {
   return Array.isArray(value) ? value : [value];
 }
 
+// Time-based safety net: even if nothing ever calls /api/revalidate, every
+// cached page/route refetches BNR on its own within this many seconds. BNR
+// only republishes once a day (~13:00-13:15 Bucharest time), so this just
+// bounds the worst-case staleness — the cron hitting /api/revalidate is what
+// makes the update feel instant.
+const RATES_REVALIDATE_SECONDS = 300;
+const HISTORY_REVALIDATE_SECONDS = 3600;
+
 export async function getDailyRates(): Promise<RatesSnapshot> {
   try {
-    const res = await fetch(BNR_DAILY_URL, { next: { revalidate: 3600 } });
+    const res = await fetch(BNR_DAILY_URL, {
+      next: { revalidate: RATES_REVALIDATE_SECONDS, tags: ["bnr-rates"] },
+    });
     if (!res.ok) throw new Error(`BNR daily feed responded ${res.status}`);
     const xml = await res.text();
     const doc = parser.parse(xml);
@@ -122,7 +132,9 @@ export async function getHistory(currency: string, days = 90): Promise<{
     const allPoints: HistoryPoint[] = [];
 
     for (const year of years) {
-      const res = await fetch(BNR_YEARLY_URL(year), { next: { revalidate: 21600 } });
+      const res = await fetch(BNR_YEARLY_URL(year), {
+        next: { revalidate: HISTORY_REVALIDATE_SECONDS, tags: ["bnr-history"] },
+      });
       if (!res.ok) continue;
       const xml = await res.text();
       const doc = parser.parse(xml);
