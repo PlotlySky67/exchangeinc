@@ -78,15 +78,23 @@ export default async function Home() {
       </section>
 
       <section className="mx-auto w-full max-w-6xl px-4 pb-14 sm:px-6">
-        <div className="mb-4">
-          <h2 className="text-xl font-bold text-foreground">
-            Compară case de schimb — EUR
-          </h2>
-          <p className="mt-1 text-sm text-muted">
-            Exemplu de comparație a cursurilor de cumpărare/vânzare oferite de
-            case de schimb. Secțiune demonstrativă, gata de conectat la un
-            flux real de date.
-          </p>
+        <div className="mb-4 flex flex-wrap items-end justify-between gap-2">
+          <div>
+            <h2 className="text-xl font-bold text-foreground">
+              Compară case de schimb — EUR
+            </h2>
+            <p className="mt-1 text-sm text-muted">
+              Exemplu de comparație a cursurilor de cumpărare/vânzare oferite de
+              case de schimb. Secțiune demonstrativă, gata de conectat la un
+              flux real de date.
+            </p>
+          </div>
+          <Link
+            href="/schimb-valutar-judetean"
+            className="shrink-0 text-sm font-medium text-brand hover:underline"
+          >
+            Vezi pe fiecare județ →
+          </Link>
         </div>
         {officeQuotes.length > 0 && (
           <OfficeCompareTable quotes={officeQuotes} currency="EUR" />

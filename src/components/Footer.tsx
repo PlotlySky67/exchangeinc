@@ -25,6 +25,7 @@ export default function Footer() {
               <li><Link href="/" className="hover:text-brand">Acasă</Link></li>
               <li><Link href="/convertor" className="hover:text-brand">Convertor valutar</Link></li>
               <li><Link href="/istoric" className="hover:text-brand">Istoric curs</Link></li>
+              <li><Link href="/schimb-valutar-judetean" className="hover:text-brand">Schimb valutar județean</Link></li>
               <li><Link href="/despre" className="hover:text-brand">Despre</Link></li>
             </ul>
           </div>
