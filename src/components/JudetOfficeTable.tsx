@@ -3,9 +3,11 @@ import type { JudetOfficeQuote } from "@/lib/demoOffices";
 export default function JudetOfficeTable({
   quotes,
   judetName,
+  orasName,
 }: {
   quotes: JudetOfficeQuote[];
   judetName: string;
+  orasName: string;
 }) {
   const bestEur = quotes.reduce((a, b) => (b.eurBuy > a.eurBuy ? b : a), quotes[0]);
 
@@ -56,9 +58,9 @@ export default function JudetOfficeTable({
         </table>
       </div>
       <p className="border-t border-border bg-background/60 px-4 py-2 text-xs text-muted">
-        Date demonstrative pentru județul {judetName}, calculate ca marjă
-        sintetică față de cursul BNR — nu sunt cotații live de la case de
-        schimb reale.
+        Date demonstrative pentru {orasName}, județul {judetName}, calculate
+        ca marjă sintetică față de cursul BNR — nu sunt cotații live de la
+        case de schimb reale.
       </p>
     </div>
   );

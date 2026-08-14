@@ -37,10 +37,10 @@ export interface JudetOfficeQuote {
   usdSell: number;
 }
 
-// Fictional office name templates used to generate a per-județ comparison
-// table. Combined with a deterministic seed (județ + template), this always
-// produces the same sample numbers for a given county — stable across
-// renders/deploys — without hand-authoring 42 counties x N offices by hand.
+// Fictional office name templates used to generate a per-oraș comparison
+// table. Combined with a deterministic seed (județ + oraș + template), this
+// always produces the same sample numbers for a given town — stable across
+// renders/deploys — without hand-authoring every county/city x office by hand.
 const OFFICE_NAME_TEMPLATES = [
   "Exchange Central",
   "Casa de Schimb Nord",
@@ -61,6 +61,7 @@ function seededRandom(seed: string): () => number {
 
 export function judetOfficeQuotes(
   judetSlug: string,
+  orasSlug: string,
   eur: RateEntry,
   usd: RateEntry,
 ): JudetOfficeQuote[] {
@@ -68,7 +69,7 @@ export function judetOfficeQuotes(
   const usdUnit = usd.rate / usd.multiplier;
 
   return OFFICE_NAME_TEMPLATES.map((office) => {
-    const rand = seededRandom(`${judetSlug}:${office}`);
+    const rand = seededRandom(`${judetSlug}:${orasSlug}:${office}`);
     const eurBuySpread = 0.003 + rand() * 0.006;
     const eurSellSpread = 0.004 + rand() * 0.008;
     const usdBuySpread = 0.003 + rand() * 0.006;
