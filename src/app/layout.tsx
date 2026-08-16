@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "CursActual — Curs valutar zilnic și convertor",
-    template: "%s — CursActual",
+    default: "Indicial.ro — Curs valutar zilnic și convertor",
+    template: "%s — Indicial.ro",
   },
   description:
     "Curs valutar zilnic pe baza cursului oficial BNR, convertor valutar și istoric al cursurilor pentru EUR, USD, GBP și alte valute.",

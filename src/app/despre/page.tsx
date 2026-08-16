@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Despre",
   description:
-    "Despre CursActual: sursa datelor, cum funcționează convertorul și limitele secțiunii de comparare case de schimb.",
+    "Despre Indicial.ro: sursa datelor, cum funcționează convertorul și limitele secțiunii de comparare case de schimb.",
 };
 
 export default function DesprePage() {
@@ -11,12 +11,12 @@ export default function DesprePage() {
     <div className="mx-auto w-full max-w-3xl px-4 py-10 sm:px-6 sm:py-14">
       <p className="text-sm font-semibold uppercase tracking-wide text-brand">Despre</p>
       <h1 className="mt-2 text-3xl font-bold tracking-tight text-foreground">
-        Despre CursActual
+        Despre Indicial.ro
       </h1>
 
       <div className="prose-sm mt-6 space-y-5 text-base leading-relaxed text-foreground">
         <p>
-          CursActual este un proiect independent care afișează cursul valutar
+          Indicial.ro este un proiect independent care afișează cursul valutar
           de referință publicat zilnic de{" "}
           <a
             href="https://www.bnr.ro/Cursul-de-schimb-3544.aspx"
@@ -58,7 +58,7 @@ export default function DesprePage() {
         </div>
 
         <p className="text-sm text-muted">
-          CursActual nu este afiliat Băncii Naționale a României și nu oferă
+          Indicial.ro nu este afiliat Băncii Naționale a României și nu oferă
           consultanță financiară. Informațiile au caracter orientativ.
         </p>
       </div>

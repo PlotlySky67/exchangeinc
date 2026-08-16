@@ -1,6 +1,6 @@
-# CursActual
+# Indicial.ro
 
-CursActual is a Romanian currency exchange rate site — daily reference rates,
+Indicial.ro is a Romanian currency exchange rate site — daily reference rates,
 a currency converter, and historical rate charts, built on the official
 public XML feeds published by the National Bank of Romania (BNR).
 
