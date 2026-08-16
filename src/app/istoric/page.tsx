@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Istoric curs valutar",
   description:
     "Evoluția în timp a cursului valutar BNR pentru EUR, USD, GBP și alte valute, cu grafic interactiv.",
+  alternates: { canonical: "/istoric" },
 };
 
 export default async function IstoricPage({

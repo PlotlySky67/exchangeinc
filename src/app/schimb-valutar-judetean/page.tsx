@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Schimb valutar județean",
   description:
     "Compară cursurile de cumpărare și vânzare EUR/USD oferite de case de schimb, pe județ și oraș.",
+  alternates: { canonical: "/schimb-valutar-judetean" },
 };
 
 export default async function SchimbValutarJudeteanPage({

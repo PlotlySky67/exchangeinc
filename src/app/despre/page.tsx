@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: "Despre",
   description:
     "Despre Indicial.ro: sursa datelor, cum funcționează convertorul și limitele secțiunii de comparare case de schimb.",
+  alternates: { canonical: "/despre" },
 };
 
 export default function DesprePage() {

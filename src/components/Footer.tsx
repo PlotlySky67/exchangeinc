@@ -18,6 +18,12 @@ export default function Footer() {
               Curs valutar zilnic, convertor și istoric al cursurilor, pe baza
               cursului de referință publicat de Banca Națională a României.
             </p>
+            <a
+              href="https://indicial.ro"
+              className="mt-3 inline-block text-sm font-medium text-brand hover:underline"
+            >
+              indicial.ro →
+            </a>
           </div>
           <div>
             <h3 className="text-sm font-semibold text-foreground">Navigare</h3>

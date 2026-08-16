@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Convertor valutar",
   description:
     "Convertește instant între RON, EUR, USD, GBP și alte valute, pe baza cursului oficial BNR.",
+  alternates: { canonical: "/convertor" },
 };
 
 export default async function ConvertorPage() {
