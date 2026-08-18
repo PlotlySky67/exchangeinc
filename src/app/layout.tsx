@@ -19,8 +19,8 @@ const SITE_URL = "https://indicial.ro";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Indicial.ro — Curs valutar zilnic și convertor",
-    template: "%s — Indicial.ro",
+    default: "Indicial.ro | Curs valutar zilnic și convertor",
+    template: "%s | Indicial.ro",
   },
   description:
     "Curs valutar zilnic pe baza cursului oficial BNR, convertor valutar și istoric al cursurilor pentru EUR, USD, GBP și alte valute.",
@@ -32,13 +32,13 @@ export const metadata: Metadata = {
     locale: "ro_RO",
     url: SITE_URL,
     siteName: "Indicial.ro",
-    title: "Indicial.ro — Curs valutar zilnic și convertor",
+    title: "Indicial.ro | Curs valutar zilnic și convertor",
     description:
       "Curs valutar zilnic pe baza cursului oficial BNR, convertor valutar și istoric al cursurilor.",
   },
   twitter: {
     card: "summary",
-    title: "Indicial.ro — Curs valutar zilnic și convertor",
+    title: "Indicial.ro | Curs valutar zilnic și convertor",
     description:
       "Curs valutar zilnic pe baza cursului oficial BNR, convertor valutar și istoric al cursurilor.",
   },
