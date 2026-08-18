@@ -67,9 +67,18 @@ function toArray<T>(value: T | T[] | undefined): T[] {
 const RATES_REVALIDATE_SECONDS = 300;
 const HISTORY_REVALIDATE_SECONDS = 3600;
 
+// Some bank/government servers reject requests that don't look like they
+// come from a browser (missing or non-browser User-Agent).
+const BNR_FETCH_HEADERS = {
+  "User-Agent":
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+  Accept: "application/xml,text/xml,*/*",
+};
+
 export async function getDailyRates(): Promise<RatesSnapshot> {
   try {
     const res = await fetch(BNR_DAILY_URL, {
+      headers: BNR_FETCH_HEADERS,
       next: { revalidate: RATES_REVALIDATE_SECONDS, tags: ["bnr-rates"] },
     });
     if (!res.ok) throw new Error(`BNR daily feed responded ${res.status}`);
@@ -89,7 +98,8 @@ export async function getDailyRates(): Promise<RatesSnapshot> {
     if (!date || rates.length === 0) throw new Error("Malformed BNR daily feed");
 
     return { date, rates, source: "live" };
-  } catch {
+  } catch (err) {
+    console.error("[bnr] getDailyRates failed, using fallback:", err);
     return fallbackSnapshot();
   }
 }
@@ -133,6 +143,7 @@ export async function getHistory(currency: string, days = 90): Promise<{
 
     for (const year of years) {
       const res = await fetch(BNR_YEARLY_URL(year), {
+        headers: BNR_FETCH_HEADERS,
         next: { revalidate: HISTORY_REVALIDATE_SECONDS, tags: ["bnr-history"] },
       });
       if (!res.ok) continue;
@@ -156,7 +167,8 @@ export async function getHistory(currency: string, days = 90): Promise<{
     allPoints.sort((a, b) => a.date.localeCompare(b.date));
     const trimmed = allPoints.slice(-days);
     return { points: trimmed, source: "live" };
-  } catch {
+  } catch (err) {
+    console.error("[bnr] getHistory failed, using fallback:", err);
     return { points: synthesizeHistory(code, days), source: "fallback" };
   }
 }
