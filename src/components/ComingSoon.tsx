@@ -13,7 +13,7 @@ export default function ComingSoon() {
         Revenim în curând
       </h1>
       <p className="mt-3 max-w-md text-base text-muted">
-        Curs valutar BNR, convertor valutar și istoric al cursurilor —
+        Curs valutar BNR, convertor valutar și istoric al cursurilor,
         disponibile din <span className="font-semibold text-foreground">{LAUNCH_DATE_LABEL}</span>.
       </p>
     </div>
