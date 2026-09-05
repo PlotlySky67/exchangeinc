@@ -10,7 +10,7 @@ export default function ComingSoon() {
         Indicial<span className="text-brand">.ro</span>
       </p>
       <h1 className="mt-6 max-w-lg text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-        Revenim în curând
+        {"În curând.."}
       </h1>
       <p className="mt-3 max-w-md text-base text-muted">
         Curs valutar BNR, convertor valutar și istoric al cursurilor,
