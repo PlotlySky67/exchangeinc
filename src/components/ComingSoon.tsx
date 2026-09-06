@@ -140,9 +140,9 @@ export default function ComingSoon() {
               </a>
               <span
                 className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] font-semibold whitespace-nowrap"
-                style={{ background: "#0b1220", border: "1px solid #223049", color: "#93a0bb" }}
+                style={{ background: "#ffffff", border: "1px solid #223049", color: "#10172a" }}
               >
-                Powered by Awesome Solutions &amp; Software
+                powered by Awesome Solutions &amp; Software
               </span>
             </div>
           ))}
