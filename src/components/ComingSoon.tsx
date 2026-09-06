@@ -11,9 +11,6 @@ export default function ComingSoon() {
       <h1 className="mt-6 max-w-lg text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
         {"În curând.."}
       </h1>
-      <p className="mt-2 max-w-md text-base font-medium text-foreground">
-        Istoric al cursurilor din România (din 15 septembrie)
-      </p>
       <p className="mt-3 max-w-md text-base text-muted">
         Curs valutar BNR, convertor valutar și comparații de cotații pe
         județe din România, disponibile din{" "}
