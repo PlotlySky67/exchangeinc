@@ -28,7 +28,6 @@ function pad(n: number): string {
 
 export default function ComingSoon() {
   const [remaining, setRemaining] = useState<Remaining>(() => getRemaining());
-  const [fireworksKey, setFireworksKey] = useState(0);
 
   useEffect(() => {
     const id = setInterval(() => setRemaining(getRemaining()), 30000);
@@ -46,7 +45,7 @@ export default function ComingSoon() {
       className="relative flex min-h-full flex-1 flex-col items-center justify-center overflow-hidden px-4 text-center"
       style={{ background: "#0b1220" }}
     >
-      <Fireworks key={fireworksKey} />
+      <Fireworks />
 
       <div className="relative z-10 flex flex-col items-center">
         <button
@@ -98,16 +97,6 @@ export default function ComingSoon() {
         <p className="mt-7 text-sm font-bold" style={{ color: "#4f9ae0" }}>
           Din {LAUNCH_DATE_LABEL}
         </p>
-
-        <button
-          type="button"
-          aria-label="Artificii"
-          onClick={() => setFireworksKey((k) => k + 1)}
-          className="mt-5 flex h-10 w-10 items-center justify-center rounded-full text-lg transition-colors"
-          style={{ background: "#121b2e", border: "1px solid #223049" }}
-        >
-          🎆
-        </button>
       </div>
 
       <div
