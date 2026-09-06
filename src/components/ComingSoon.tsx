@@ -63,7 +63,7 @@ export default function ComingSoon() {
         className="mt-2 max-w-md text-base sm:max-w-none sm:whitespace-nowrap"
         style={{ color: "#93a0bb" }}
       >
-        Curs valutar BNR, convertor valutar și cotații valutare în timp real.
+        Curs valutar BNR, convertor valutar și cotații valutare în timp real!
       </p>
 
       <div className="mt-9 flex gap-3.5">
