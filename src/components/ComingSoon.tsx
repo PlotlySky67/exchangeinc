@@ -100,11 +100,12 @@ export default function ComingSoon() {
 
         <button
           type="button"
+          aria-label="Artificii"
           onClick={() => setFireworksKey((k) => k + 1)}
-          className="mt-5 rounded-full px-3.5 py-1.5 text-xs font-semibold transition-colors"
-          style={{ background: "#121b2e", border: "1px solid #223049", color: "#93a0bb" }}
+          className="mt-5 flex h-10 w-10 items-center justify-center rounded-full text-lg transition-colors"
+          style={{ background: "#121b2e", border: "1px solid #223049" }}
         >
-          🎆 Artificii
+          🎆
         </button>
       </div>
     </div>
