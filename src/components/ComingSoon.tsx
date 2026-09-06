@@ -134,27 +134,21 @@ export default function ComingSoon() {
                 />
               </a>
               <a
-                href="https://ec.europa.eu/consumers/odr/"
+                href="https://anpc.ro"
                 target="_blank"
                 rel="noopener noreferrer"
-                title="ANPC · Soluționarea online a litigiilor (SOL)"
-                className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] font-semibold whitespace-nowrap transition-colors"
-                style={{ background: "#0b1220", border: "1px solid #223049", color: "#93a0bb" }}
+                title="ANPC · Soluționarea Alternativă a Litigiilor (SAL)"
+                className="flex items-center overflow-hidden rounded-lg"
+                style={{ background: "#121b2e" }}
               >
-                <span
-                  className="flex h-4 w-4 items-center justify-center rounded-full text-[9px] font-extrabold text-white"
-                  style={{ background: "#e8b656" }}
-                >
-                  EU
-                </span>
-                ANPC · SOL
+                <Image
+                  src="/anpc-sal-logo.png"
+                  alt="ANPC SAL"
+                  width={130}
+                  height={32}
+                  className="h-8 w-auto"
+                />
               </a>
-              <span
-                className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] font-semibold whitespace-nowrap"
-                style={{ background: "#0b1220", border: "1px solid #223049", color: "#93a0bb" }}
-              >
-                🎆 indicial.ro
-              </span>
               <span
                 className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] font-semibold whitespace-nowrap"
                 style={{ background: "#0b1220", border: "1px solid #223049", color: "#93a0bb" }}
