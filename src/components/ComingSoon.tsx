@@ -108,6 +108,41 @@ export default function ComingSoon() {
           🎆
         </button>
       </div>
+
+      <div className="absolute inset-x-0 bottom-6 z-10 flex flex-wrap items-center justify-center gap-2.5 px-4">
+        <a
+          href="https://www.rotld.ro"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Domeniu înregistrat prin ROTLD"
+          className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] font-semibold transition-colors"
+          style={{ background: "#121b2e", border: "1px solid #223049", color: "#93a0bb" }}
+        >
+          <span
+            className="flex h-4 w-4 items-center justify-center rounded-full text-[9px] font-extrabold text-white"
+            style={{ background: "#4f9ae0" }}
+          >
+            ro
+          </span>
+          ROTLD
+        </a>
+        <a
+          href="https://ec.europa.eu/consumers/odr/"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="ANPC · Soluționarea online a litigiilor (SOL)"
+          className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] font-semibold transition-colors"
+          style={{ background: "#121b2e", border: "1px solid #223049", color: "#93a0bb" }}
+        >
+          <span
+            className="flex h-4 w-4 items-center justify-center rounded-full text-[9px] font-extrabold text-white"
+            style={{ background: "#e8b656" }}
+          >
+            EU
+          </span>
+          ANPC · SOL
+        </a>
+      </div>
     </div>
   );
 }
