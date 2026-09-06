@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { LAUNCH_DATE_ISO, LAUNCH_DATE_LABEL } from "@/lib/launch";
 import { LogoMark } from "@/components/Logo";
 import Fireworks from "@/components/Fireworks";
@@ -121,16 +122,16 @@ export default function ComingSoon() {
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Domeniu înregistrat prin ROTLD"
-                className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] font-semibold whitespace-nowrap transition-colors"
-                style={{ background: "#0b1220", border: "1px solid #223049", color: "#93a0bb" }}
+                className="flex items-center rounded-full px-3 py-1 whitespace-nowrap"
+                style={{ background: "#ffffff" }}
               >
-                <span
-                  className="flex h-4 w-4 items-center justify-center rounded-full text-[9px] font-extrabold text-white"
-                  style={{ background: "#4f9ae0" }}
-                >
-                  ro
-                </span>
-                ROTLD
+                <Image
+                  src="/rotld-logo.png"
+                  alt="ROTLD"
+                  width={76}
+                  height={40}
+                  className="h-6 w-auto"
+                />
               </a>
               <a
                 href="https://ec.europa.eu/consumers/odr/"
