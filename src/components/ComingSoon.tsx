@@ -54,7 +54,7 @@ export default function ComingSoon() {
         indicial<span style={{ color: "#4f9ae0" }}>.ro</span>
       </p>
       <h1
-        className="mt-5 text-3xl font-bold tracking-tight sm:text-4xl"
+        className="mt-5 text-xl font-bold tracking-tight sm:text-2xl"
         style={{ color: "#edf1f9" }}
       >
         {"În curând.."}
