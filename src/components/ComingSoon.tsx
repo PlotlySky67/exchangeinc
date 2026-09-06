@@ -154,6 +154,12 @@ export default function ComingSoon() {
               >
                 🎆 indicial.ro
               </span>
+              <span
+                className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] font-semibold whitespace-nowrap"
+                style={{ background: "#0b1220", border: "1px solid #223049", color: "#93a0bb" }}
+              >
+                Powered by Awesome Solutions &amp; Software
+              </span>
             </div>
           ))}
         </div>
