@@ -53,7 +53,10 @@ export default function ComingSoon() {
       >
         {"În curând.."}
       </h1>
-      <p className="mt-2 max-w-md text-base" style={{ color: "#93a0bb" }}>
+      <p
+        className="mt-2 max-w-md text-base sm:max-w-none sm:whitespace-nowrap"
+        style={{ color: "#93a0bb" }}
+      >
         Curs valutar BNR, convertor valutar și cotații valutare în timp real.
       </p>
 
