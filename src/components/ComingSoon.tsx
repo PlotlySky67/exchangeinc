@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { LAUNCH_DATE_ISO, LAUNCH_DATE_LABEL } from "@/lib/launch";
 import { LogoMark } from "@/components/Logo";
+import Fireworks from "@/components/Fireworks";
 
 interface Remaining {
   days: number;
@@ -40,58 +41,62 @@ export default function ComingSoon() {
 
   return (
     <div
-      className="flex min-h-full flex-1 flex-col items-center justify-center px-4 text-center"
+      className="relative flex min-h-full flex-1 flex-col items-center justify-center overflow-hidden px-4 text-center"
       style={{ background: "#0b1220" }}
     >
-      <button
-        type="button"
-        aria-label="indicial.ro"
-        className="cursor-pointer transition-transform duration-300 ease-out hover:scale-110 active:scale-90 active:duration-150"
-      >
-        <LogoMark size={84} />
-      </button>
-      <p className="mt-4 text-lg font-bold tracking-tight" style={{ color: "#edf1f9" }}>
-        indicial<span style={{ color: "#4f9ae0" }}>.ro</span>
-      </p>
-      <h1
-        className="mt-5 text-xl font-bold tracking-tight sm:text-2xl"
-        style={{ color: "#edf1f9" }}
-      >
-        {"În curând.."}
-      </h1>
-      <p
-        className="mt-2 max-w-md text-base sm:max-w-none sm:whitespace-nowrap"
-        style={{ color: "#93a0bb" }}
-      >
-        Curs valutar BNR, convertor valutar și cotații valutare în timp real!
-      </p>
+      <Fireworks />
 
-      <div className="mt-9 flex gap-3.5">
-        {tiles.map((tile) => (
-          <div
-            key={tile.label}
-            className="w-20 rounded-2xl py-4 text-center"
-            style={{ background: "#121b2e", border: "1px solid #223049" }}
-          >
+      <div className="relative z-10 flex flex-col items-center">
+        <button
+          type="button"
+          aria-label="indicial.ro"
+          className="cursor-pointer transition-transform duration-300 ease-out hover:scale-110 active:scale-90 active:duration-150"
+        >
+          <LogoMark size={84} />
+        </button>
+        <p className="mt-4 text-lg font-bold tracking-tight" style={{ color: "#edf1f9" }}>
+          indicial<span style={{ color: "#4f9ae0" }}>.ro</span>
+        </p>
+        <h1
+          className="mt-5 text-xl font-bold tracking-tight sm:text-2xl"
+          style={{ color: "#edf1f9" }}
+        >
+          {"În curând.."}
+        </h1>
+        <p
+          className="mt-2 max-w-md text-base sm:max-w-none sm:whitespace-nowrap"
+          style={{ color: "#93a0bb" }}
+        >
+          Curs valutar BNR, convertor valutar și cotații valutare în timp real!
+        </p>
+
+        <div className="mt-9 flex gap-3.5">
+          {tiles.map((tile) => (
             <div
-              className="font-mono text-3xl font-extrabold tabular-nums"
-              style={{ color: "#edf1f9" }}
+              key={tile.label}
+              className="w-20 rounded-2xl py-4 text-center"
+              style={{ background: "#121b2e", border: "1px solid #223049" }}
             >
-              {pad(tile.value)}
+              <div
+                className="font-mono text-3xl font-extrabold tabular-nums"
+                style={{ color: "#edf1f9" }}
+              >
+                {pad(tile.value)}
+              </div>
+              <div
+                className="mt-1 text-[11px] font-semibold uppercase tracking-wide"
+                style={{ color: "#93a0bb" }}
+              >
+                {tile.label}
+              </div>
             </div>
-            <div
-              className="mt-1 text-[11px] font-semibold uppercase tracking-wide"
-              style={{ color: "#93a0bb" }}
-            >
-              {tile.label}
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
+
+        <p className="mt-7 text-sm font-bold" style={{ color: "#4f9ae0" }}>
+          Din {LAUNCH_DATE_LABEL}
+        </p>
       </div>
-
-      <p className="mt-7 text-sm font-bold" style={{ color: "#4f9ae0" }}>
-        Lansare pe {LAUNCH_DATE_LABEL}
-      </p>
     </div>
   );
 }
