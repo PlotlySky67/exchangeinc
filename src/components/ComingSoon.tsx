@@ -43,7 +43,13 @@ export default function ComingSoon() {
       className="flex min-h-full flex-1 flex-col items-center justify-center px-4 text-center"
       style={{ background: "#0b1220" }}
     >
-      <LogoMark size={56} />
+      <button
+        type="button"
+        aria-label="indicial.ro"
+        className="cursor-pointer transition-transform duration-300 ease-out hover:scale-110 active:scale-90 active:duration-150"
+      >
+        <LogoMark size={84} />
+      </button>
       <p className="mt-4 text-lg font-bold tracking-tight" style={{ color: "#edf1f9" }}>
         indicial<span style={{ color: "#4f9ae0" }}>.ro</span>
       </p>
