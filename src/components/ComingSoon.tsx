@@ -12,8 +12,8 @@ export default function ComingSoon() {
         {"În curând.."}
       </h1>
       <p className="mt-3 max-w-md text-base text-muted">
-        Curs valutar BNR, convertor valutar și comparații de cotații pe
-        județe din România, disponibile din{" "}
+        Curs valutar BNR, convertor valutar și cotații valutare în timp
+        real, disponibile din{" "}
         <span className="font-semibold text-foreground">{LAUNCH_DATE_LABEL}</span>.
       </p>
     </div>
