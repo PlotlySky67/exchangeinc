@@ -112,7 +112,7 @@ export default function ComingSoon() {
                 rel="noopener noreferrer"
                 title="Domeniu înregistrat prin ROTLD"
                 className="flex items-center rounded-full px-3 py-1 whitespace-nowrap"
-                style={{ background: "#ffffff", border: "1px solid #000000" }}
+                style={{ background: "#ffffff", border: "2px solid #000000" }}
               >
                 <Image
                   src="/rotld-logo.png"
@@ -128,7 +128,7 @@ export default function ComingSoon() {
                 rel="noopener noreferrer"
                 title="ANPC · Soluționarea Alternativă a Litigiilor (SAL)"
                 className="flex items-center overflow-hidden rounded-lg"
-                style={{ background: "#121b2e", border: "1px solid #000000" }}
+                style={{ background: "#121b2e", border: "2px solid #000000" }}
               >
                 <Image
                   src="/anpc-sal-logo.png"
@@ -140,7 +140,7 @@ export default function ComingSoon() {
               </a>
               <span
                 className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] font-semibold whitespace-nowrap"
-                style={{ background: "#ffffff", border: "1px solid #000000", color: "#10172a" }}
+                style={{ background: "#ffffff", border: "2px solid #000000", color: "#10172a" }}
               >
                 <Image
                   src="/awesome-logo.png"
