@@ -142,7 +142,14 @@ export default function ComingSoon() {
                 className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] font-semibold whitespace-nowrap"
                 style={{ background: "#ffffff", border: "1px solid #223049", color: "#10172a" }}
               >
-                powered by Awesome Solutions &amp; Software
+                <Image
+                  src="/awesome-logo.png"
+                  alt="Awesome Solutions & Software"
+                  width={39}
+                  height={20}
+                  className="h-5 w-auto"
+                />
+                powered by awesome solutions&software
               </span>
             </div>
           ))}
