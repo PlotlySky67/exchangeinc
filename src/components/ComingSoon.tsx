@@ -145,9 +145,9 @@ export default function ComingSoon() {
                 <Image
                   src="/awesome-logo.png"
                   alt="Awesome Solutions & Software"
-                  width={39}
-                  height={20}
-                  className="h-5 w-auto"
+                  width={31}
+                  height={16}
+                  className="h-4 w-auto"
                 />
                 powered by awesome solutions&software
               </span>
