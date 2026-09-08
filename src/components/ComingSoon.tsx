@@ -140,15 +140,17 @@ export default function ComingSoon() {
               </a>
               <span
                 className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] font-semibold whitespace-nowrap"
-                style={{ background: "#ffffff", border: "2px solid #000000", color: "#10172a" }}
+                style={{ background: "#121b2e", border: "2px solid #000000", color: "#edf1f9" }}
               >
-                <Image
-                  src="/awesome-logo.png"
-                  alt="Awesome Solutions & Software"
-                  width={31}
-                  height={16}
-                  className="h-4 w-auto"
-                />
+                <span className="flex items-center rounded px-0.5" style={{ background: "#ffffff" }}>
+                  <Image
+                    src="/awesome-logo.png"
+                    alt="Awesome Solutions & Software"
+                    width={31}
+                    height={16}
+                    className="h-4 w-auto"
+                  />
+                </span>
                 powered by awesome solutions&software
               </span>
             </div>
