@@ -30,9 +30,9 @@ const parser = new XMLParser({ ignoreAttributes: false, attributeNamePrefix: "@_
 // always labels this as cached/sample data rather than presenting it as live.
 const FALLBACK_DATE = "2026-08-11";
 const FALLBACK_RATES: RateEntry[] = [
-  { currency: "EUR", multiplier: 1, rate: 5.0784 },
-  { currency: "USD", multiplier: 1, rate: 4.3821 },
-  { currency: "GBP", multiplier: 1, rate: 5.8674 },
+  { currency: "EUR", multiplier: 1, rate: 5.23 },
+  { currency: "USD", multiplier: 1, rate: 4.52 },
+  { currency: "GBP", multiplier: 1, rate: 6.06 },
   { currency: "CHF", multiplier: 1, rate: 5.4312 },
   { currency: "JPY", multiplier: 100, rate: 2.9812 },
   { currency: "CAD", multiplier: 1, rate: 3.1854 },
