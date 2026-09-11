@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { LogoMark, LogoWordmark } from "@/components/Logo";
+import { getDailyRates } from "@/lib/bnr";
 
 const NAV_LINKS = [
   { href: "/", label: "Acasă" },
@@ -9,9 +10,31 @@ const NAV_LINKS = [
   { href: "/despre", label: "Despre" },
 ];
 
-export default function Header() {
+const TICKER_CURRENCIES = ["EUR", "USD", "GBP", "CHF"];
+
+export default async function Header() {
+  const snapshot = await getDailyRates();
+  const tickerRates = TICKER_CURRENCIES.map((code) =>
+    snapshot.rates.find((r) => r.currency === code),
+  ).filter((r): r is NonNullable<typeof r> => Boolean(r));
+
   return (
-    <header className="sticky top-0 z-30 border-b border-border bg-surface/90 backdrop-blur">
+    <header className="sticky top-0 z-30 border-b border-border">
+      {tickerRates.length > 0 && (
+        <div className="overflow-x-auto bg-brand-dark px-4 py-1.5 text-white sm:px-6">
+          <div className="flex w-max gap-5 text-xs font-semibold">
+            {tickerRates.map((r) => (
+              <span key={r.currency} className="whitespace-nowrap">
+                {r.currency}{" "}
+                <span className="font-mono opacity-90">
+                  {(r.rate / r.multiplier).toFixed(4)}
+                </span>
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
+      <div className="bg-surface/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <Link href="/" className="flex items-center gap-2 shrink-0">
           <LogoMark size={36} />
@@ -30,6 +53,12 @@ export default function Header() {
         </nav>
         <Link
           href="/convertor"
+          className="hidden shrink-0 rounded-md bg-brand px-3 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-dark sm:block"
+        >
+          Convertor →
+        </Link>
+        <Link
+          href="/convertor"
           className="rounded-md bg-brand px-3 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-dark sm:hidden"
         >
           Convertor
@@ -46,6 +75,7 @@ export default function Header() {
           </Link>
         ))}
       </nav>
+      </div>
     </header>
   );
 }
