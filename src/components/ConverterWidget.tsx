@@ -118,7 +118,10 @@ export default function ConverterWidget({
             {loading
               ? "Se încarcă…"
               : Number.isFinite(result)
-                ? result.toLocaleString("ro-RO", { maximumFractionDigits: 4 })
+                ? result.toLocaleString("ro-RO", {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                  })
                 : "—"}{" "}
             {to}
           </div>
