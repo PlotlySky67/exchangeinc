@@ -151,7 +151,7 @@ export default function ComingSoon() {
                     className="h-4 w-auto"
                   />
                 </span>
-                powered by awesome solutions&software
+                Powered by Awesome Solutions &amp; Software
               </span>
             </div>
           ))}
