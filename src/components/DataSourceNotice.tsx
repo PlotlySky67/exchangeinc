@@ -20,8 +20,7 @@ export default function DataSourceNotice({
       className={`rounded-md border border-accent/40 bg-accent/10 px-3 py-2 text-xs font-medium text-accent-foreground ${className}`}
       style={{ color: "var(--accent)" }}
     >
-      ⚠ Flux BNR indisponibil momentan — se afișează date de rezervă (cache),
-      nu curs live.
+      ⚠ Flux BNR indisponibil momentan
     </div>
   );
 }
