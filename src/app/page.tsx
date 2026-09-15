@@ -1,6 +1,5 @@
 import { getDailyRates } from "@/lib/bnr";
 import RateTable from "@/components/RateTable";
-import DataSourceNotice from "@/components/DataSourceNotice";
 import InterbankRatesWidget from "@/components/InterbankRatesWidget";
 
 export default async function Home() {
@@ -13,7 +12,6 @@ export default async function Home() {
       </h1>
 
       <div className="mt-6">
-        <DataSourceNotice source={snapshot.source} className="mb-4" />
         <RateTable rates={snapshot.rates} />
       </div>
 
