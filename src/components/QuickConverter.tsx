@@ -110,6 +110,7 @@ export default function QuickConverter({
           ⇄
         </button>
       </div>
+      <p className="mt-3 text-xs text-muted">Sursă: cursbnr.ro</p>
     </div>
   );
 }
