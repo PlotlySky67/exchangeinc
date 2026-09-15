@@ -58,7 +58,7 @@ export default function QuickConverter({
   return (
     <div className="rounded-xl border border-border bg-surface p-4">
       <p className="text-sm font-semibold text-foreground">
-        CONVERTOR VALUTAR BNR, actualizat la data de ({formatDate(new Date())})
+        Convertor Valutar BNR actualizat la data de ({formatDate(new Date())})
       </p>
       <div className="mt-3 flex flex-wrap items-center gap-2">
         <input
