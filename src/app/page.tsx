@@ -1,6 +1,7 @@
 import { getDailyRates } from "@/lib/bnr";
 import RateTable from "@/components/RateTable";
 import DataSourceNotice from "@/components/DataSourceNotice";
+import InterbankRatesWidget from "@/components/InterbankRatesWidget";
 
 export default async function Home() {
   const snapshot = await getDailyRates();
@@ -34,6 +35,9 @@ export default async function Home() {
           Cursul valutar interbancar variază permanent pe toată perioada
           zilei de tranzacționare, în funcție de cerere și ofertă.
         </p>
+        <div className="mt-6">
+          <InterbankRatesWidget />
+        </div>
       </section>
     </div>
   );
