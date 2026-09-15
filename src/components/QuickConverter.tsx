@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import type { RateEntry, RatesSnapshot } from "@/lib/bnr";
 
 function formatDate(date: Date): string {
@@ -36,10 +36,7 @@ export default function QuickConverter({
     };
   }, [initialSnapshot]);
 
-  const options = useMemo(() => {
-    const codes = (snapshot?.rates ?? []).map((r) => r.currency);
-    return ["RON", ...codes];
-  }, [snapshot]);
+  const options = ["RON", "EUR"];
 
   function unitRate(code: string): number {
     if (code === "RON") return 1;
