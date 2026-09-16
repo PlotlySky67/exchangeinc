@@ -43,7 +43,7 @@ export default function TrustBadgesMarquee() {
             </a>
             <span
               className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] font-semibold whitespace-nowrap"
-              style={{ background: "#121b2e", border: "2px solid #000000", color: "#edf1f9" }}
+              style={{ background: "#ffffff", border: "2px solid #000000", color: "#10172a" }}
             >
               <span className="flex items-center rounded px-0.5" style={{ background: "#ffffff" }}>
                 <Image
