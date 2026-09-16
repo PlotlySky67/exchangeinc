@@ -1,14 +1,14 @@
 import { getDailyRates } from "@/lib/bnr";
 import RateTable from "@/components/RateTable";
 import InterbankRatesWidget from "@/components/InterbankRatesWidget";
-import QuickConverter from "@/components/QuickConverter";
+import DailyRateSummary from "@/components/DailyRateSummary";
 
 export default async function Home() {
   const snapshot = await getDailyRates();
 
   return (
     <div className="mx-auto w-full max-w-4xl px-4 py-10 sm:px-6 sm:py-14">
-      <QuickConverter initialSnapshot={snapshot} />
+      <DailyRateSummary />
 
       <h1 className="mt-8 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
         CURS VALUTAR BNR
