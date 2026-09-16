@@ -65,7 +65,7 @@ export default async function DailyRateSummary() {
 
   return (
     <div className="rounded-xl p-5" style={{ background: "#eef4fc" }}>
-      <p className="text-lg text-foreground">
+      <p className="text-lg" style={{ color: "#10172a" }}>
         <span className="font-bold">Cursul valutar BNR</span> comunicat în{" "}
         {latestDate ? formatRomanianDate(latestDate) : ""}
       </p>
@@ -77,7 +77,7 @@ export default async function DailyRateSummary() {
               key={i}
               className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-lg"
             >
-              <span className="text-foreground">
+              <span style={{ color: "#10172a" }}>
                 {row.label} = {row.value.toFixed(4)} {row.unit}
               </span>
               <span
