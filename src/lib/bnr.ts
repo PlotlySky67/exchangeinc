@@ -28,7 +28,7 @@ const parser = new XMLParser({ ignoreAttributes: false, attributeNamePrefix: "@_
 // Fallback snapshot used when the live BNR feed can't be reached (e.g. offline
 // dev environments). Values are a realistic mid-2026 reference point — the UI
 // always labels this as cached/sample data rather than presenting it as live.
-const FALLBACK_DATE = "2026-08-11";
+const FALLBACK_DATE = "2026-08-16";
 const FALLBACK_RATES: RateEntry[] = [
   { currency: "EUR", multiplier: 1, rate: 5.26 },
   { currency: "USD", multiplier: 1, rate: 4.52 },
