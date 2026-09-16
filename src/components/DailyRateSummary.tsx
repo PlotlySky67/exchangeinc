@@ -64,28 +64,29 @@ export default async function DailyRateSummary() {
   const latestDate = eurPoints[eurPoints.length - 1]?.date;
 
   return (
-    <div className="rounded-xl border border-border bg-surface p-4">
-      <p className="text-sm text-foreground">
+    <div className="rounded-xl p-5" style={{ background: "#eef4fc" }}>
+      <p className="text-lg text-foreground">
         <span className="font-bold">Cursul valutar BNR</span> comunicat în{" "}
         {latestDate ? formatRomanianDate(latestDate) : ""}
       </p>
-      <div className="mt-3 space-y-2">
+      <div className="mt-4 space-y-3">
         {rows.map((row, i) => {
           const up = row.delta >= 0;
           return (
             <div
               key={i}
-              className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-sm"
+              className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-lg"
             >
-              <span className="font-semibold text-foreground">
+              <span className="text-foreground">
                 {row.label} = {row.value.toFixed(4)} {row.unit}
               </span>
               <span
-                className={`flex items-center gap-1 font-medium ${
+                className={`flex items-center gap-2 ${
                   up ? "text-positive" : "text-negative"
                 }`}
               >
-                {formatDelta(row.delta)} {row.deltaUnit} {up ? "↑" : "↓"}
+                {formatDelta(row.delta)} {row.deltaUnit}
+                <span className="text-2xl leading-none font-bold">{up ? "↑" : "↓"}</span>
               </span>
             </div>
           );
