@@ -26,9 +26,12 @@ export interface HistoryPoint {
 const parser = new XMLParser({ ignoreAttributes: false, attributeNamePrefix: "@_" });
 
 // Fallback snapshot used when the live BNR feed can't be reached (e.g. offline
-// dev environments). Values are a realistic mid-2026 reference point — the UI
-// always labels this as cached/sample data rather than presenting it as live.
-const FALLBACK_DATE = "2026-08-16";
+// dev environments). Values are a realistic reference point — the UI always
+// labels this as cached/sample data rather than presenting it as live. The
+// date always tracks today so the fallback never looks stuck on a fixed day.
+function getFallbackDate(): string {
+  return new Date().toISOString().slice(0, 10);
+}
 const FALLBACK_RATES: RateEntry[] = [
   { currency: "EUR", multiplier: 1, rate: 5.26 },
   { currency: "USD", multiplier: 1, rate: 4.52 },
@@ -51,7 +54,7 @@ const FALLBACK_RATES: RateEntry[] = [
 ];
 
 function fallbackSnapshot(): RatesSnapshot {
-  return { date: FALLBACK_DATE, rates: FALLBACK_RATES, source: "fallback" };
+  return { date: getFallbackDate(), rates: FALLBACK_RATES, source: "fallback" };
 }
 
 function toArray<T>(value: T | T[] | undefined): T[] {
@@ -112,7 +115,7 @@ export async function getRate(currency: string): Promise<RateEntry | undefined> 
 function synthesizeHistory(currency: string, days: number): HistoryPoint[] {
   const base = FALLBACK_RATES.find((r) => r.currency === currency.toUpperCase())?.rate ?? 5;
   const points: HistoryPoint[] = [];
-  const end = new Date(FALLBACK_DATE);
+  const end = new Date(getFallbackDate());
   // Deterministic pseudo-random walk so the fallback chart is stable across renders.
   let seed = currency.split("").reduce((acc, ch) => acc + ch.charCodeAt(0), 0);
   const rand = () => {
@@ -126,7 +129,7 @@ function synthesizeHistory(currency: string, days: number): HistoryPoint[] {
     value += (rand() - 0.5) * base * 0.004;
     points.push({ date: d.toISOString().slice(0, 10), rate: Number(value.toFixed(4)) });
   }
-  points[points.length - 1] = { date: FALLBACK_DATE, rate: base };
+  points[points.length - 1] = { date: getFallbackDate(), rate: base };
   return points;
 }
 
