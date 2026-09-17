@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { getDailyRates } from "@/lib/bnr";
 import ConverterWidget from "@/components/ConverterWidget";
 import RateTable from "@/components/RateTable";
-import DataSourceNotice from "@/components/DataSourceNotice";
 
 export const metadata: Metadata = {
   title: "Convertor valutar",
@@ -28,7 +27,6 @@ export default async function ConvertorPage() {
       </p>
 
       <div className="mt-6">
-        <DataSourceNotice source={snapshot.source} className="mb-3" />
         <ConverterWidget initialSnapshot={snapshot} />
       </div>
 
