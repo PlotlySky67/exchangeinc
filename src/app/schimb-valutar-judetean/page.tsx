@@ -4,7 +4,6 @@ import { JUDETE, DEFAULT_JUDET, DEFAULT_ORAS, judetBySlug, orasBySlug } from "@/
 import { judetOfficeQuotes } from "@/lib/demoOffices";
 import JudetSelector from "@/components/JudetSelector";
 import JudetOfficeTable from "@/components/JudetOfficeTable";
-import DataSourceNotice from "@/components/DataSourceNotice";
 
 export const metadata: Metadata = {
   title: "Schimb valutar județean",
@@ -44,7 +43,6 @@ export default async function SchimbValutarJudeteanPage({
       </p>
 
       <div className="mt-6">
-        <DataSourceNotice source={snapshot.source} className="mb-3" />
         <div className="mb-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <span className="text-sm font-medium text-muted">Județ / oraș</span>
           <JudetSelector judete={JUDETE} currentJudet={judet.slug} currentOras={oras.slug} />

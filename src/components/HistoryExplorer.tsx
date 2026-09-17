@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import type { HistoryPoint } from "@/lib/bnr";
 import { CURRENCIES, currencyMeta } from "@/lib/currencies";
 import HistoryChart from "./HistoryChart";
-import DataSourceNotice from "./DataSourceNotice";
 
 const RANGES = [
   { label: "30 zile", days: 30 },
@@ -41,7 +40,6 @@ export default function HistoryExplorer({ initialCurrency }: { initialCurrency: 
   }, [currency, days]);
 
   const points = loading ? [] : result!.points;
-  const source = result?.source ?? "live";
   const first = points[0];
   const last = points[points.length - 1];
   const change = first && last ? ((last.rate - first.rate) / first.rate) * 100 : 0;
@@ -79,8 +77,6 @@ export default function HistoryExplorer({ initialCurrency }: { initialCurrency: 
           ))}
         </div>
       </div>
-
-      <DataSourceNotice source={source} className="mt-3" />
 
       <div className="mt-4 rounded-xl border border-border bg-surface p-4 sm:p-6">
         <div className="mb-2 flex items-baseline justify-between">
