@@ -64,34 +64,38 @@ export default async function DailyRateSummary() {
   const latestDate = eurPoints[eurPoints.length - 1]?.date;
 
   return (
-    <div className="rounded-xl p-5" style={{ background: "#eef4fc" }}>
-      <p className="text-lg" style={{ color: "#10172a" }}>
-        <span className="font-bold">Cursul valutar BNR</span> comunicat în{" "}
-        {latestDate ? formatRomanianDate(latestDate) : ""}
-      </p>
-      <div className="mt-4 space-y-3">
-        {rows.map((row, i) => {
-          const up = row.delta >= 0;
-          return (
-            <div
-              key={i}
-              className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-lg"
-            >
-              <span style={{ color: "#10172a" }}>
-                {row.label} = {row.value.toFixed(4)} {row.unit}
-              </span>
-              <span
-                className={`flex items-center gap-2 ${
-                  up ? "text-positive" : "text-negative"
-                }`}
-              >
-                {formatDelta(row.delta)} {row.deltaUnit}
-                <span className="text-2xl leading-none font-bold">{up ? "↑" : "↓"}</span>
-              </span>
-            </div>
-          );
-        })}
+    <div className="overflow-hidden rounded-xl border border-border bg-surface">
+      <div className="border-b border-border bg-background/60 px-4 py-3 sm:px-5">
+        <p className="text-[11px] font-extrabold tracking-wide text-brand uppercase">
+          Curs oficial BNR
+        </p>
+        <p className="mt-0.5 text-sm text-muted">
+          comunicat în {latestDate ? formatRomanianDate(latestDate) : ""}
+        </p>
       </div>
+      {rows.map((row, i) => {
+        const up = row.delta >= 0;
+        return (
+          <div
+            key={i}
+            className={`flex flex-wrap items-center justify-between gap-x-3 gap-y-1 px-4 py-3 text-sm sm:px-5 ${
+              i > 0 ? "border-t border-border" : ""
+            }`}
+          >
+            <span className="text-foreground">
+              {row.label} = <span className="font-mono font-bold">{row.value.toFixed(4)}</span>{" "}
+              {row.unit}
+            </span>
+            <span
+              className={`flex items-center gap-1.5 font-bold ${
+                up ? "text-positive" : "text-negative"
+              }`}
+            >
+              {formatDelta(row.delta)} {row.deltaUnit} {up ? "↑" : "↓"}
+            </span>
+          </div>
+        );
+      })}
     </div>
   );
 }
