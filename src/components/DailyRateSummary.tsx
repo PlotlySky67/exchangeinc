@@ -38,9 +38,6 @@ export default async function DailyRateSummary() {
   const gbpToday = gbpPoints[gbpPoints.length - 1]?.rate ?? 0;
   const gbpYesterday = gbpPoints[gbpPoints.length - 2]?.rate ?? gbpToday;
 
-  const crossToday = usdToday !== 0 ? eurToday / usdToday : 0;
-  const crossYesterday = usdYesterday !== 0 ? eurYesterday / usdYesterday : crossToday;
-
   const rows: Row[] = [
     {
       label: "1 EURO",
@@ -62,13 +59,6 @@ export default async function DailyRateSummary() {
       unit: "Lei",
       delta: gbpToday - gbpYesterday,
       deltaUnit: "Lei",
-    },
-    {
-      label: "1 EURO",
-      value: crossToday,
-      unit: "USD",
-      delta: crossToday - crossYesterday,
-      deltaUnit: "USD",
     },
   ];
 
