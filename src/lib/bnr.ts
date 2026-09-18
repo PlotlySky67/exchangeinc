@@ -114,22 +114,36 @@ export async function getRate(currency: string): Promise<RateEntry | undefined> 
 
 function synthesizeHistory(currency: string, days: number): HistoryPoint[] {
   const base = FALLBACK_RATES.find((r) => r.currency === currency.toUpperCase())?.rate ?? 5;
-  const points: HistoryPoint[] = [];
+  const dates: string[] = [];
   const end = new Date(getFallbackDate());
+  for (let i = days - 1; i >= 0; i--) {
+    const d = new Date(end);
+    d.setDate(d.getDate() - i);
+    dates.push(d.toISOString().slice(0, 10));
+  }
+
   // Deterministic pseudo-random walk so the fallback chart is stable across renders.
   let seed = currency.split("").reduce((acc, ch) => acc + ch.charCodeAt(0), 0);
   const rand = () => {
     seed = (seed * 9301 + 49297) % 233280;
     return seed / 233280;
   };
+  const rawValues: number[] = [];
   let value = base * 0.985;
-  for (let i = days - 1; i >= 0; i--) {
-    const d = new Date(end);
-    d.setDate(d.getDate() - i);
+  for (let i = 0; i < days; i++) {
     value += (rand() - 0.5) * base * 0.004;
-    points.push({ date: d.toISOString().slice(0, 10), rate: Number(value.toFixed(4)) });
+    rawValues.push(value);
   }
-  points[points.length - 1] = { date: getFallbackDate(), rate: base };
+
+  // Smoothly bend the walk (a "Brownian bridge") so it ends exactly at today's
+  // real rate instead of snapping there on the last point.
+  const lastIndex = days - 1;
+  const drift = base - rawValues[lastIndex];
+  const points: HistoryPoint[] = rawValues.map((v, i) => {
+    const corrected = v + (drift * i) / lastIndex;
+    return { date: dates[i], rate: Number(corrected.toFixed(4)) };
+  });
+  points[lastIndex] = { date: getFallbackDate(), rate: base };
   return points;
 }
 
