@@ -23,7 +23,7 @@ export default async function SchimbValutarJudeteanPage({
 
   const judet = judetBySlug(judetSlug);
   const oras = orasBySlug(judet, orasSlug);
-  const offices = REAL_OFFICES[judet.slug] ?? [];
+  const offices = REAL_OFFICES[`${judet.slug}:${oras.slug}`] ?? [];
   const snapshot = await getDailyRates();
 
   return (
