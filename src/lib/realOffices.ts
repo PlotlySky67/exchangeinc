@@ -14,6 +14,9 @@ export interface RealOffice {
   city: string;
   rates: RealOfficeRateSpread[];
   source?: string;
+  // Fixed date (YYYY-MM-DD) the quote was captured, shown instead of
+  // today's date when the office's board photo/source has its own date.
+  capturedDate?: string;
 }
 
 const CID_EXCHANGE_RATES: RealOfficeRateSpread[] = [
@@ -47,6 +50,7 @@ export const REAL_OFFICES: Record<string, RealOffice[]> = {
       city: "Vicovu de Sus",
       rates: BIVOLARIE_RATES,
       source: "Facebook",
+      capturedDate: "2026-09-17",
     },
   ],
 };
