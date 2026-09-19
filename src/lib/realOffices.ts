@@ -22,6 +22,13 @@ const CID_EXCHANGE_RATES: RealOfficeRateSpread[] = [
   { currency: "CHF", name: "Franc elvețian", buyFactor: 5.5129 / 5.5, sellFactor: 5.54 / 5.5 },
 ];
 
+const BIVOLARIE_RATES: RealOfficeRateSpread[] = [
+  { currency: "EUR", name: "Euro", buyFactor: 5.23 / 5.26, sellFactor: 5.27 / 5.26 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.53 / 4.52, sellFactor: 4.6 / 4.52 },
+  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.07 / 6.06, sellFactor: 6.12 / 6.06 },
+  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.5 / 5.5, sellFactor: 5.56 / 5.5 },
+];
+
 // Real, manually-entered exchange office spreads (not synthetic/demo data).
 // Keyed by "judetSlug:orasSlug". Add more offices as they're supplied.
 export const REAL_OFFICES: Record<string, RealOffice[]> = {
@@ -41,11 +48,9 @@ export const REAL_OFFICES: Record<string, RealOffice[]> = {
   ],
   "suceava:vicovu-de-sus": [
     {
-      // No distinct rates supplied yet for this office — reusing the same
-      // spread as Casa CID Exchange until real figures are provided.
-      name: "Schimb Valutar Bivolărie",
+      name: "Casa de Schimb Valutar Bivolărie",
       city: "Vicovu de Sus",
-      rates: CID_EXCHANGE_RATES,
+      rates: BIVOLARIE_RATES,
     },
   ],
 };
