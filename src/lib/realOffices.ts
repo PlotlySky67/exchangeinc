@@ -38,6 +38,7 @@ export const REAL_OFFICES: Record<string, RealOffice[]> = {
       name: "Casa CID Exchange Suceava",
       city: "Suceava",
       rates: CID_EXCHANGE_RATES,
+      source: "valutare.com",
     },
   ],
   "suceava:radauti": [
