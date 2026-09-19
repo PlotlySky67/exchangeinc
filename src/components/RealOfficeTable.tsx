@@ -1,6 +1,14 @@
 import type { RateEntry } from "@/lib/bnr";
 import type { RealOffice } from "@/lib/realOffices";
 
+function formatRomanianDate(date: Date): string {
+  return new Intl.DateTimeFormat("ro-RO", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  }).format(date);
+}
+
 export default function RealOfficeTable({
   office,
   bnrRates,
@@ -12,7 +20,9 @@ export default function RealOfficeTable({
     <div className="overflow-hidden rounded-xl border border-border bg-surface">
       <div className="border-b border-border bg-background/60 px-4 py-3 sm:px-5">
         <p className="text-sm font-bold text-foreground">{office.name}</p>
-        <p className="text-xs text-muted">{office.city}</p>
+        <p className="text-xs text-muted">
+          {office.city} · {formatRomanianDate(new Date())}
+        </p>
       </div>
       <table className="w-full text-sm">
         <thead>
