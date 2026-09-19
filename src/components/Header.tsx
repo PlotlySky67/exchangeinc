@@ -5,8 +5,8 @@ import { getDailyRates } from "@/lib/bnr";
 const NAV_LINKS = [
   { href: "/", label: "Acasă" },
   { href: "/convertor", label: "Convertor valutar" },
-  { href: "/istoric", label: "Istoric curs" },
   { href: "/schimb-valutar-judetean", label: "Județe" },
+  { href: "/istoric", label: "Istoric curs" },
   { href: "/despre", label: "Despre" },
 ];
 
@@ -45,7 +45,7 @@ export default async function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="rounded-md px-3 py-2 text-sm font-medium text-muted transition-colors hover:bg-background hover:text-foreground"
+              className="rounded-md px-3 py-2 text-sm font-medium text-muted uppercase transition-colors hover:bg-background hover:text-foreground"
             >
               {link.label}
             </Link>
@@ -53,13 +53,13 @@ export default async function Header() {
         </nav>
         <Link
           href="/convertor"
-          className="hidden shrink-0 rounded-md bg-brand px-3 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-dark sm:block"
+          className="hidden shrink-0 rounded-md bg-brand px-3 py-2 text-sm font-semibold text-white uppercase transition-colors hover:bg-brand-dark sm:block"
         >
           Convertor →
         </Link>
         <Link
           href="/convertor"
-          className="rounded-md bg-brand px-3 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-dark sm:hidden"
+          className="rounded-md bg-brand px-3 py-2 text-sm font-semibold text-white uppercase transition-colors hover:bg-brand-dark sm:hidden"
         >
           Convertor
         </Link>
@@ -69,7 +69,7 @@ export default async function Header() {
           <Link
             key={link.href}
             href={link.href}
-            className="shrink-0 rounded-md px-2.5 py-1.5 text-sm font-medium text-muted hover:bg-background hover:text-foreground"
+            className="shrink-0 rounded-md px-2.5 py-1.5 text-sm font-medium text-muted uppercase hover:bg-background hover:text-foreground"
           >
             {link.label}
           </Link>
