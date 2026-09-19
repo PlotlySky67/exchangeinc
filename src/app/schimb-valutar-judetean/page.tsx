@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { JUDETE, DEFAULT_JUDET, DEFAULT_ORAS, judetBySlug, orasBySlug } from "@/lib/judete";
+import { REAL_OFFICES } from "@/lib/realOffices";
 import JudetSelector from "@/components/JudetSelector";
+import RealOfficeTable from "@/components/RealOfficeTable";
 
 export const metadata: Metadata = {
   title: "Schimb valutar județean",
@@ -20,6 +22,7 @@ export default async function SchimbValutarJudeteanPage({
 
   const judet = judetBySlug(judetSlug);
   const oras = orasBySlug(judet, orasSlug);
+  const offices = REAL_OFFICES[judet.slug] ?? [];
 
   return (
     <div className="mx-auto w-full max-w-4xl px-4 py-10 sm:px-6 sm:py-14">
@@ -38,6 +41,14 @@ export default async function SchimbValutarJudeteanPage({
           <span className="text-sm font-medium text-muted">Județ / oraș</span>
           <JudetSelector judete={JUDETE} currentJudet={judet.slug} currentOras={oras.slug} />
         </div>
+
+        {offices.length > 0 && (
+          <div className="flex flex-col gap-4">
+            {offices.map((office) => (
+              <RealOfficeTable key={office.name} office={office} />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
