@@ -55,6 +55,11 @@ export default function RealOfficeTable({
           })}
         </tbody>
       </table>
+      {office.source && (
+        <p className="border-t border-border px-4 py-2 text-xs text-muted sm:px-5">
+          Sursă: {office.source}
+        </p>
+      )}
     </div>
   );
 }

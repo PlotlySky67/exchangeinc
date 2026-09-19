@@ -13,6 +13,7 @@ export interface RealOffice {
   name: string;
   city: string;
   rates: RealOfficeRateSpread[];
+  source?: string;
 }
 
 const CID_EXCHANGE_RATES: RealOfficeRateSpread[] = [
@@ -51,6 +52,7 @@ export const REAL_OFFICES: Record<string, RealOffice[]> = {
       name: "Casa de Schimb Valutar Bivolărie",
       city: "Vicovu de Sus",
       rates: BIVOLARIE_RATES,
+      source: "Facebook",
     },
   ],
 };
