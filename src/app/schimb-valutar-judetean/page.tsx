@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
-import { getDailyRates } from "@/lib/bnr";
 import { JUDETE, DEFAULT_JUDET, DEFAULT_ORAS, judetBySlug, orasBySlug } from "@/lib/judete";
-import { judetOfficeQuotes } from "@/lib/demoOffices";
 import JudetSelector from "@/components/JudetSelector";
-import JudetOfficeTable from "@/components/JudetOfficeTable";
 
 export const metadata: Metadata = {
   title: "Schimb valutar județean",
@@ -24,11 +21,6 @@ export default async function SchimbValutarJudeteanPage({
   const judet = judetBySlug(judetSlug);
   const oras = orasBySlug(judet, orasSlug);
 
-  const snapshot = await getDailyRates();
-  const eur = snapshot.rates.find((r) => r.currency === "EUR");
-  const usd = snapshot.rates.find((r) => r.currency === "USD");
-  const quotes = eur && usd ? judetOfficeQuotes(judet.slug, oras.slug, eur, usd) : [];
-
   return (
     <div className="mx-auto w-full max-w-4xl px-4 py-10 sm:px-6 sm:py-14">
       <p className="text-sm font-semibold uppercase tracking-wide text-brand">
@@ -38,8 +30,7 @@ export default async function SchimbValutarJudeteanPage({
         Case de schimb valutar pe județe și orașe
       </h1>
       <p className="mt-3 text-base text-muted">
-        Alege un județ și un oraș pentru a vedea o comparație a cursurilor de
-        cumpărare/vânzare EUR și USD oferite de case de schimb din zonă.
+        Alege un județ și un oraș.
       </p>
 
       <div className="mt-6">
@@ -47,14 +38,6 @@ export default async function SchimbValutarJudeteanPage({
           <span className="text-sm font-medium text-muted">Județ / oraș</span>
           <JudetSelector judete={JUDETE} currentJudet={judet.slug} currentOras={oras.slug} />
         </div>
-
-        {quotes.length > 0 ? (
-          <JudetOfficeTable quotes={quotes} judetName={judet.name} orasName={oras.name} />
-        ) : (
-          <p className="text-sm text-muted">
-            Datele nu sunt disponibile momentan.
-          </p>
-        )}
       </div>
     </div>
   );
