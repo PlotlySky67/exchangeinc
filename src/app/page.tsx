@@ -21,6 +21,9 @@ export default async function Home() {
           Cursul valutar interbancar variază permanent pe toată perioada
           zilei de tranzacționare, în funcție de cerere și ofertă.
         </p>
+        <p className="mt-4 text-sm font-semibold text-foreground">
+          Mai jos regăsiți tabelul de conversie valutară Investing.com
+        </p>
         <div className="mt-6">
           <InterbankRatesWidget />
         </div>
