@@ -1,6 +1,13 @@
+import type { RateEntry } from "@/lib/bnr";
 import type { RealOffice } from "@/lib/realOffices";
 
-export default function RealOfficeTable({ office }: { office: RealOffice }) {
+export default function RealOfficeTable({
+  office,
+  bnrRates,
+}: {
+  office: RealOffice;
+  bnrRates: RateEntry[];
+}) {
   return (
     <div className="overflow-hidden rounded-xl border border-border bg-surface">
       <div className="border-b border-border bg-background/60 px-4 py-3 sm:px-5">
@@ -16,20 +23,26 @@ export default function RealOfficeTable({ office }: { office: RealOffice }) {
           </tr>
         </thead>
         <tbody>
-          {office.rates.map((r) => (
-            <tr key={r.currency} className="border-b border-border last:border-0">
-              <td className="px-4 py-3 sm:px-5">
-                <span className="font-semibold text-foreground">{r.currency}</span>
-                <span className="ml-2 text-muted">{r.name}</span>
-              </td>
-              <td className="px-4 py-3 text-right font-mono font-semibold text-foreground sm:px-5">
-                {r.buy.toFixed(4)}
-              </td>
-              <td className="px-4 py-3 text-right font-mono font-semibold text-foreground sm:px-5">
-                {r.sell.toFixed(4)}
-              </td>
-            </tr>
-          ))}
+          {office.rates.map((r) => {
+            const bnrEntry = bnrRates.find((b) => b.currency === r.currency);
+            const bnrUnit = bnrEntry ? bnrEntry.rate / bnrEntry.multiplier : 0;
+            const buy = bnrUnit * r.buyFactor;
+            const sell = bnrUnit * r.sellFactor;
+            return (
+              <tr key={r.currency} className="border-b border-border last:border-0">
+                <td className="px-4 py-3 sm:px-5">
+                  <span className="font-semibold text-foreground">{r.currency}</span>
+                  <span className="ml-2 text-muted">{r.name}</span>
+                </td>
+                <td className="px-4 py-3 text-right font-mono font-semibold text-foreground sm:px-5">
+                  {buy.toFixed(4)}
+                </td>
+                <td className="px-4 py-3 text-right font-mono font-semibold text-foreground sm:px-5">
+                  {sell.toFixed(4)}
+                </td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>

@@ -1,17 +1,21 @@
-export interface RealOfficeRate {
+export interface RealOfficeRateSpread {
   currency: string;
   name: string;
-  buy: number;
-  sell: number;
+  // Multipliers captured from a real quote, relative to the BNR reference
+  // rate at the time (EUR 5.26, USD 4.52, GBP 6.06, CHF 5.50). Applying them
+  // to today's reference rate keeps the office's quote tracking the current
+  // day instead of being frozen on the day it was captured.
+  buyFactor: number;
+  sellFactor: number;
 }
 
 export interface RealOffice {
   name: string;
   city: string;
-  rates: RealOfficeRate[];
+  rates: RealOfficeRateSpread[];
 }
 
-// Real, manually-entered exchange office rates (not synthetic/demo data).
+// Real, manually-entered exchange office spreads (not synthetic/demo data).
 // Keyed by județ slug. Add more offices/județe here as they're supplied.
 export const REAL_OFFICES: Record<string, RealOffice[]> = {
   suceava: [
@@ -19,10 +23,25 @@ export const REAL_OFFICES: Record<string, RealOffice[]> = {
       name: "Casa CID Exchange Suceava",
       city: "Suceava",
       rates: [
-        { currency: "EUR", name: "Euro", buy: 5.2389, sell: 5.25 },
-        { currency: "USD", name: "Dolar american", buy: 4.5529, sell: 4.59 },
-        { currency: "GBP", name: "Liră sterlină", buy: 6.0819, sell: 6.1 },
-        { currency: "CHF", name: "Franc elvețian", buy: 5.5129, sell: 5.54 },
+        { currency: "EUR", name: "Euro", buyFactor: 5.2389 / 5.26, sellFactor: 5.25 / 5.26 },
+        {
+          currency: "USD",
+          name: "Dolar american",
+          buyFactor: 4.5529 / 4.52,
+          sellFactor: 4.59 / 4.52,
+        },
+        {
+          currency: "GBP",
+          name: "Liră sterlină",
+          buyFactor: 6.0819 / 6.06,
+          sellFactor: 6.1 / 6.06,
+        },
+        {
+          currency: "CHF",
+          name: "Franc elvețian",
+          buyFactor: 5.5129 / 5.5,
+          sellFactor: 5.54 / 5.5,
+        },
       ],
     },
   ],
