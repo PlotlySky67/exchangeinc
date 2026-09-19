@@ -39,8 +39,7 @@ export default async function SchimbValutarJudeteanPage({
       </p>
 
       <div className="mt-6">
-        <div className="mb-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-          <span className="text-sm font-medium text-muted">Județ / oraș</span>
+        <div className="mb-6">
           <JudetSelector judete={JUDETE} currentJudet={judet.slug} currentOras={oras.slug} />
         </div>
 
