@@ -33,21 +33,27 @@ const BIVOLARIE_RATES: RealOfficeRateSpread[] = [
   { currency: "CHF", name: "Franc elvețian", buyFactor: 5.5 / 5.5, sellFactor: 5.56 / 5.5 },
 ];
 
-// EUR-only for now — USD/GBP/CHF not supplied yet for these offices.
+// GBP/CHF not supplied yet for these offices.
 const ARIANA_MOSILOR_RATES: RealOfficeRateSpread[] = [
   { currency: "EUR", name: "Euro", buyFactor: 5.26 / 5.26, sellFactor: 5.279 / 5.26 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.56 / 4.52, sellFactor: 4.599 / 4.52 },
 ];
 const HOLUX_MOSILOR_241_RATES: RealOfficeRateSpread[] = [
   { currency: "EUR", name: "Euro", buyFactor: 5.26 / 5.26, sellFactor: 5.279 / 5.26 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.56 / 4.52, sellFactor: 4.595 / 4.52 },
 ];
 const HOLUX_UNIRII_COPOSU_RATES: RealOfficeRateSpread[] = [
   { currency: "EUR", name: "Euro", buyFactor: 5.26 / 5.26, sellFactor: 5.28 / 5.26 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.56 / 4.52, sellFactor: 4.595 / 4.52 },
 ];
+// USD not supplied yet for this office (only a different Prestige branch
+// — Iuliu Maniu 158a — was visible on valutare.ro for USD).
 const PRESTIGE_GARA_DE_NORD_RATES: RealOfficeRateSpread[] = [
   { currency: "EUR", name: "Euro", buyFactor: 5.265 / 5.26, sellFactor: 5.29 / 5.26 },
 ];
 const DIAMANT_PIATA_UNIRII_RATES: RealOfficeRateSpread[] = [
   { currency: "EUR", name: "Euro", buyFactor: 5.25 / 5.26, sellFactor: 5.285 / 5.26 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.53 / 4.52, sellFactor: 4.595 / 4.52 },
 ];
 
 // Real, manually-entered exchange office spreads (not synthetic/demo data).
