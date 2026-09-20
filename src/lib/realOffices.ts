@@ -57,9 +57,11 @@ const PRESTIGE_GARA_DE_NORD_RATES: RealOfficeRateSpread[] = [
   { currency: "GBP", name: "Liră sterlină", buyFactor: 5.99 / 6.06, sellFactor: 6.14 / 6.06 },
   { currency: "CHF", name: "Franc elvețian", buyFactor: 5.45 / 5.5, sellFactor: 5.648 / 5.5 },
 ];
+// CHF not supplied yet for this office.
 const DIAMANT_PIATA_UNIRII_RATES: RealOfficeRateSpread[] = [
   { currency: "EUR", name: "Euro", buyFactor: 5.25 / 5.26, sellFactor: 5.285 / 5.26 },
   { currency: "USD", name: "Dolar american", buyFactor: 4.53 / 4.52, sellFactor: 4.595 / 4.52 },
+  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.03 / 6.06, sellFactor: 6.12 / 6.06 },
 ];
 
 // Real, manually-entered exchange office spreads (not synthetic/demo data).
