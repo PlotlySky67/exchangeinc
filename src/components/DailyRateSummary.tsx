@@ -14,21 +14,25 @@ interface Row {
 }
 
 export default async function DailyRateSummary() {
-  const [eurHistory, usdHistory, gbpHistory] = await Promise.all([
+  const [eurHistory, usdHistory, gbpHistory, chfHistory] = await Promise.all([
     getHistory("EUR", 2),
     getHistory("USD", 2),
     getHistory("GBP", 2),
+    getHistory("CHF", 2),
   ]);
 
   const eurPoints = eurHistory.points;
   const usdPoints = usdHistory.points;
   const gbpPoints = gbpHistory.points;
+  const chfPoints = chfHistory.points;
   const eurToday = eurPoints[eurPoints.length - 1]?.rate ?? 0;
   const eurYesterday = eurPoints[eurPoints.length - 2]?.rate ?? eurToday;
   const usdToday = usdPoints[usdPoints.length - 1]?.rate ?? 0;
   const usdYesterday = usdPoints[usdPoints.length - 2]?.rate ?? usdToday;
   const gbpToday = gbpPoints[gbpPoints.length - 1]?.rate ?? 0;
   const gbpYesterday = gbpPoints[gbpPoints.length - 2]?.rate ?? gbpToday;
+  const chfToday = chfPoints[chfPoints.length - 1]?.rate ?? 0;
+  const chfYesterday = chfPoints[chfPoints.length - 2]?.rate ?? chfToday;
 
   const rows: Row[] = [
     {
@@ -50,6 +54,13 @@ export default async function DailyRateSummary() {
       value: gbpToday,
       unit: "Lei",
       delta: gbpToday - gbpYesterday,
+      deltaUnit: "Lei",
+    },
+    {
+      label: "1 CHF",
+      value: chfToday,
+      unit: "Lei",
+      delta: chfToday - chfYesterday,
       deltaUnit: "Lei",
     },
   ];
