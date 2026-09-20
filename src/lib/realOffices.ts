@@ -68,15 +68,18 @@ const DIAMANT_PIATA_UNIRII_RATES: RealOfficeRateSpread[] = [
   { currency: "CHF", name: "Franc elvețian", buyFactor: 5.5 / 5.5, sellFactor: 5.57 / 5.5 },
 ];
 
-// EUR-only for now — USD/GBP/CHF not supplied yet for these offices.
+// GBP/CHF not supplied yet for these offices.
 const PANDA_EXCHANGE_IASI_RATES: RealOfficeRateSpread[] = [
   { currency: "EUR", name: "Euro", buyFactor: 5.232 / 5.26, sellFactor: 5.248 / 5.26 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.502 / 4.52, sellFactor: 4.588 / 4.52 },
 ];
 const FACTORY_EXCHANGE_IASI_RATES: RealOfficeRateSpread[] = [
   { currency: "EUR", name: "Euro", buyFactor: 5.2345 / 5.26, sellFactor: 5.247 / 5.26 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.5105 / 4.52, sellFactor: 4.584 / 4.52 },
 ];
 const MONDIAL_EXCHANGE_IASI_RATES: RealOfficeRateSpread[] = [
   { currency: "EUR", name: "Euro", buyFactor: 5.2025 / 5.26, sellFactor: 5.275 / 5.26 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.5025 / 4.52, sellFactor: 4.58 / 4.52 },
 ];
 
 // Real, manually-entered exchange office spreads (not synthetic/demo data).
