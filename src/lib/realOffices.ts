@@ -51,10 +51,11 @@ const HOLUX_UNIRII_COPOSU_RATES: RealOfficeRateSpread[] = [
   { currency: "GBP", name: "Liră sterlină", buyFactor: 6.08 / 6.06, sellFactor: 6.12 / 6.06 },
   { currency: "CHF", name: "Franc elvețian", buyFactor: 5.52 / 5.5, sellFactor: 5.56 / 5.5 },
 ];
-// GBP/CHF not supplied yet for this office.
+// CHF not supplied yet for this office.
 const PRESTIGE_GARA_DE_NORD_RATES: RealOfficeRateSpread[] = [
   { currency: "EUR", name: "Euro", buyFactor: 5.265 / 5.26, sellFactor: 5.29 / 5.26 },
   { currency: "USD", name: "Dolar american", buyFactor: 4.51 / 4.52, sellFactor: 4.598 / 4.52 },
+  { currency: "GBP", name: "Liră sterlină", buyFactor: 5.99 / 6.06, sellFactor: 6.14 / 6.06 },
 ];
 const DIAMANT_PIATA_UNIRII_RATES: RealOfficeRateSpread[] = [
   { currency: "EUR", name: "Euro", buyFactor: 5.25 / 5.26, sellFactor: 5.285 / 5.26 },
