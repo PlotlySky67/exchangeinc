@@ -35,9 +35,9 @@ const ROWS: InterbankRow[] = [
   {
     pair: "GBP/RON",
     name: "Liră sterlină",
-    rate: 6.1374,
-    delta: 0.0192,
-    deltaPercent: 0.31,
+    rate: 6.1387,
+    delta: 0.0218,
+    deltaPercent: 0.36,
     capturedLabel: "18/09",
   },
 ];
