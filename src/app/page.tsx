@@ -1,4 +1,5 @@
 import InterbankRatesWidget from "@/components/InterbankRatesWidget";
+import InterbankRatesSnapshot from "@/components/InterbankRatesSnapshot";
 import DailyRateSummary from "@/components/DailyRateSummary";
 
 export default async function Home() {
@@ -21,7 +22,10 @@ export default async function Home() {
           Cursul valutar interbancar variază permanent pe toată perioada
           zilei de tranzacționare, în funcție de cerere și ofertă.
         </p>
-        <p className="mt-4 text-sm font-semibold text-foreground">
+        <div className="mt-6">
+          <InterbankRatesSnapshot />
+        </div>
+        <p className="mt-6 text-sm font-semibold text-foreground">
           Mai jos regăsiți tabelul de conversie valutară www.tradingview.com
         </p>
         <div className="mt-6">
