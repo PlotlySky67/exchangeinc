@@ -26,7 +26,9 @@ export default async function Home() {
           <InterbankRatesSnapshot />
         </div>
         <p className="mt-6 text-sm font-semibold text-foreground">
-          Mai jos regăsiți tabelul de conversie valutară www.tradingview.com
+          tabel conversie valutară
+          <br />
+          sursa: www.tradingview.com
         </p>
         <div className="mt-6">
           <InterbankRatesWidget />
