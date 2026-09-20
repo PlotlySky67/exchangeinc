@@ -25,11 +25,14 @@ export default async function Home() {
         <div className="mt-6">
           <InterbankRatesSnapshot />
         </div>
-        <p className="mt-6 text-sm font-semibold text-foreground">
-          tabel conversie valutară
-          <br />
-          sursa: www.tradingview.com
-        </p>
+        <div className="mt-6">
+          <span className="inline-block rounded-md border border-brand/40 bg-brand/5 px-3 py-1.5 text-sm font-semibold text-foreground">
+            tabel conversie valutară
+          </span>
+          <p className="mt-2 text-sm font-semibold text-foreground">
+            sursa: www.tradingview.com
+          </p>
+        </div>
         <div className="mt-6">
           <InterbankRatesWidget />
         </div>
