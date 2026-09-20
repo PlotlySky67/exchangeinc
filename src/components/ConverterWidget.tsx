@@ -135,7 +135,6 @@ export default function ConverterWidget({
             maximumFractionDigits: 4,
           })}{" "}
           {to} · curs din {snapshot.date}
-          {snapshot.source === "fallback" ? " (date de rezervă)" : " (BNR)"}
         </p>
       )}
     </div>
