@@ -17,6 +17,10 @@ export interface RealOffice {
   // Fixed date (YYYY-MM-DD) the quote was captured, shown instead of
   // today's date when the office's board photo/source has its own date.
   capturedDate?: string;
+  // Literal display text (e.g. "20 septembrie 14:45") used instead of
+  // capturedDate when a specific time is also known. Rendered verbatim,
+  // so it avoids any timezone-parsing ambiguity.
+  capturedLabel?: string;
 }
 
 const CID_EXCHANGE_RATES: RealOfficeRateSpread[] = [
@@ -90,35 +94,35 @@ export const REAL_OFFICES: Record<string, RealOffice[]> = {
       city: "București",
       rates: ARIANA_MOSILOR_RATES,
       source: "valutare.ro",
-      capturedDate: "2026-09-19",
+      capturedLabel: "20 septembrie 14:45",
     },
     {
       name: "Holux Exchange Mosilor 241",
       city: "București",
       rates: HOLUX_MOSILOR_241_RATES,
       source: "valutare.ro",
-      capturedDate: "2026-09-19",
+      capturedLabel: "20 septembrie 14:45",
     },
     {
       name: "Holux Exchange Unirii Coposu Nr. 4",
       city: "București",
       rates: HOLUX_UNIRII_COPOSU_RATES,
       source: "valutare.ro",
-      capturedDate: "2026-09-19",
+      capturedLabel: "20 septembrie 14:45",
     },
     {
       name: "Prestige Exchange House Gara de Nord-Grivița",
       city: "București",
       rates: PRESTIGE_GARA_DE_NORD_RATES,
       source: "valutare.ro",
-      capturedDate: "2026-09-19",
+      capturedLabel: "20 septembrie 14:45",
     },
     {
       name: "Diamant Exchange / Piața Unirii",
       city: "București",
       rates: DIAMANT_PIATA_UNIRII_RATES,
       source: "valutare.ro",
-      capturedDate: "2026-09-19",
+      capturedLabel: "20 septembrie 14:45",
     },
   ],
 };

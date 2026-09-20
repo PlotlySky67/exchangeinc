@@ -21,7 +21,11 @@ export default function RealOfficeTable({
       <div className="border-b border-border bg-background/60 px-4 py-3 sm:px-5">
         <p className="text-sm font-bold text-foreground">{office.name}</p>
         <p className="text-xs text-muted">
-          {office.capturedDate ? (
+          {office.capturedLabel ? (
+            <>
+              {office.city}, (actualizat la data de {office.capturedLabel})
+            </>
+          ) : office.capturedDate ? (
             <>
               {office.city}, (actualizat la data de{" "}
               {formatRomanianDate(new Date(office.capturedDate))})
