@@ -6,6 +6,7 @@ const NAV_LINKS = [
   { href: "/", label: "Acasă" },
   { href: "/convertor", label: "Convertor valutar" },
   { href: "/schimb-valutar-judetean", label: "Județe" },
+  { href: "/compara-case-schimb", label: "Compară case" },
   { href: "/istoric", label: "Istoric curs" },
   { href: "/despre", label: "Despre" },
 ];

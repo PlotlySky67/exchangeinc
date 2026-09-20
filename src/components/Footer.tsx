@@ -29,6 +29,7 @@ export default function Footer() {
               <li><Link href="/convertor" className="hover:text-brand">Convertor valutar</Link></li>
               <li><Link href="/istoric" className="hover:text-brand">Istoric curs</Link></li>
               <li><Link href="/schimb-valutar-judetean" className="hover:text-brand">Schimb valutar județean</Link></li>
+              <li><Link href="/compara-case-schimb" className="hover:text-brand">Compară case de schimb</Link></li>
               <li><Link href="/despre" className="hover:text-brand">Despre</Link></li>
             </ul>
           </div>
@@ -44,7 +45,8 @@ export default function Footer() {
               >
                 Băncii Naționale a României
               </a>
-              . Secțiunea de comparare case de schimb afișează date demonstrative.
+              . Cursurile caselor de schimb sunt preluate manual de la sursele
+              indicate pe fiecare casă de schimb.
             </p>
           </div>
         </div>
