@@ -33,21 +33,23 @@ const BIVOLARIE_RATES: RealOfficeRateSpread[] = [
   { currency: "CHF", name: "Franc elvețian", buyFactor: 5.5 / 5.5, sellFactor: 5.56 / 5.5 },
 ];
 
-// CHF not supplied yet for these offices.
 const ARIANA_MOSILOR_RATES: RealOfficeRateSpread[] = [
   { currency: "EUR", name: "Euro", buyFactor: 5.26 / 5.26, sellFactor: 5.279 / 5.26 },
   { currency: "USD", name: "Dolar american", buyFactor: 4.56 / 4.52, sellFactor: 4.599 / 4.52 },
   { currency: "GBP", name: "Liră sterlină", buyFactor: 6.08 / 6.06, sellFactor: 6.12 / 6.06 },
+  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.52 / 5.5, sellFactor: 5.57 / 5.5 },
 ];
 const HOLUX_MOSILOR_241_RATES: RealOfficeRateSpread[] = [
   { currency: "EUR", name: "Euro", buyFactor: 5.26 / 5.26, sellFactor: 5.279 / 5.26 },
   { currency: "USD", name: "Dolar american", buyFactor: 4.56 / 4.52, sellFactor: 4.595 / 4.52 },
   { currency: "GBP", name: "Liră sterlină", buyFactor: 6.07 / 6.06, sellFactor: 6.12 / 6.06 },
+  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.5 / 5.5, sellFactor: 5.56 / 5.5 },
 ];
 const HOLUX_UNIRII_COPOSU_RATES: RealOfficeRateSpread[] = [
   { currency: "EUR", name: "Euro", buyFactor: 5.26 / 5.26, sellFactor: 5.28 / 5.26 },
   { currency: "USD", name: "Dolar american", buyFactor: 4.56 / 4.52, sellFactor: 4.595 / 4.52 },
   { currency: "GBP", name: "Liră sterlină", buyFactor: 6.08 / 6.06, sellFactor: 6.12 / 6.06 },
+  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.52 / 5.5, sellFactor: 5.56 / 5.5 },
 ];
 // USD/GBP not supplied yet for this office (only a different Prestige
 // branch — Iuliu Maniu 158a — was visible on valutare.ro for those).
