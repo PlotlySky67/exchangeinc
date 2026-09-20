@@ -68,6 +68,17 @@ const DIAMANT_PIATA_UNIRII_RATES: RealOfficeRateSpread[] = [
   { currency: "CHF", name: "Franc elvețian", buyFactor: 5.5 / 5.5, sellFactor: 5.57 / 5.5 },
 ];
 
+// EUR-only for now — USD/GBP/CHF not supplied yet for these offices.
+const PANDA_EXCHANGE_IASI_RATES: RealOfficeRateSpread[] = [
+  { currency: "EUR", name: "Euro", buyFactor: 5.232 / 5.26, sellFactor: 5.248 / 5.26 },
+];
+const FACTORY_EXCHANGE_IASI_RATES: RealOfficeRateSpread[] = [
+  { currency: "EUR", name: "Euro", buyFactor: 5.2345 / 5.26, sellFactor: 5.247 / 5.26 },
+];
+const MONDIAL_EXCHANGE_IASI_RATES: RealOfficeRateSpread[] = [
+  { currency: "EUR", name: "Euro", buyFactor: 5.2025 / 5.26, sellFactor: 5.275 / 5.26 },
+];
+
 // Real, manually-entered exchange office spreads (not synthetic/demo data).
 // Keyed by "judetSlug:orasSlug". Add more offices as they're supplied.
 export const REAL_OFFICES: Record<string, RealOffice[]> = {
@@ -123,6 +134,29 @@ export const REAL_OFFICES: Record<string, RealOffice[]> = {
       rates: DIAMANT_PIATA_UNIRII_RATES,
       source: "valutare.ro",
       capturedLabel: "20 septembrie 14:45",
+    },
+  ],
+  "iasi:iasi": [
+    {
+      name: "Panda Exchange",
+      city: "Iași, Centru",
+      rates: PANDA_EXCHANGE_IASI_RATES,
+      source: "valutare.ro",
+      capturedDate: "2026-09-17",
+    },
+    {
+      name: "Factory Exchange",
+      city: "Iași",
+      rates: FACTORY_EXCHANGE_IASI_RATES,
+      source: "valutare.ro",
+      capturedDate: "2026-09-17",
+    },
+    {
+      name: "Mondial Exchange",
+      city: "Iași, Centru",
+      rates: MONDIAL_EXCHANGE_IASI_RATES,
+      source: "valutare.ro",
+      capturedDate: "2026-09-19",
     },
   ],
 };
