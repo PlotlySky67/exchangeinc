@@ -34,7 +34,7 @@ function getFallbackDate(): string {
 }
 const FALLBACK_RATES: RateEntry[] = [
   { currency: "EUR", multiplier: 1, rate: 5.26 },
-  { currency: "USD", multiplier: 1, rate: 4.52 },
+  { currency: "USD", multiplier: 1, rate: 4.58 },
   { currency: "GBP", multiplier: 1, rate: 6.06 },
   { currency: "CHF", multiplier: 1, rate: 5.5 },
   { currency: "JPY", multiplier: 100, rate: 2.9812 },
