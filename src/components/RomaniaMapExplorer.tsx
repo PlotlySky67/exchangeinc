@@ -8,30 +8,36 @@ interface CityPin {
   y: number;
 }
 
+// Coordinates below are a hand-projected approximation of Romania's real
+// border (equirectangular projection, longitude compressed for latitude
+// ~46°N), not a survey-accurate boundary — good enough to be recognizable.
 const ACTIVE_PINS: CityPin[] = [
-  { name: "Suceava", judetSlug: "suceava", orasSlug: "suceava", x: 60, y: 14 },
-  { name: "Iași", judetSlug: "iasi", orasSlug: "iasi", x: 76, y: 21 },
-  { name: "București", judetSlug: "bucuresti", orasSlug: "bucuresti", x: 58, y: 80 },
+  { name: "Suceava", judetSlug: "suceava", orasSlug: "suceava", x: 61.5, y: 16.3 },
+  { name: "Iași", judetSlug: "iasi", orasSlug: "iasi", x: 71, y: 23 },
+  { name: "București", judetSlug: "bucuresti", orasSlug: "bucuresti", x: 60.2, y: 57.2 },
 ];
 
 // Approximate positions only, shown as inactive reference points — no office
 // coverage there yet.
 const COMING_SOON_PINS: { name: string; x: number; y: number }[] = [
-  { name: "Oradea", x: 16, y: 22 },
-  { name: "Cluj-Napoca", x: 32, y: 38 },
-  { name: "Timișoara", x: 14, y: 56 },
-  { name: "Sibiu", x: 42, y: 46 },
-  { name: "Brașov", x: 50, y: 50 },
-  { name: "Craiova", x: 35, y: 76 },
-  { name: "Constanța", x: 85, y: 66 },
-  { name: "Galați", x: 84, y: 46 },
+  { name: "Oradea", x: 23.2, y: 23.8 },
+  { name: "Cluj-Napoca", x: 38.1, y: 27.5 },
+  { name: "Timișoara", x: 17.1, y: 40.4 },
+  { name: "Sibiu", x: 42.9, y: 39.9 },
+  { name: "Brașov", x: 55.8, y: 41.6 },
+  { name: "Craiova", x: 39.8, y: 58.6 },
+  { name: "Constanța", x: 81.5, y: 61 },
+  { name: "Galați", x: 75.5, y: 45.5 },
 ];
 
+// Traces Beba Veche (W) south along the Serbia border, along the Danube to
+// Dobrogea, up the Black Sea coast to the Danube Delta (E), back north along
+// the Prut, then west through Maramureș and Satu Mare back to Beba Veche.
 const ROMANIA_OUTLINE =
-  "M15,18 C20,10 35,6 50,8 C60,9 65,14 72,12 C80,10 88,18 90,28 " +
-  "C93,40 96,50 94,58 C92,66 88,72 90,80 C91,86 85,90 78,88 " +
-  "C68,86 60,90 50,88 C38,86 30,90 22,85 C14,80 10,70 12,60 " +
-  "C8,50 6,40 10,30 C12,24 12,20 15,18 Z";
+  "M8.2,35.3 L12,44.5 L23.9,53.8 L29.2,55.1 L39.8,65.3 L54,67.2 " +
+  "L59,64 L70.8,61.4 L82,65.9 L82.7,60.4 L92,48.1 L77.2,44.3 " +
+  "L73.4,22.6 L72.6,9.9 L59.3,9 L41.6,11.8 L30.1,14.4 L19.5,24.5 " +
+  "L15.1,34.7 Z";
 
 export default function RomaniaMapExplorer({
   currentJudet,
@@ -46,11 +52,12 @@ export default function RomaniaMapExplorer({
         vedea casele de schimb din zonă.
       </p>
       <div className="mx-auto mt-4 max-w-xs">
-        <svg viewBox="0 0 100 100" className="w-full" aria-hidden="true">
+        <svg viewBox="0 0 100 78" className="w-full" aria-hidden="true">
           <path
             d={ROMANIA_OUTLINE}
             className="fill-brand/10 stroke-brand/40"
             strokeWidth="1.2"
+            strokeLinejoin="round"
           />
           {COMING_SOON_PINS.map((p) => (
             <circle
