@@ -4,6 +4,7 @@ import { JUDETE, DEFAULT_JUDET, DEFAULT_ORAS, judetBySlug, orasBySlug } from "@/
 import { REAL_OFFICES } from "@/lib/realOffices";
 import JudetSelector from "@/components/JudetSelector";
 import RealOfficeTable from "@/components/RealOfficeTable";
+import RomaniaMapExplorer from "@/components/RomaniaMapExplorer";
 
 export const metadata: Metadata = {
   title: "Schimb valutar județean",
@@ -39,6 +40,9 @@ export default async function SchimbValutarJudeteanPage({
       </p>
 
       <div className="mt-6">
+        <div className="mb-6">
+          <RomaniaMapExplorer currentJudet={judet.slug} />
+        </div>
         <div className="mb-6">
           <JudetSelector judete={JUDETE} currentJudet={judet.slug} currentOras={oras.slug} />
         </div>
