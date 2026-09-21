@@ -1,7 +1,16 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { getDailyRates } from "@/lib/bnr";
 import { REAL_OFFICES } from "@/lib/realOffices";
 import OfficeComparisonTable from "@/components/OfficeComparisonTable";
+
+function formatRomanianDate(dateStr: string): string {
+  return new Intl.DateTimeFormat("ro-RO", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  }).format(new Date(dateStr));
+}
 
 export const metadata: Metadata = {
   title: "Compară case de schimb",
@@ -33,6 +42,9 @@ export default async function CompareOfficesPage() {
         Cursurile de cumpărare și vânzare oferite de casele de schimb reale
         din baza noastră de date, pentru fiecare valută.
       </p>
+      <p className="mt-2 text-xs font-medium text-muted">
+        Curs BNR de referință actualizat: {formatRomanianDate(snapshot.date)}
+      </p>
 
       <div className="mt-8 flex flex-col gap-10">
         {CURRENCIES.map((currency) => (
@@ -44,6 +56,22 @@ export default async function CompareOfficesPage() {
             bnrRates={snapshot.rates}
           />
         ))}
+      </div>
+
+      <div className="mt-10 rounded-xl border border-brand/30 bg-brand/5 p-5">
+        <p className="text-sm font-semibold text-foreground">
+          Nu știi la ce să te uiți când alegi o casă de schimb?
+        </p>
+        <p className="mt-1 text-sm text-muted">
+          Am scris un ghid scurt cu repere practice, ca să nu pierzi bani pe
+          comisioane ascunse sau curs dezavantajos.
+        </p>
+        <Link
+          href="/cum-aleg-o-casa-de-schimb-buna"
+          className="mt-4 inline-block rounded-md bg-brand px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-dark"
+        >
+          Citește ghidul →
+        </Link>
       </div>
     </div>
   );

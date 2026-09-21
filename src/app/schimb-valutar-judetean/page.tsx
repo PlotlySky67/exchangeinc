@@ -13,6 +13,14 @@ export const metadata: Metadata = {
   alternates: { canonical: "/schimb-valutar-judetean" },
 };
 
+function formatRomanianDate(dateStr: string): string {
+  return new Intl.DateTimeFormat("ro-RO", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  }).format(new Date(dateStr));
+}
+
 export default async function SchimbValutarJudeteanPage({
   searchParams,
 }: PageProps<"/schimb-valutar-judetean">) {
@@ -37,6 +45,9 @@ export default async function SchimbValutarJudeteanPage({
       </h1>
       <p className="mt-3 text-base text-muted">
         Alege un județ și un oraș.
+      </p>
+      <p className="mt-2 text-xs font-medium text-muted">
+        Curs BNR de referință actualizat: {formatRomanianDate(snapshot.date)}
       </p>
 
       <div className="mt-6">

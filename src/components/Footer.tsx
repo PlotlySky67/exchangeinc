@@ -30,6 +30,7 @@ export default function Footer() {
               <li><Link href="/istoric" className="hover:text-brand">Istoric curs</Link></li>
               <li><Link href="/schimb-valutar-judetean" className="hover:text-brand">Schimb valutar județean</Link></li>
               <li><Link href="/compara-case-schimb" className="hover:text-brand">Compară case de schimb</Link></li>
+              <li><Link href="/cum-aleg-o-casa-de-schimb-buna" className="hover:text-brand">Cum aleg o casă de schimb bună</Link></li>
               <li><Link href="/despre" className="hover:text-brand">Despre</Link></li>
             </ul>
           </div>

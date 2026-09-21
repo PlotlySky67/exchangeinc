@@ -13,6 +13,13 @@ const NAV_LINKS = [
 
 const TICKER_CURRENCIES = ["EUR", "USD", "GBP", "CHF"];
 
+function formatShortDate(dateStr: string): string {
+  return new Intl.DateTimeFormat("ro-RO", {
+    day: "numeric",
+    month: "short",
+  }).format(new Date(dateStr));
+}
+
 export default async function Header() {
   const snapshot = await getDailyRates();
   const tickerRates = TICKER_CURRENCIES.map((code) =>
@@ -32,6 +39,9 @@ export default async function Header() {
                 </span>
               </span>
             ))}
+            <span className="whitespace-nowrap font-normal opacity-75">
+              actualizat {formatShortDate(snapshot.date)}
+            </span>
           </div>
         </div>
       )}
