@@ -1,46 +1,4 @@
-interface InterbankRow {
-  pair: string;
-  name: string;
-  rate: number;
-  delta: number;
-  deltaPercent: number;
-  capturedLabel: string;
-}
-
-const ROWS: InterbankRow[] = [
-  {
-    pair: "EUR/RON",
-    name: "Euro",
-    rate: 5.2642,
-    delta: 0.0089,
-    deltaPercent: 0.17,
-    capturedLabel: "18/09",
-  },
-  {
-    pair: "USD/RON",
-    name: "Dolar american",
-    rate: 4.5822,
-    delta: 0.002,
-    deltaPercent: 0.04,
-    capturedLabel: "18/09",
-  },
-  {
-    pair: "CHF/RON",
-    name: "Franc elvețian",
-    rate: 5.5738,
-    delta: 0.0136,
-    deltaPercent: 0.24,
-    capturedLabel: "18/09",
-  },
-  {
-    pair: "GBP/RON",
-    name: "Liră sterlină",
-    rate: 6.1387,
-    delta: 0.0218,
-    deltaPercent: 0.36,
-    capturedLabel: "18/09",
-  },
-];
+import { getInterbankRates } from "@/lib/interbank";
 
 function formatDelta(delta: number): string {
   const sign = delta >= 0 ? "+" : "";
@@ -52,14 +10,21 @@ function formatPercent(percent: number): string {
   return `(${sign}${percent.toFixed(2)}%)`;
 }
 
-export default function InterbankRatesSnapshot() {
+function formatShortDate(dateStr: string): string {
+  return new Intl.DateTimeFormat("ro-RO", { day: "2-digit", month: "2-digit" }).format(
+    new Date(dateStr),
+  );
+}
+
+export default async function InterbankRatesSnapshot() {
+  const { rows, source } = await getInterbankRates();
+
   return (
     <div className="overflow-hidden rounded-xl border border-border bg-surface">
       <div className="border-b border-border bg-background/60 px-4 py-3 sm:px-5">
         <p className="text-sm text-muted">
-          Cotații valutare în timp real pentru euro (EUR/RON), dolarul
-          american (USD/RON), francul elvețian (CHF/RON) și lira sterlină
-          (GBP/RON).
+          Cotații valutare pentru euro (EUR/RON), dolarul american (USD/RON),
+          francul elvețian (CHF/RON) și lira sterlină (GBP/RON).
         </p>
       </div>
       <table className="w-full text-sm">
@@ -71,14 +36,16 @@ export default function InterbankRatesSnapshot() {
           </tr>
         </thead>
         <tbody>
-          {ROWS.map((row) => {
+          {rows.map((row) => {
             const up = row.delta >= 0;
             return (
               <tr key={row.pair} className="border-b border-border last:border-0">
                 <td className="px-4 py-3 sm:px-5">
                   <span className="font-semibold text-foreground">{row.pair}</span>
                   <span className="ml-2 text-muted">{row.name}</span>
-                  <span className="ml-2 text-xs text-muted">· {row.capturedLabel}</span>
+                  <span className="ml-2 text-xs text-muted">
+                    · {formatShortDate(row.date)}
+                  </span>
                 </td>
                 <td className="px-4 py-3 text-right font-mono font-semibold text-foreground sm:px-5">
                   {row.rate.toFixed(4)}
@@ -95,6 +62,9 @@ export default function InterbankRatesSnapshot() {
           })}
         </tbody>
       </table>
+      <p className="border-t border-border px-4 py-2 text-xs text-muted sm:px-5">
+        sursa: {source === "live" ? "Frankfurter API (curs de referință BCE)" : "date de rezervă"}
+      </p>
     </div>
   );
 }
