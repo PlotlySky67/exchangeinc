@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 interface BankRate {
   name: string;
   buy: number;
@@ -71,6 +73,14 @@ export default function BankRatesSection() {
           </tbody>
         </table>
       </div>
+      <p className="mt-3 text-xs text-muted">
+        Cursurile pot varia; confirmă pe site-ul oficial al băncii înainte de
+        a efectua o tranzacție. Vezi și{" "}
+        <Link href="/termeni-si-conditii" className="text-brand hover:underline">
+          termenii și condițiile
+        </Link>
+        .
+      </p>
     </section>
   );
 }

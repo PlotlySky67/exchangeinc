@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { getDailyRates } from "@/lib/bnr";
 import { JUDETE, DEFAULT_JUDET, DEFAULT_ORAS, judetBySlug, orasBySlug } from "@/lib/judete";
 import { REAL_OFFICES } from "@/lib/realOffices";
@@ -64,6 +65,17 @@ export default async function SchimbValutarJudeteanPage({
               <RealOfficeTable key={office.name} office={office} bnrRates={snapshot.rates} />
             ))}
           </div>
+        )}
+
+        {offices.length > 0 && (
+          <p className="mt-6 text-xs text-muted">
+            Cursurile pot varia; confirmă la sediu sau pe site-ul oficial al
+            casei de schimb înainte de a efectua o tranzacție. Vezi și{" "}
+            <Link href="/termeni-si-conditii" className="text-brand hover:underline">
+              termenii și condițiile
+            </Link>
+            .
+          </p>
         )}
       </div>
     </div>

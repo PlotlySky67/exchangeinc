@@ -58,7 +58,16 @@ export default async function CompareOfficesPage() {
         ))}
       </div>
 
-      <div className="mt-10 rounded-xl border border-brand/30 bg-brand/5 p-5">
+      <p className="mt-6 text-xs text-muted">
+        Cursurile pot varia; confirmă la sediu sau pe site-ul oficial al
+        casei de schimb înainte de a efectua o tranzacție. Vezi și{" "}
+        <Link href="/termeni-si-conditii" className="text-brand hover:underline">
+          termenii și condițiile
+        </Link>
+        .
+      </p>
+
+      <div className="mt-6 rounded-xl border border-brand/30 bg-brand/5 p-5">
         <p className="text-sm font-semibold text-foreground">
           Nu știi la ce să te uiți când alegi o casă de schimb?
         </p>
