@@ -8,12 +8,17 @@ interface ActiveCounty {
   judetSlug: string;
   orasSlug: string;
   label: string;
+  // Centroid of the county's real boundary path, in the same coordinate
+  // space as ROMANIA_VIEWBOX — used to place the city pin correctly inside
+  // its own county shape.
+  x: number;
+  y: number;
 }
 
 const ACTIVE_COUNTIES: ActiveCounty[] = [
-  { countyId: "ro-sv", judetSlug: "suceava", orasSlug: "suceava", label: "Suceava" },
-  { countyId: "ro-is", judetSlug: "iasi", orasSlug: "iasi", label: "Iași" },
-  { countyId: "ro-b", judetSlug: "bucuresti", orasSlug: "bucuresti", label: "București" },
+  { countyId: "ro-sv", judetSlug: "suceava", orasSlug: "suceava", label: "Suceava", x: 354.96, y: 69.39 },
+  { countyId: "ro-is", judetSlug: "iasi", orasSlug: "iasi", label: "Iași", x: 454.97, y: 102.71 },
+  { countyId: "ro-b", judetSlug: "bucuresti", orasSlug: "bucuresti", label: "București", x: 378.07, y: 359.13 },
 ];
 
 export default function RomaniaMapExplorer({
@@ -23,6 +28,7 @@ export default function RomaniaMapExplorer({
 }) {
   const router = useRouter();
   const activeById = new Map(ACTIVE_COUNTIES.map((c) => [c.countyId, c]));
+  const selected = ACTIVE_COUNTIES.find((c) => c.judetSlug === currentJudet);
 
   function goTo(county: ActiveCounty) {
     router.push(`/schimb-valutar-judetean?judet=${county.judetSlug}&oras=${county.orasSlug}`);
@@ -61,6 +67,17 @@ export default function RomaniaMapExplorer({
               </path>
             );
           })}
+          {selected && (
+            <circle
+              cx={selected.x}
+              cy={selected.y}
+              r="6"
+              className="fill-accent stroke-surface"
+              strokeWidth="2"
+            >
+              <title>{selected.label}</title>
+            </circle>
+          )}
         </svg>
       </div>
       <div className="mt-4 flex flex-wrap justify-center gap-2">
