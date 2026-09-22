@@ -31,10 +31,10 @@ const CID_EXCHANGE_RATES: RealOfficeRateSpread[] = [
 ];
 
 const BIVOLARIE_RATES: RealOfficeRateSpread[] = [
-  { currency: "EUR", name: "Euro", buyFactor: 5.22 / 5.26, sellFactor: 5.265 / 5.26 },
+  { currency: "EUR", name: "Euro", buyFactor: 5.23 / 5.26, sellFactor: 5.265 / 5.26 },
   { currency: "USD", name: "Dolar american", buyFactor: 4.55 / 4.52, sellFactor: 4.6 / 4.52 },
-  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.06 / 6.06, sellFactor: 6.1 / 6.06 },
-  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.47 / 5.5, sellFactor: 5.54 / 5.5 },
+  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.07 / 6.06, sellFactor: 6.11 / 6.06 },
+  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.52 / 5.5, sellFactor: 5.57 / 5.5 },
 ];
 
 const ARIANA_MOSILOR_RATES: RealOfficeRateSpread[] = [
