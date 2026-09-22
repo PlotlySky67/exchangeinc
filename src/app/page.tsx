@@ -1,6 +1,7 @@
 import InterbankRatesWidget from "@/components/InterbankRatesWidget";
 import InterbankRatesSnapshot from "@/components/InterbankRatesSnapshot";
 import DailyRateSummary from "@/components/DailyRateSummary";
+import BankRatesSection from "@/components/BankRatesSection";
 
 export default async function Home() {
   return (
@@ -35,6 +36,8 @@ export default async function Home() {
           <InterbankRatesWidget />
         </div>
       </section>
+
+      <BankRatesSection />
     </div>
   );
 }
