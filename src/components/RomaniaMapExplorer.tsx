@@ -38,7 +38,7 @@ export default function RomaniaMapExplorer({
     <div className="overflow-hidden rounded-xl border border-border bg-surface p-4 sm:p-5">
       <p className="text-sm font-semibold text-foreground">Explorare pe hartă</p>
       <p className="mt-1 text-xs text-muted">
-        Harta reală a județelor României — alege un județ marcat activ pentru
+        Harta reală a județelor României. Alege un județ marcat activ pentru
         a vedea casele de schimb din zonă.
       </p>
       <div className="mx-auto mt-4 max-w-md">
