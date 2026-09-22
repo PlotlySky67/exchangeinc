@@ -53,10 +53,8 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-8 border-t border-border pt-6 text-xs text-muted">
-          <p>
-            © {new Date().getFullYear()} indicial.ro. Proiect realizat de
-            Martinescu Ionuț
-          </p>
+          <p>© {new Date().getFullYear()} indicial.ro</p>
+          <p className="mt-1">Proiect realizat de Martinescu Ionuț</p>
           <p className="mt-1">
             fără afiliere cu Banca Națională a României sau cu alte platforme
             de curs valutar. Informațiile au caracter orientativ și nu
