@@ -50,11 +50,29 @@ export default function DesprePage() {
             Secțiunea &bdquo;Compară case de schimb&rdquo;
           </h2>
           <p className="mt-2 text-sm text-muted">
-            Tabelul cu case de schimb de pe pagina principală conține{" "}
-            <strong>date demonstrative</strong>, generate matematic pornind de
-            la cursul BNR, pentru a ilustra funcționalitatea. Nu reprezintă
-            cotații live de la case de schimb reale. Pentru date reale, această
-            secțiune poate fi conectată la un furnizor de date propriu.
+            Cursurile caselor de schimb afișate pe județe și în pagina de
+            comparare sunt <strong>cotații reale</strong>, preluate manual de
+            pe panourile fizice sau de pe surse publice precum valutare.ro,
+            apoi actualizate periodic. Cursul de bază urmărește cursul BNR al
+            zilei, astfel încât valorile rămân proporționale de la o zi la
+            alta.
+          </p>
+        </div>
+
+        <div className="rounded-xl border border-border bg-surface p-5">
+          <h2 className="text-lg font-bold text-foreground">Harta județelor</h2>
+          <p className="mt-2 text-sm text-muted">
+            Harta din secțiunea &bdquo;Schimb valutar județean&rdquo; folosește
+            conturul real al județelor din pachetul{" "}
+            <a
+              href="https://github.com/VictorCazanave/svg-maps/tree/master/packages/romania"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-brand hover:underline"
+            >
+              @svg-maps/romania
+            </a>
+            , distribuit sub licența Creative Commons Attribution 4.0.
           </p>
         </div>
 
