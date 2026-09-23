@@ -27,7 +27,7 @@ export default async function Home() {
           <InterbankRatesSnapshot />
         </div>
         <div className="mt-6">
-          <span className="inline-block rounded-md border border-brand/40 bg-brand/5 px-3 py-1.5 text-sm font-semibold text-foreground">
+          <span className="inline-block rounded-md border border-brand/40 bg-brand/5 px-3 py-1.5 text-sm font-semibold uppercase text-foreground">
             tabel conversie valutară
           </span>
         </div>
