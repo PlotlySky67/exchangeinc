@@ -71,7 +71,7 @@ export default async function DailyRateSummary() {
         <p className="text-[11px] font-extrabold tracking-wide text-brand uppercase">
           Curs oficial BNR
         </p>
-        <p className="mt-0.5 text-sm text-muted">comunicat marți, 22 septembrie 2026</p>
+        <p className="mt-0.5 text-sm text-muted">comunicat miercuri, 23 septembrie 2026</p>
       </div>
       {rows.map((row, i) => {
         const up = row.delta >= 0;
