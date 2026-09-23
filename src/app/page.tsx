@@ -30,11 +30,11 @@ export default async function Home() {
           <span className="inline-block rounded-md border border-brand/40 bg-brand/5 px-3 py-1.5 text-sm font-semibold text-foreground">
             tabel conversie valutară
           </span>
-          <p className="mt-2 text-xs text-muted">sursa: www.tradingview.com</p>
         </div>
         <div className="mt-6">
           <InterbankRatesWidget />
         </div>
+        <p className="mt-2 text-xs text-muted">sursa: www.tradingview.com</p>
       </section>
 
       <BankRatesSection />
