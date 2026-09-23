@@ -1,5 +1,14 @@
 import { getHistory } from "@/lib/bnr";
 
+function formatRomanianDate(dateStr: string): string {
+  return new Intl.DateTimeFormat("ro-RO", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  }).format(new Date(dateStr));
+}
+
 function formatDelta(delta: number): string {
   const sign = delta >= 0 ? "+" : "";
   return `${sign}${delta.toFixed(4)}`;
@@ -65,13 +74,17 @@ export default async function DailyRateSummary() {
     },
   ];
 
+  const latestDate = eurPoints[eurPoints.length - 1]?.date;
+
   return (
     <div className="overflow-hidden rounded-xl border border-border bg-surface">
       <div className="border-b border-border bg-background/60 px-4 py-3 sm:px-5">
         <p className="text-[11px] font-extrabold tracking-wide text-brand uppercase">
           Curs oficial BNR
         </p>
-        <p className="mt-0.5 text-sm text-muted">comunicat miercuri, 23 septembrie 2026</p>
+        <p className="mt-0.5 text-sm text-muted">
+          {latestDate ? `comunicat ${formatRomanianDate(latestDate)}` : ""}
+        </p>
       </div>
       {rows.map((row, i) => {
         const up = row.delta >= 0;

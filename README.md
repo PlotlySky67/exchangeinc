@@ -6,9 +6,10 @@ public XML feeds published by the National Bank of Romania (BNR).
 
 It offers the same kind of functionality as sites like valutare.ro (daily
 rates, converter, exchange-office comparison, historical charts), with
-original branding and design, real data sourced directly from BNR, and a
-clearly-labeled demo dataset for the exchange-office comparison table (no
-live feed for that is wired up yet).
+original branding and design. The official reference rate is fetched live
+from BNR; exchange-office and bank rates are real quotes entered manually
+from their own published boards/sites (no live feed exists for those), kept
+current by periodic updates.
 
 ## Stack
 

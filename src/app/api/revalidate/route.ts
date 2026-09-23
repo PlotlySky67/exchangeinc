@@ -34,9 +34,12 @@ export async function GET(request: Request) {
   // trusted cron/webhook, not by end users.
   revalidateTag("bnr-rates", { expire: 0 });
   revalidateTag("bnr-history", { expire: 0 });
+  revalidateTag("interbank-rates", { expire: 0 });
   revalidatePath("/");
   revalidatePath("/convertor");
   revalidatePath("/istoric");
+  revalidatePath("/schimb-valutar-judetean");
+  revalidatePath("/compara-case-schimb");
 
   return NextResponse.json({ revalidated: true, now: new Date().toISOString() });
 }
