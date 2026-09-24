@@ -56,7 +56,7 @@ export default function HistoryExplorer({ initialCurrency }: { initialCurrency: 
           >
             {CURRENCIES.map((c) => (
               <option key={c.code} value={c.code}>
-                {c.flag} {c.code} — {c.name}
+                {c.flag} {c.code} ({c.name})
               </option>
             ))}
           </select>

@@ -32,7 +32,7 @@ export default function BankRatesSection() {
   return (
     <section className="mt-12 border-t border-border pt-10">
       <h2 className="text-2xl font-bold tracking-tight text-foreground">
-        Curs valutar bănci — EUR/RON
+        Curs valutar bănci EUR/RON
       </h2>
       <p className="mt-1 text-sm font-semibold uppercase tracking-wide text-brand">
         actualizat la data de 22 septembrie 2026

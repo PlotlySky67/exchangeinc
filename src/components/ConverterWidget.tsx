@@ -122,7 +122,7 @@ export default function ConverterWidget({
                     minimumFractionDigits: 2,
                     maximumFractionDigits: 2,
                   })
-                : "—"}{" "}
+                : "-"}{" "}
             {to}
           </div>
         </div>

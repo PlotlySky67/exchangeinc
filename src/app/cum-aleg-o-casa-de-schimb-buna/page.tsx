@@ -12,12 +12,12 @@ const TIPS = [
   {
     title: "Compară cursul de cumpărare, nu doar pe cel de vânzare",
     body:
-      "Dacă vinzi valută (ai euro/dolari și vrei lei), te interesează cursul de CUMPĂRARE al casei de schimb — cu cât e mai mare, cu atât primești mai mulți lei. Dacă vrei să cumperi valută, te interesează cursul de VÂNZARE — cu cât e mai mic, cu atât plătești mai puțini lei.",
+      "Dacă vinzi valută (ai euro/dolari și vrei lei), te interesează cursul de CUMPĂRARE al casei de schimb: cu cât e mai mare, cu atât primești mai mulți lei. Dacă vrei să cumperi valută, te interesează cursul de VÂNZARE: cu cât e mai mic, cu atât plătești mai puțini lei.",
   },
   {
     title: "Raportează-te mereu la cursul BNR al zilei",
     body:
-      "Cursul BNR e reperul oficial, nu prețul la care poți schimba efectiv. O casă de schimb serioasă are un ecart (diferența dintre cumpărare și vânzare) rezonabil față de cursul BNR — un ecart foarte mare e un semn că plătești o marjă prea mare.",
+      "Cursul BNR e reperul oficial, nu prețul la care poți schimba efectiv. O casă de schimb serioasă are un ecart (diferența dintre cumpărare și vânzare) rezonabil față de cursul BNR; un ecart foarte mare e un semn că plătești o marjă prea mare.",
   },
   {
     title: "Evită casele de schimb din zone turistice și gări/aeroporturi",
@@ -27,7 +27,7 @@ const TIPS = [
   {
     title: "Întreabă explicit dacă există comision suplimentar",
     body:
-      "Cursul afișat pe panou ar trebui să fie cursul final. Unele case de schimb adaugă totuși un comision fix sau procentual la sume mari — cere să ți se confirme suma finală înainte să predai banii.",
+      "Cursul afișat pe panou ar trebui să fie cursul final. Unele case de schimb adaugă totuși un comision fix sau procentual la sume mari; cere să ți se confirme suma finală înainte să predai banii.",
   },
   {
     title: "Cere bon fiscal / dovadă a tranzacției",
