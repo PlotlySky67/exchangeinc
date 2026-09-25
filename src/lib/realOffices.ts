@@ -41,19 +41,19 @@ const ARIANA_MOSILOR_RATES: RealOfficeRateSpread[] = [
   { currency: "EUR", name: "Euro", buyFactor: 5.267 / 5.26, sellFactor: 5.285 / 5.26 },
   { currency: "USD", name: "Dolar american", buyFactor: 4.615 / 4.52, sellFactor: 4.65 / 4.52 },
   { currency: "GBP", name: "Liră sterlină", buyFactor: 6.075 / 6.06, sellFactor: 6.12 / 6.06 },
-  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.52 / 5.5, sellFactor: 5.57 / 5.5 },
+  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.556 / 5.5, sellFactor: 5.599 / 5.5 },
 ];
 const HOLUX_MOSILOR_241_RATES: RealOfficeRateSpread[] = [
   { currency: "EUR", name: "Euro", buyFactor: 5.26 / 5.26, sellFactor: 5.284 / 5.26 },
   { currency: "USD", name: "Dolar american", buyFactor: 4.6 / 4.52, sellFactor: 4.65 / 4.52 },
   { currency: "GBP", name: "Liră sterlină", buyFactor: 6.065 / 6.06, sellFactor: 6.1 / 6.06 },
-  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.5 / 5.5, sellFactor: 5.56 / 5.5 },
+  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.53 / 5.5, sellFactor: 5.59 / 5.5 },
 ];
 const HOLUX_UNIRII_COPOSU_RATES: RealOfficeRateSpread[] = [
   { currency: "EUR", name: "Euro", buyFactor: 5.25 / 5.26, sellFactor: 5.284 / 5.26 },
-  { currency: "USD", name: "Dolar american", buyFactor: 4.56 / 4.52, sellFactor: 4.595 / 4.52 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.6 / 4.52, sellFactor: 4.64 / 4.52 },
   { currency: "GBP", name: "Liră sterlină", buyFactor: 6.065 / 6.06, sellFactor: 6.1 / 6.06 },
-  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.52 / 5.5, sellFactor: 5.56 / 5.5 },
+  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.53 / 5.5, sellFactor: 5.59 / 5.5 },
 ];
 const PRESTIGE_GARA_DE_NORD_RATES: RealOfficeRateSpread[] = [
   { currency: "EUR", name: "Euro", buyFactor: 5.265 / 5.26, sellFactor: 5.29 / 5.26 },
