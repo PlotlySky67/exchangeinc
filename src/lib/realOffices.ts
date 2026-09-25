@@ -32,9 +32,9 @@ const CID_EXCHANGE_RATES: RealOfficeRateSpread[] = [
 
 const BIVOLARIE_RATES: RealOfficeRateSpread[] = [
   { currency: "EUR", name: "Euro", buyFactor: 5.23 / 5.26, sellFactor: 5.27 / 5.26 },
-  { currency: "USD", name: "Dolar american", buyFactor: 4.55 / 4.52, sellFactor: 4.62 / 4.52 },
-  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.07 / 6.06, sellFactor: 6.12 / 6.06 },
-  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.52 / 5.5, sellFactor: 5.58 / 5.5 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.58 / 4.52, sellFactor: 4.64 / 4.52 },
+  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.06 / 6.06, sellFactor: 6.12 / 6.06 },
+  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.51 / 5.5, sellFactor: 5.58 / 5.5 },
 ];
 
 const ARIANA_MOSILOR_RATES: RealOfficeRateSpread[] = [
@@ -105,7 +105,7 @@ export const REAL_OFFICES: Record<string, RealOffice[]> = {
       city: "Vicovu de Sus",
       rates: BIVOLARIE_RATES,
       source: "Facebook",
-      capturedDate: "2026-09-23",
+      capturedDate: "2026-09-25",
     },
   ],
   "bucuresti:bucuresti": [
