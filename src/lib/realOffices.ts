@@ -38,21 +38,21 @@ const BIVOLARIE_RATES: RealOfficeRateSpread[] = [
 ];
 
 const ARIANA_MOSILOR_RATES: RealOfficeRateSpread[] = [
-  { currency: "EUR", name: "Euro", buyFactor: 5.26 / 5.26, sellFactor: 5.279 / 5.26 },
-  { currency: "USD", name: "Dolar american", buyFactor: 4.56 / 4.52, sellFactor: 4.599 / 4.52 },
-  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.08 / 6.06, sellFactor: 6.12 / 6.06 },
+  { currency: "EUR", name: "Euro", buyFactor: 5.267 / 5.26, sellFactor: 5.285 / 5.26 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.615 / 4.52, sellFactor: 4.65 / 4.52 },
+  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.075 / 6.06, sellFactor: 6.12 / 6.06 },
   { currency: "CHF", name: "Franc elvețian", buyFactor: 5.52 / 5.5, sellFactor: 5.57 / 5.5 },
 ];
 const HOLUX_MOSILOR_241_RATES: RealOfficeRateSpread[] = [
-  { currency: "EUR", name: "Euro", buyFactor: 5.26 / 5.26, sellFactor: 5.279 / 5.26 },
-  { currency: "USD", name: "Dolar american", buyFactor: 4.56 / 4.52, sellFactor: 4.595 / 4.52 },
-  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.07 / 6.06, sellFactor: 6.12 / 6.06 },
+  { currency: "EUR", name: "Euro", buyFactor: 5.26 / 5.26, sellFactor: 5.284 / 5.26 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.6 / 4.52, sellFactor: 4.65 / 4.52 },
+  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.065 / 6.06, sellFactor: 6.1 / 6.06 },
   { currency: "CHF", name: "Franc elvețian", buyFactor: 5.5 / 5.5, sellFactor: 5.56 / 5.5 },
 ];
 const HOLUX_UNIRII_COPOSU_RATES: RealOfficeRateSpread[] = [
-  { currency: "EUR", name: "Euro", buyFactor: 5.26 / 5.26, sellFactor: 5.28 / 5.26 },
+  { currency: "EUR", name: "Euro", buyFactor: 5.25 / 5.26, sellFactor: 5.284 / 5.26 },
   { currency: "USD", name: "Dolar american", buyFactor: 4.56 / 4.52, sellFactor: 4.595 / 4.52 },
-  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.08 / 6.06, sellFactor: 6.12 / 6.06 },
+  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.065 / 6.06, sellFactor: 6.1 / 6.06 },
   { currency: "CHF", name: "Franc elvețian", buyFactor: 5.52 / 5.5, sellFactor: 5.56 / 5.5 },
 ];
 const PRESTIGE_GARA_DE_NORD_RATES: RealOfficeRateSpread[] = [
@@ -114,21 +114,21 @@ export const REAL_OFFICES: Record<string, RealOffice[]> = {
       city: "București",
       rates: ARIANA_MOSILOR_RATES,
       source: "valutare.ro",
-      capturedDate: "2026-09-22",
+      capturedDate: "2026-09-25",
     },
     {
       name: "Holux Exchange Mosilor 241",
       city: "București",
       rates: HOLUX_MOSILOR_241_RATES,
       source: "valutare.ro",
-      capturedDate: "2026-09-22",
+      capturedDate: "2026-09-25",
     },
     {
       name: "Holux Exchange Unirii Coposu Nr. 4",
       city: "București",
       rates: HOLUX_UNIRII_COPOSU_RATES,
       source: "valutare.ro",
-      capturedDate: "2026-09-22",
+      capturedDate: "2026-09-25",
     },
     {
       name: "Prestige Exchange House Gara de Nord-Grivița",
