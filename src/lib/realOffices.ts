@@ -28,10 +28,10 @@ export interface RealOffice {
 }
 
 const CID_EXCHANGE_RATES: RealOfficeRateSpread[] = [
-  { currency: "EUR", name: "Euro", buyFactor: 5.2389 / 5.26, sellFactor: 5.25 / 5.26 },
-  { currency: "USD", name: "Dolar american", buyFactor: 4.55 / 4.52, sellFactor: 4.59 / 4.52 },
-  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.075 / 6.06, sellFactor: 6.11 / 6.06 },
-  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.52 / 5.5, sellFactor: 5.56 / 5.5 },
+  { currency: "EUR", name: "Euro", buyFactor: 5.2429 / 5.26, sellFactor: 5.265 / 5.26 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.5969 / 4.52, sellFactor: 4.63 / 4.52 },
+  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.0859 / 6.06, sellFactor: 6.11 / 6.06 },
+  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.57 / 5.5, sellFactor: 5.6 / 5.5 },
 ];
 
 const BIVOLARIE_RATES: RealOfficeRateSpread[] = [
@@ -100,7 +100,7 @@ export const REAL_OFFICES: Record<string, RealOffice[]> = {
       city: "Suceava",
       rates: CID_EXCHANGE_RATES,
       source: "valutare.com",
-      capturedDate: "2026-09-22",
+      capturedDate: "2026-09-24",
     },
   ],
   "suceava:vicovu-de-sus": [
