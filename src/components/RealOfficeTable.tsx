@@ -18,24 +18,31 @@ export default function RealOfficeTable({
 }) {
   return (
     <div className="overflow-hidden rounded-xl border border-border bg-surface">
-      <div className="border-b border-border bg-background/60 px-4 py-3 sm:px-5">
-        <p className="text-sm font-bold text-foreground">{office.name}</p>
-        <p className="text-xs text-muted">
-          {office.capturedLabel ? (
-            <>
-              {office.city}, (actualizat la data de {office.capturedLabel})
-            </>
-          ) : office.capturedDate ? (
-            <>
-              {office.city}, (actualizat la data de{" "}
-              {formatRomanianDate(new Date(office.capturedDate))})
-            </>
-          ) : (
-            <>
-              {office.city} · {formatRomanianDate(new Date())}
-            </>
-          )}
-        </p>
+      <div className="flex items-start justify-between gap-3 border-b border-border bg-background/60 px-4 py-3 sm:px-5">
+        <div>
+          <p className="text-sm font-bold text-foreground">{office.name}</p>
+          <p className="text-xs text-muted">
+            {office.capturedLabel ? (
+              <>
+                {office.city}, (actualizat la data de {office.capturedLabel})
+              </>
+            ) : office.capturedDate ? (
+              <>
+                {office.city}, (actualizat la data de{" "}
+                {formatRomanianDate(new Date(office.capturedDate))})
+              </>
+            ) : (
+              <>
+                {office.city} · {formatRomanianDate(new Date())}
+              </>
+            )}
+          </p>
+        </div>
+        {office.capturedTime && (
+          <span className="shrink-0 whitespace-nowrap text-xs font-semibold text-muted">
+            ora {office.capturedTime}
+          </span>
+        )}
       </div>
       <table className="w-full text-sm">
         <thead>

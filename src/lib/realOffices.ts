@@ -21,6 +21,10 @@ export interface RealOffice {
   // capturedDate when a specific time is also known. Rendered verbatim,
   // so it avoids any timezone-parsing ambiguity.
   capturedLabel?: string;
+  // Time of day (e.g. "11:03") the quote was captured, shown on the right
+  // side of the office card header alongside capturedDate. Omitted when
+  // the source doesn't give a specific time.
+  capturedTime?: string;
 }
 
 const CID_EXCHANGE_RATES: RealOfficeRateSpread[] = [
@@ -115,6 +119,7 @@ export const REAL_OFFICES: Record<string, RealOffice[]> = {
       rates: ARIANA_MOSILOR_RATES,
       source: "valutare.ro",
       capturedDate: "2026-09-25",
+      capturedTime: "11:03",
     },
     {
       name: "Holux Exchange Mosilor 241",
@@ -122,6 +127,7 @@ export const REAL_OFFICES: Record<string, RealOffice[]> = {
       rates: HOLUX_MOSILOR_241_RATES,
       source: "valutare.ro",
       capturedDate: "2026-09-25",
+      capturedTime: "10:38",
     },
     {
       name: "Holux Exchange Unirii Coposu Nr. 4",
@@ -129,6 +135,7 @@ export const REAL_OFFICES: Record<string, RealOffice[]> = {
       rates: HOLUX_UNIRII_COPOSU_RATES,
       source: "valutare.ro",
       capturedDate: "2026-09-25",
+      capturedTime: "11:07",
     },
     {
       name: "Prestige Exchange House Gara de Nord-Grivița",
@@ -166,6 +173,7 @@ export const REAL_OFFICES: Record<string, RealOffice[]> = {
       rates: MONDIAL_EXCHANGE_IASI_RATES,
       source: "valutare.ro",
       capturedDate: "2026-09-25",
+      capturedTime: "11:03",
     },
   ],
 };
