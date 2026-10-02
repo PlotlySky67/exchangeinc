@@ -6,10 +6,7 @@ import BankRatesSection from "@/components/BankRatesSection";
 export default async function Home() {
   return (
     <div className="mx-auto w-full max-w-4xl px-4 py-10 sm:px-6 sm:py-14">
-      <p className="text-xs font-extrabold uppercase tracking-wide text-brand">
-        Curs valutar, simplu
-      </p>
-      <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">
+      <h1 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">
         Cursul zilei, dintr-o privire.
       </h1>
       <p className="mt-3 max-w-xl text-sm text-muted">
