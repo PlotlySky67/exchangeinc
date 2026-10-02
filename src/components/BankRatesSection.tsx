@@ -26,7 +26,12 @@ const BANK_RATES: BankRate[] = [
     sell: 5.336,
     logo: "/banca-transilvania-logo.png",
   },
-  { name: "Intesa Sanpaolo Bank", buy: 5.211, sell: 5.331 },
+  {
+    name: "Intesa Sanpaolo Bank",
+    buy: 5.211,
+    sell: 5.331,
+    logo: "/intesa-sanpaolo-logo.png",
+  },
   { name: "UniCredit Bank", buy: 5.21, sell: 5.35 },
   { name: "Patria Bank", buy: 5.2065, sell: 5.352 },
   { name: "BRD", buy: 5.198, sell: 5.352 },
