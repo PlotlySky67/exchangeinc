@@ -1,17 +1,19 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 interface BankRate {
   name: string;
   buy: number;
   sell: number;
+  logo?: string;
 }
 
 // Real EUR/RON quotes published by each bank, sourced by the site owner.
 const BANK_RATES: BankRate[] = [
-  { name: "CEC Bank", buy: 5.2322, sell: 5.3238 },
+  { name: "CEC Bank", buy: 5.2322, sell: 5.3238, logo: "/cec-bank-logo.jpg" },
   { name: "Libra Internet Bank", buy: 5.22, sell: 5.33 },
   { name: "Banca Transilvania", buy: 5.216, sell: 5.336 },
   { name: "Intesa Sanpaolo Bank", buy: 5.211, sell: 5.331 },
@@ -112,9 +114,21 @@ export default function BankRatesSection() {
                 <tr key={bank.name} className="border-b border-border last:border-0">
                   <td className="px-4 py-3 sm:px-5">
                     <div className="flex items-center gap-3">
-                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand">
-                        {initials(bank.name)}
-                      </span>
+                      {bank.logo ? (
+                        <span className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-full border border-border bg-white">
+                          <Image
+                            src={bank.logo}
+                            alt={bank.name}
+                            width={32}
+                            height={32}
+                            className="h-full w-full object-contain p-1"
+                          />
+                        </span>
+                      ) : (
+                        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand">
+                          {initials(bank.name)}
+                        </span>
+                      )}
                       <span className="font-medium text-foreground">{bank.name}</span>
                       {isBest && (
                         <span className="rounded-full bg-positive/15 px-2 py-0.5 text-[10px] font-semibold text-positive">
