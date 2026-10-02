@@ -36,7 +36,7 @@ const FALLBACK_RATES: RateEntry[] = [
   { currency: "EUR", multiplier: 1, rate: 5.3447 },
   { currency: "USD", multiplier: 1, rate: 4.7519 },
   { currency: "GBP", multiplier: 1, rate: 6.28 },
-  { currency: "CHF", multiplier: 1, rate: 5.5896 },
+  { currency: "CHF", multiplier: 1, rate: 5.73 },
   { currency: "JPY", multiplier: 100, rate: 2.9812 },
   { currency: "CAD", multiplier: 1, rate: 3.1854 },
   { currency: "AUD", multiplier: 1, rate: 2.8967 },
