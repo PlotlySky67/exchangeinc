@@ -38,9 +38,19 @@ const BANK_RATES: BankRate[] = [
     sell: 5.35,
     logo: "/unicredit-bank-logo.png",
   },
-  { name: "Patria Bank", buy: 5.2065, sell: 5.352 },
-  { name: "BRD", buy: 5.198, sell: 5.352 },
-  { name: "Raiffeisen Bank", buy: 5.1798, sell: 5.3302 },
+  {
+    name: "Patria Bank",
+    buy: 5.2065,
+    sell: 5.352,
+    logo: "/patria-bank-logo.png",
+  },
+  { name: "BRD", buy: 5.198, sell: 5.352, logo: "/brd-logo.png" },
+  {
+    name: "Raiffeisen Bank",
+    buy: 5.1798,
+    sell: 5.3302,
+    logo: "/raiffeisen-bank-logo.png",
+  },
 ];
 
 function initials(name: string): string {
