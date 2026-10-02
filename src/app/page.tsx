@@ -13,8 +13,7 @@ export default async function Home() {
         Cursul zilei, dintr-o privire.
       </h1>
       <p className="mt-3 max-w-xl text-sm text-muted">
-        Curs oficial BNR, cotații interbancare live și case de schimb reale,
-        totul într-un singur loc, actualizat automat.
+        Curs oficial BNR, cotații interbancare live și case de schimb reale.
       </p>
 
       <div className="mt-8">
