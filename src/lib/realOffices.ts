@@ -66,10 +66,10 @@ const PRESTIGE_GARA_DE_NORD_RATES: RealOfficeRateSpread[] = [
   { currency: "CHF", name: "Franc elvețian", buyFactor: 5.45 / 5.5, sellFactor: 5.648 / 5.5 },
 ];
 const DIAMANT_PIATA_UNIRII_RATES: RealOfficeRateSpread[] = [
-  { currency: "EUR", name: "Euro", buyFactor: 5.25 / 5.26, sellFactor: 5.285 / 5.26 },
-  { currency: "USD", name: "Dolar american", buyFactor: 4.53 / 4.52, sellFactor: 4.595 / 4.52 },
-  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.03 / 6.06, sellFactor: 6.12 / 6.06 },
-  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.5 / 5.5, sellFactor: 5.57 / 5.5 },
+  { currency: "EUR", name: "Euro", buyFactor: 5.32 / 5.26, sellFactor: 5.43 / 5.26 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.65 / 4.52, sellFactor: 4.76 / 4.52 },
+  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.1 / 6.06, sellFactor: 6.24 / 6.06 },
+  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.53 / 5.5, sellFactor: 5.69 / 5.5 },
 ];
 
 const PANDA_EXCHANGE_IASI_RATES: RealOfficeRateSpread[] = [
@@ -149,7 +149,8 @@ export const REAL_OFFICES: Record<string, RealOffice[]> = {
       city: "București",
       rates: DIAMANT_PIATA_UNIRII_RATES,
       source: "valutare.ro",
-      capturedDate: "2026-09-22",
+      capturedDate: "2026-10-02",
+      capturedTime: "14:32",
     },
   ],
   "iasi:iasi": [
