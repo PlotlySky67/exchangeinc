@@ -14,8 +14,18 @@ interface BankRate {
 // Real EUR/RON quotes published by each bank, sourced by the site owner.
 const BANK_RATES: BankRate[] = [
   { name: "CEC Bank", buy: 5.2322, sell: 5.3238, logo: "/cec-bank-logo.jpg" },
-  { name: "Libra Internet Bank", buy: 5.22, sell: 5.33 },
-  { name: "Banca Transilvania", buy: 5.216, sell: 5.336 },
+  {
+    name: "Libra Internet Bank",
+    buy: 5.22,
+    sell: 5.33,
+    logo: "/libra-internet-bank-logo.png",
+  },
+  {
+    name: "Banca Transilvania",
+    buy: 5.216,
+    sell: 5.336,
+    logo: "/banca-transilvania-logo.png",
+  },
   { name: "Intesa Sanpaolo Bank", buy: 5.211, sell: 5.331 },
   { name: "UniCredit Bank", buy: 5.21, sell: 5.35 },
   { name: "Patria Bank", buy: 5.2065, sell: 5.352 },
