@@ -15,11 +15,11 @@ function formatDelta(delta: number): string {
 }
 
 interface Row {
-  label: string;
+  code: string;
+  flag: string;
+  name: string;
   value: number;
-  unit: string;
   delta: number;
-  deltaUnit: string;
 }
 
 export default async function DailyRateSummary() {
@@ -44,42 +44,36 @@ export default async function DailyRateSummary() {
   const chfYesterday = chfPoints[chfPoints.length - 2]?.rate ?? chfToday;
 
   const rows: Row[] = [
+    { code: "EUR", flag: "🇪🇺", name: "Euro", value: eurToday, delta: eurToday - eurYesterday },
     {
-      label: "1 EURO",
-      value: eurToday,
-      unit: "Lei",
-      delta: eurToday - eurYesterday,
-      deltaUnit: "Lei",
-    },
-    {
-      label: "1 USD",
+      code: "USD",
+      flag: "🇺🇸",
+      name: "Dolar american",
       value: usdToday,
-      unit: "Lei",
       delta: usdToday - usdYesterday,
-      deltaUnit: "Lei",
     },
     {
-      label: "1 GBP",
+      code: "GBP",
+      flag: "🇬🇧",
+      name: "Liră sterlină",
       value: gbpToday,
-      unit: "Lei",
       delta: gbpToday - gbpYesterday,
-      deltaUnit: "Lei",
     },
     {
-      label: "1 CHF",
+      code: "CHF",
+      flag: "🇨🇭",
+      name: "Franc elvețian",
       value: chfToday,
-      unit: "Lei",
       delta: chfToday - chfYesterday,
-      deltaUnit: "Lei",
     },
   ];
 
   const latestDate = eurPoints[eurPoints.length - 1]?.date;
 
   return (
-    <div className="overflow-hidden rounded-xl border border-border bg-surface">
-      <div className="border-b border-border bg-background/60 px-4 py-3 sm:px-5">
-        <p className="text-[11px] font-extrabold tracking-wide text-brand uppercase">
+    <div className="overflow-hidden rounded-2xl border border-border bg-surface shadow-sm">
+      <div className="px-5 py-4 sm:px-6">
+        <p className="text-xs font-extrabold tracking-wide text-brand uppercase">
           Curs oficial BNR
         </p>
         <p className="mt-0.5 text-sm text-muted">
@@ -90,22 +84,28 @@ export default async function DailyRateSummary() {
         const up = row.delta >= 0;
         return (
           <div
-            key={i}
-            className={`flex flex-wrap items-center justify-between gap-x-3 gap-y-1 px-4 py-3 text-sm sm:px-5 ${
+            key={row.code}
+            className={`flex items-center justify-between gap-3 px-5 py-4 sm:px-6 ${
               i > 0 ? "border-t border-border" : ""
             }`}
           >
-            <span className="text-foreground">
-              {row.label} = <span className="font-mono font-bold">{row.value.toFixed(4)}</span>{" "}
-              {row.unit}
-            </span>
-            <span
-              className={`flex items-center gap-1.5 font-bold ${
-                up ? "text-positive" : "text-negative"
-              }`}
-            >
-              {formatDelta(row.delta)} {row.deltaUnit} {up ? "↑" : "↓"}
-            </span>
+            <div className="flex items-center gap-3">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand/10 text-lg">
+                {row.flag}
+              </span>
+              <div>
+                <p className="text-sm font-bold text-foreground">{row.name}</p>
+                <p className="text-xs text-muted">{row.code}/RON</p>
+              </div>
+            </div>
+            <div className="text-right">
+              <p className="font-mono text-lg font-extrabold text-foreground">
+                {row.value.toFixed(4)}
+              </p>
+              <p className={`text-xs font-bold ${up ? "text-positive" : "text-negative"}`}>
+                {formatDelta(row.delta)} {up ? "↑" : "↓"}
+              </p>
+            </div>
           </div>
         );
       })}

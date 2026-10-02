@@ -4,7 +4,7 @@ import { currencyMeta } from "@/lib/currencies";
 
 export default function RateTable({ rates }: { rates: RateEntry[] }) {
   return (
-    <div className="overflow-hidden rounded-xl border border-border bg-surface">
+    <div className="overflow-hidden rounded-2xl border border-border bg-surface shadow-sm">
       <table className="w-full text-sm">
         <thead>
           <tr className="border-b border-border bg-background/60 text-left text-xs uppercase tracking-wide text-muted">

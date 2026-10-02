@@ -78,7 +78,7 @@ export default function HistoryExplorer({ initialCurrency }: { initialCurrency: 
         </div>
       </div>
 
-      <div className="mt-4 rounded-xl border border-border bg-surface p-4 sm:p-6">
+      <div className="mt-4 rounded-2xl border border-border bg-surface shadow-sm p-4 sm:p-6">
         <div className="mb-2 flex items-baseline justify-between">
           <h2 className="text-lg font-bold text-foreground">
             {meta.flag} {currency} / RON

@@ -29,7 +29,7 @@ export default function InterbankRatesWidget() {
 
   return (
     <div
-      className="tradingview-widget-container min-h-[400px] overflow-hidden rounded-xl border border-border bg-surface"
+      className="tradingview-widget-container min-h-[400px] overflow-hidden rounded-2xl border border-border bg-surface shadow-sm"
       ref={containerRef}
     >
       <div className="tradingview-widget-container__widget flex min-h-[400px] items-center justify-center text-sm text-muted">

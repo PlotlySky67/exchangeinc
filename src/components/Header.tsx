@@ -56,7 +56,7 @@ export default async function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="rounded-md px-3 py-2 text-sm font-medium text-muted uppercase transition-colors hover:bg-background hover:text-foreground"
+              className="rounded-full px-3.5 py-2 text-sm font-semibold text-muted transition-colors hover:bg-background hover:text-foreground"
             >
               {link.label}
             </Link>
@@ -64,13 +64,13 @@ export default async function Header() {
         </nav>
         <Link
           href="/convertor"
-          className="hidden shrink-0 rounded-md bg-brand px-3 py-2 text-sm font-semibold text-white uppercase transition-colors hover:bg-brand-dark sm:block"
+          className="hidden shrink-0 rounded-full bg-foreground px-4 py-2.5 text-sm font-bold text-background transition-colors hover:opacity-85 sm:block"
         >
           Convertor →
         </Link>
         <Link
           href="/convertor"
-          className="rounded-md bg-brand px-3 py-2 text-sm font-semibold text-white uppercase transition-colors hover:bg-brand-dark sm:hidden"
+          className="rounded-full bg-foreground px-3.5 py-2 text-sm font-bold text-background transition-colors hover:opacity-85 sm:hidden"
         >
           Convertor
         </Link>
@@ -80,7 +80,7 @@ export default async function Header() {
           <Link
             key={link.href}
             href={link.href}
-            className="shrink-0 rounded-md px-2.5 py-1.5 text-sm font-medium text-muted uppercase hover:bg-background hover:text-foreground"
+            className="shrink-0 rounded-full px-3 py-1.5 text-sm font-semibold text-muted hover:bg-background hover:text-foreground"
           >
             {link.label}
           </Link>

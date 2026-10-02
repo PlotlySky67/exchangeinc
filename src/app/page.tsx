@@ -6,7 +6,20 @@ import BankRatesSection from "@/components/BankRatesSection";
 export default async function Home() {
   return (
     <div className="mx-auto w-full max-w-4xl px-4 py-10 sm:px-6 sm:py-14">
-      <DailyRateSummary />
+      <p className="text-xs font-extrabold uppercase tracking-wide text-brand">
+        Curs valutar, simplu
+      </p>
+      <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">
+        Cursul zilei, dintr-o privire.
+      </h1>
+      <p className="mt-3 max-w-xl text-sm text-muted">
+        Curs oficial BNR, cotații interbancare live și case de schimb reale —
+        totul într-un singur loc, actualizat automat.
+      </p>
+
+      <div className="mt-8">
+        <DailyRateSummary />
+      </div>
 
       <section className="mt-12 border-t border-border pt-10">
         <h2 className="text-2xl font-bold tracking-tight text-foreground">
@@ -27,7 +40,7 @@ export default async function Home() {
           <InterbankRatesSnapshot />
         </div>
         <div className="mt-6">
-          <span className="inline-block rounded-md border border-brand/40 bg-brand/5 px-3 py-1.5 text-sm font-semibold uppercase text-foreground">
+          <span className="inline-block rounded-full border border-brand/20 bg-brand/5 px-3.5 py-1.5 text-sm font-semibold uppercase text-foreground">
             tabel conversie valutară
           </span>
         </div>

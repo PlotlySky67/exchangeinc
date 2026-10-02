@@ -57,7 +57,7 @@ export default function CumAlegOCasaDeSchimbBunaPage() {
         {TIPS.map((tip, i) => (
           <div
             key={tip.title}
-            className="rounded-xl border border-border bg-surface p-5"
+            className="rounded-2xl border border-border bg-surface shadow-sm p-5"
           >
             <p className="text-xs font-semibold text-brand">
               {String(i + 1).padStart(2, "0")}
@@ -68,7 +68,7 @@ export default function CumAlegOCasaDeSchimbBunaPage() {
         ))}
       </div>
 
-      <div className="mt-10 rounded-xl border border-brand/30 bg-brand/5 p-5">
+      <div className="mt-10 rounded-2xl border border-brand/20 bg-brand/5 p-5">
         <p className="text-sm font-semibold text-foreground">
           Vrei să compari direct case de schimb reale?
         </p>
@@ -79,13 +79,13 @@ export default function CumAlegOCasaDeSchimbBunaPage() {
         <div className="mt-4 flex flex-wrap gap-3">
           <Link
             href="/compara-case-schimb"
-            className="rounded-md bg-brand px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-dark"
+            className="rounded-full bg-brand px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-dark"
           >
             Compară case de schimb →
           </Link>
           <Link
             href="/schimb-valutar-judetean"
-            className="rounded-md border border-border px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:bg-background"
+            className="rounded-full border border-border px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:bg-background"
           >
             Case de schimb pe județe
           </Link>

@@ -67,7 +67,7 @@ export default async function CompareOfficesPage() {
         .
       </p>
 
-      <div className="mt-6 rounded-xl border border-brand/30 bg-brand/5 p-5">
+      <div className="mt-6 rounded-2xl border border-brand/20 bg-brand/5 p-5">
         <p className="text-sm font-semibold text-foreground">
           Nu știi la ce să te uiți când alegi o casă de schimb?
         </p>
@@ -77,7 +77,7 @@ export default async function CompareOfficesPage() {
         </p>
         <Link
           href="/cum-aleg-o-casa-de-schimb-buna"
-          className="mt-4 inline-block rounded-md bg-brand px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-dark"
+          className="mt-4 inline-block rounded-full bg-brand px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-dark"
         >
           Citește ghidul →
         </Link>

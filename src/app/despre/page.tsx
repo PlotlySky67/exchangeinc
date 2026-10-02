@@ -31,7 +31,7 @@ export default function DesprePage() {
           cursurilor cu grafic interactiv.
         </p>
 
-        <div className="rounded-xl border border-border bg-surface p-5">
+        <div className="rounded-2xl border border-border bg-surface shadow-sm p-5">
           <h2 className="text-lg font-bold text-foreground">Sursa datelor</h2>
           <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm text-muted">
             <li>Cursul zilnic provine din fluxul XML public al BNR.</li>
@@ -45,7 +45,7 @@ export default function DesprePage() {
           </ul>
         </div>
 
-        <div className="rounded-xl border border-accent/40 bg-accent/10 p-5">
+        <div className="rounded-2xl border border-accent/30 bg-accent/10 p-5">
           <h2 className="text-lg font-bold text-foreground">
             Secțiunea &bdquo;Compară case de schimb&rdquo;
           </h2>
@@ -59,7 +59,7 @@ export default function DesprePage() {
           </p>
         </div>
 
-        <div className="rounded-xl border border-border bg-surface p-5">
+        <div className="rounded-2xl border border-border bg-surface shadow-sm p-5">
           <h2 className="text-lg font-bold text-foreground">Harta județelor</h2>
           <p className="mt-2 text-sm text-muted">
             Harta din secțiunea &bdquo;Schimb valutar județean&rdquo; folosește

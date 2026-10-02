@@ -1,8 +1,12 @@
 export function LogoMark({ size = 36 }: { size?: number }) {
   return (
     <span
-      className="flex shrink-0 items-center justify-center rounded-2xl bg-brand text-white"
-      style={{ width: size, height: size }}
+      className="flex shrink-0 items-center justify-center rounded-2xl text-white"
+      style={{
+        width: size,
+        height: size,
+        background: "linear-gradient(135deg, var(--brand), var(--brand-dark))",
+      }}
     >
       <svg
         width={size * 0.56}

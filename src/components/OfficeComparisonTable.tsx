@@ -46,7 +46,7 @@ export default function OfficeComparisonTable({
       <h2 className="text-lg font-bold text-foreground">
         {currency} · {currencyName}
       </h2>
-      <div className="mt-3 overflow-hidden rounded-xl border border-border bg-surface">
+      <div className="mt-3 overflow-hidden rounded-2xl border border-border bg-surface shadow-sm">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-border bg-background/60 text-left text-xs uppercase tracking-wide text-muted">

@@ -63,7 +63,7 @@ export default function ConverterWidget({
 
   return (
     <div
-      className={`rounded-xl border border-border bg-surface p-5 shadow-sm ${
+      className={`rounded-2xl border border-border bg-surface shadow-sm p-5 shadow-sm ${
         compact ? "" : "sm:p-6"
       }`}
     >

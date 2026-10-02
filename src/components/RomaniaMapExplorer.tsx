@@ -35,7 +35,7 @@ export default function RomaniaMapExplorer({
   }
 
   return (
-    <div className="overflow-hidden rounded-xl border border-border bg-surface p-4 sm:p-5">
+    <div className="overflow-hidden rounded-2xl border border-border bg-surface shadow-sm p-4 sm:p-5">
       <p className="text-sm font-semibold text-foreground">Explorare pe hartă</p>
       <p className="mt-1 text-xs text-muted">
         Harta reală a județelor României. Alege un județ marcat activ pentru

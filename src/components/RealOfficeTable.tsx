@@ -17,7 +17,7 @@ export default function RealOfficeTable({
   bnrRates: RateEntry[];
 }) {
   return (
-    <div className="overflow-hidden rounded-xl border border-border bg-surface">
+    <div className="overflow-hidden rounded-2xl border border-border bg-surface shadow-sm">
       <div className="flex items-start justify-between gap-3 border-b border-border bg-background/60 px-4 py-3 sm:px-5">
         <div>
           <p className="text-sm font-bold text-foreground">{office.name}</p>

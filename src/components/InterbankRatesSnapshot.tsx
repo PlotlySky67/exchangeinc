@@ -20,7 +20,7 @@ export default async function InterbankRatesSnapshot() {
   const { rows, source } = await getInterbankRates();
 
   return (
-    <div className="overflow-hidden rounded-xl border border-border bg-surface">
+    <div className="overflow-hidden rounded-2xl border border-border bg-surface shadow-sm">
       <div className="border-b border-border bg-background/60 px-4 py-3 sm:px-5">
         <p className="text-sm text-muted">
           Cotații valutare pentru euro (EUR/RON), dolarul american (USD/RON),

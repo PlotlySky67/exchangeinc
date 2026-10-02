@@ -83,7 +83,7 @@ export default function BankRatesSection() {
         {mode === "buy" ? "de cumpărare (cel mai avantajos primul)" : "de vânzare (cel mai avantajos primul)"}.
       </p>
 
-      <div className="mt-6 overflow-hidden rounded-xl border border-border bg-surface">
+      <div className="mt-6 overflow-hidden rounded-2xl border border-border bg-surface shadow-sm">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-border bg-background/40 text-left text-xs uppercase tracking-wide text-muted">
