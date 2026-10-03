@@ -2,9 +2,16 @@ export interface RealOfficeRateSpread {
   currency: string;
   name: string;
   // Multipliers captured from a real quote, relative to the BNR reference
-  // rate at the time (EUR 5.26, USD 4.52, GBP 6.06, CHF 5.50). Applying them
-  // to today's reference rate keeps the office's quote tracking the current
-  // day instead of being frozen on the day it was captured.
+  // rate at the time. Applying them to today's reference rate keeps the
+  // office's quote tracking the current day instead of being frozen on the
+  // day it was captured.
+  //
+  // IMPORTANT: the divisor below must be kept close to the actual BNR rate
+  // on each quote's capture date (currently anchored to 2 Oct 2026: EUR
+  // 5.3447, USD 4.7519, GBP 6.28, CHF 5.73 — see src/lib/bnr.ts
+  // FALLBACK_RATES). If BNR drifts far from this anchor without rebasing
+  // these divisors, displayed office rates will drift away from their real
+  // quoted values — rebase periodically (or whenever rates look off).
   buyFactor: number;
   sellFactor: number;
 }
@@ -28,61 +35,61 @@ export interface RealOffice {
 }
 
 const CID_EXCHANGE_RATES: RealOfficeRateSpread[] = [
-  { currency: "EUR", name: "Euro", buyFactor: 5.27 / 5.26, sellFactor: 5.32 / 5.26 },
-  { currency: "USD", name: "Dolar american", buyFactor: 4.65 / 4.52, sellFactor: 4.74 / 4.52 },
-  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.14 / 6.06, sellFactor: 6.22 / 6.06 },
-  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.64 / 5.5, sellFactor: 5.7 / 5.5 },
+  { currency: "EUR", name: "Euro", buyFactor: 5.27 / 5.3447, sellFactor: 5.32 / 5.3447 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.65 / 4.7519, sellFactor: 4.74 / 4.7519 },
+  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.14 / 6.28, sellFactor: 6.22 / 6.28 },
+  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.64 / 5.73, sellFactor: 5.7 / 5.73 },
 ];
 
 const BIVOLARIE_RATES: RealOfficeRateSpread[] = [
-  { currency: "EUR", name: "Euro", buyFactor: 5.28 / 5.26, sellFactor: 5.33 / 5.26 },
-  { currency: "USD", name: "Dolar american", buyFactor: 4.65 / 4.52, sellFactor: 4.75 / 4.52 },
-  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.15 / 6.06, sellFactor: 6.25 / 6.06 },
-  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.6 / 5.5, sellFactor: 5.71 / 5.5 },
+  { currency: "EUR", name: "Euro", buyFactor: 5.28 / 5.3447, sellFactor: 5.33 / 5.3447 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.65 / 4.7519, sellFactor: 4.75 / 4.7519 },
+  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.15 / 6.28, sellFactor: 6.25 / 6.28 },
+  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.6 / 5.73, sellFactor: 5.71 / 5.73 },
 ];
 
 const ARIANA_MOSILOR_RATES: RealOfficeRateSpread[] = [
-  { currency: "EUR", name: "Euro", buyFactor: 5.267 / 5.26, sellFactor: 5.285 / 5.26 },
-  { currency: "USD", name: "Dolar american", buyFactor: 4.615 / 4.52, sellFactor: 4.65 / 4.52 },
-  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.075 / 6.06, sellFactor: 6.12 / 6.06 },
-  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.556 / 5.5, sellFactor: 5.599 / 5.5 },
+  { currency: "EUR", name: "Euro", buyFactor: 5.267 / 5.3447, sellFactor: 5.285 / 5.3447 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.615 / 4.7519, sellFactor: 4.65 / 4.7519 },
+  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.075 / 6.28, sellFactor: 6.12 / 6.28 },
+  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.556 / 5.73, sellFactor: 5.599 / 5.73 },
 ];
 const HOLUX_MOSILOR_241_RATES: RealOfficeRateSpread[] = [
-  { currency: "EUR", name: "Euro", buyFactor: 5.26 / 5.26, sellFactor: 5.284 / 5.26 },
-  { currency: "USD", name: "Dolar american", buyFactor: 4.6 / 4.52, sellFactor: 4.65 / 4.52 },
-  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.065 / 6.06, sellFactor: 6.1 / 6.06 },
-  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.53 / 5.5, sellFactor: 5.59 / 5.5 },
+  { currency: "EUR", name: "Euro", buyFactor: 5.26 / 5.3447, sellFactor: 5.284 / 5.3447 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.6 / 4.7519, sellFactor: 4.65 / 4.7519 },
+  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.065 / 6.28, sellFactor: 6.1 / 6.28 },
+  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.53 / 5.73, sellFactor: 5.59 / 5.73 },
 ];
 const HOLUX_UNIRII_COPOSU_RATES: RealOfficeRateSpread[] = [
-  { currency: "EUR", name: "Euro", buyFactor: 5.25 / 5.26, sellFactor: 5.284 / 5.26 },
-  { currency: "USD", name: "Dolar american", buyFactor: 4.6 / 4.52, sellFactor: 4.64 / 4.52 },
-  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.065 / 6.06, sellFactor: 6.1 / 6.06 },
-  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.53 / 5.5, sellFactor: 5.59 / 5.5 },
+  { currency: "EUR", name: "Euro", buyFactor: 5.25 / 5.3447, sellFactor: 5.284 / 5.3447 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.6 / 4.7519, sellFactor: 4.64 / 4.7519 },
+  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.065 / 6.28, sellFactor: 6.1 / 6.28 },
+  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.53 / 5.73, sellFactor: 5.59 / 5.73 },
 ];
 const PRESTIGE_GARA_DE_NORD_RATES: RealOfficeRateSpread[] = [
-  { currency: "EUR", name: "Euro", buyFactor: 5.265 / 5.26, sellFactor: 5.29 / 5.26 },
-  { currency: "USD", name: "Dolar american", buyFactor: 4.51 / 4.52, sellFactor: 4.598 / 4.52 },
-  { currency: "GBP", name: "Liră sterlină", buyFactor: 5.99 / 6.06, sellFactor: 6.14 / 6.06 },
-  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.45 / 5.5, sellFactor: 5.648 / 5.5 },
+  { currency: "EUR", name: "Euro", buyFactor: 5.265 / 5.3447, sellFactor: 5.29 / 5.3447 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.51 / 4.7519, sellFactor: 4.598 / 4.7519 },
+  { currency: "GBP", name: "Liră sterlină", buyFactor: 5.99 / 6.28, sellFactor: 6.14 / 6.28 },
+  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.45 / 5.73, sellFactor: 5.648 / 5.73 },
 ];
 const DIAMANT_PIATA_UNIRII_RATES: RealOfficeRateSpread[] = [
-  { currency: "EUR", name: "Euro", buyFactor: 5.32 / 5.26, sellFactor: 5.43 / 5.26 },
-  { currency: "USD", name: "Dolar american", buyFactor: 4.65 / 4.52, sellFactor: 4.76 / 4.52 },
-  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.1 / 6.06, sellFactor: 6.24 / 6.06 },
-  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.53 / 5.5, sellFactor: 5.69 / 5.5 },
+  { currency: "EUR", name: "Euro", buyFactor: 5.32 / 5.3447, sellFactor: 5.43 / 5.3447 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.65 / 4.7519, sellFactor: 4.76 / 4.7519 },
+  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.1 / 6.28, sellFactor: 6.24 / 6.28 },
+  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.53 / 5.73, sellFactor: 5.69 / 5.73 },
 ];
 
 const FACTORY_EXCHANGE_IASI_RATES: RealOfficeRateSpread[] = [
-  { currency: "EUR", name: "Euro", buyFactor: 5.3105 / 5.26, sellFactor: 5.368 / 5.26 },
-  { currency: "USD", name: "Dolar american", buyFactor: 4.6305 / 4.52, sellFactor: 4.768 / 4.52 },
-  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.1305 / 6.06, sellFactor: 6.268 / 6.06 },
-  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.6205 / 5.5, sellFactor: 5.768 / 5.5 },
+  { currency: "EUR", name: "Euro", buyFactor: 5.3105 / 5.3447, sellFactor: 5.368 / 5.3447 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.6305 / 4.7519, sellFactor: 4.768 / 4.7519 },
+  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.1305 / 6.28, sellFactor: 6.268 / 6.28 },
+  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.6205 / 5.73, sellFactor: 5.768 / 5.73 },
 ];
 const MONDIAL_EXCHANGE_IASI_RATES: RealOfficeRateSpread[] = [
-  { currency: "EUR", name: "Euro", buyFactor: 5.28 / 5.26, sellFactor: 5.37 / 5.26 },
-  { currency: "USD", name: "Dolar american", buyFactor: 4.625 / 4.52, sellFactor: 4.77 / 4.52 },
-  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.125 / 6.06, sellFactor: 6.27 / 6.06 },
-  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.6057 / 5.5, sellFactor: 5.77 / 5.5 },
+  { currency: "EUR", name: "Euro", buyFactor: 5.28 / 5.3447, sellFactor: 5.37 / 5.3447 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.625 / 4.7519, sellFactor: 4.77 / 4.7519 },
+  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.125 / 6.28, sellFactor: 6.27 / 6.28 },
+  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.6057 / 5.73, sellFactor: 5.77 / 5.73 },
 ];
 
 // Real, manually-entered exchange office spreads (not synthetic/demo data).
