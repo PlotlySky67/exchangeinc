@@ -173,3 +173,22 @@ export const REAL_OFFICES: Record<string, RealOffice[]> = {
     },
   ],
 };
+
+// Sorts offices by capture date/time, most recent first. Offices with no
+// capturedDate (implicitly "today") sort to the top; capturedLabel-only
+// offices (free-form text, not reliably parseable) sort after dated ones.
+export function sortOfficesByRecency(offices: RealOffice[]): RealOffice[] {
+  const todayKey = new Date().toISOString().slice(0, 10) + " 23:59";
+
+  function sortKey(office: RealOffice): string {
+    if (office.capturedDate) {
+      return `${office.capturedDate} ${office.capturedTime ?? "00:00"}`;
+    }
+    if (office.capturedLabel) {
+      return "0000-00-00 00:00";
+    }
+    return todayKey;
+  }
+
+  return [...offices].sort((a, b) => sortKey(b).localeCompare(sortKey(a)));
+}

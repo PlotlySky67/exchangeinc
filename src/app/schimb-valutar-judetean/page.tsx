@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getDailyRates } from "@/lib/bnr";
 import { JUDETE, DEFAULT_JUDET, DEFAULT_ORAS, judetBySlug, orasBySlug } from "@/lib/judete";
-import { REAL_OFFICES } from "@/lib/realOffices";
+import { REAL_OFFICES, sortOfficesByRecency } from "@/lib/realOffices";
 import JudetSelector from "@/components/JudetSelector";
 import RealOfficeTable from "@/components/RealOfficeTable";
 import RomaniaMapExplorer from "@/components/RomaniaMapExplorer";
@@ -33,7 +33,7 @@ export default async function SchimbValutarJudeteanPage({
 
   const judet = judetBySlug(judetSlug);
   const oras = orasBySlug(judet, orasSlug);
-  const offices = REAL_OFFICES[`${judet.slug}:${oras.slug}`] ?? [];
+  const offices = sortOfficesByRecency(REAL_OFFICES[`${judet.slug}:${oras.slug}`] ?? []);
   const snapshot = await getDailyRates();
 
   return (
