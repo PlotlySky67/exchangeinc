@@ -9,6 +9,14 @@ function formatRomanianDate(date: Date): string {
   }).format(date);
 }
 
+const WEEK_MS = 7 * 24 * 60 * 60 * 1000;
+
+function isStale(capturedDate?: string): boolean {
+  if (!capturedDate) return false;
+  const diff = Date.now() - new Date(capturedDate).getTime();
+  return diff > WEEK_MS;
+}
+
 export default function RealOfficeTable({
   office,
   bnrRates,
@@ -16,8 +24,14 @@ export default function RealOfficeTable({
   office: RealOffice;
   bnrRates: RateEntry[];
 }) {
+  const stale = isStale(office.capturedDate);
+
   return (
-    <div className="overflow-hidden rounded-2xl border border-border bg-surface shadow-sm">
+    <div
+      className={`overflow-hidden rounded-2xl border border-border bg-surface shadow-sm ${
+        stale ? "grayscale" : ""
+      }`}
+    >
       <div className="flex items-start justify-between gap-3 border-b border-border bg-background/60 px-4 py-3 sm:px-5">
         <div>
           <p className="text-sm font-bold text-foreground">{office.name}</p>
