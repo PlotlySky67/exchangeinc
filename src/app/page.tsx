@@ -2,6 +2,7 @@ import InterbankRatesWidget from "@/components/InterbankRatesWidget";
 import InterbankRatesSnapshot from "@/components/InterbankRatesSnapshot";
 import DailyRateSummary from "@/components/DailyRateSummary";
 import BankRatesSection from "@/components/BankRatesSection";
+import ReferenceIndicesSection from "@/components/ReferenceIndicesSection";
 
 export default async function Home() {
   return (
@@ -16,6 +17,8 @@ export default async function Home() {
       <div className="mt-8">
         <DailyRateSummary />
       </div>
+
+      <ReferenceIndicesSection />
 
       <section className="mt-12 border-t border-border pt-10">
         <h2 className="text-2xl font-bold tracking-tight text-foreground">
