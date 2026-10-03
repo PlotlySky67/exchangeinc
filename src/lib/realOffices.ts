@@ -79,16 +79,16 @@ const PANDA_EXCHANGE_IASI_RATES: RealOfficeRateSpread[] = [
   { currency: "CHF", name: "Franc elvețian", buyFactor: 5.502 / 5.5, sellFactor: 5.578 / 5.5 },
 ];
 const FACTORY_EXCHANGE_IASI_RATES: RealOfficeRateSpread[] = [
-  { currency: "EUR", name: "Euro", buyFactor: 5.2435 / 5.26, sellFactor: 5.264 / 5.26 },
-  { currency: "USD", name: "Dolar american", buyFactor: 4.5525 / 4.52, sellFactor: 4.599 / 4.52 },
-  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.0805 / 6.06, sellFactor: 6.107 / 6.06 },
-  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.5515 / 5.5, sellFactor: 5.598 / 5.5 },
+  { currency: "EUR", name: "Euro", buyFactor: 5.3105 / 5.26, sellFactor: 5.368 / 5.26 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.6305 / 4.52, sellFactor: 4.768 / 4.52 },
+  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.1305 / 6.06, sellFactor: 6.268 / 6.06 },
+  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.6205 / 5.5, sellFactor: 5.768 / 5.5 },
 ];
 const MONDIAL_EXCHANGE_IASI_RATES: RealOfficeRateSpread[] = [
-  { currency: "EUR", name: "Euro", buyFactor: 5.22 / 5.26, sellFactor: 5.265 / 5.26 },
-  { currency: "USD", name: "Dolar american", buyFactor: 4.56 / 4.52, sellFactor: 4.65 / 4.52 },
-  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.0461 / 6.06, sellFactor: 6.12 / 6.06 },
-  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.5057 / 5.5, sellFactor: 5.71 / 5.5 },
+  { currency: "EUR", name: "Euro", buyFactor: 5.28 / 5.26, sellFactor: 5.37 / 5.26 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.625 / 4.52, sellFactor: 4.77 / 4.52 },
+  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.125 / 6.06, sellFactor: 6.27 / 6.06 },
+  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.6057 / 5.5, sellFactor: 5.77 / 5.5 },
 ];
 
 // Real, manually-entered exchange office spreads (not synthetic/demo data).
@@ -167,15 +167,15 @@ export const REAL_OFFICES: Record<string, RealOffice[]> = {
       city: "Iași",
       rates: FACTORY_EXCHANGE_IASI_RATES,
       source: "valutare.ro",
-      capturedDate: "2026-09-23",
+      capturedDate: "2026-10-02",
     },
     {
       name: "Mondial Exchange",
       city: "Iași, Centru",
       rates: MONDIAL_EXCHANGE_IASI_RATES,
       source: "valutare.ro",
-      capturedDate: "2026-09-25",
-      capturedTime: "11:03",
+      capturedDate: "2026-10-03",
+      capturedTime: "08:38",
     },
   ],
 };
