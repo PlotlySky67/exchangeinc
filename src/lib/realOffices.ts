@@ -72,12 +72,6 @@ const DIAMANT_PIATA_UNIRII_RATES: RealOfficeRateSpread[] = [
   { currency: "CHF", name: "Franc elvețian", buyFactor: 5.53 / 5.5, sellFactor: 5.69 / 5.5 },
 ];
 
-const PANDA_EXCHANGE_IASI_RATES: RealOfficeRateSpread[] = [
-  { currency: "EUR", name: "Euro", buyFactor: 5.232 / 5.26, sellFactor: 5.248 / 5.26 },
-  { currency: "USD", name: "Dolar american", buyFactor: 4.502 / 4.52, sellFactor: 4.588 / 4.52 },
-  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.076 / 6.06, sellFactor: 6.118 / 6.06 },
-  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.502 / 5.5, sellFactor: 5.578 / 5.5 },
-];
 const FACTORY_EXCHANGE_IASI_RATES: RealOfficeRateSpread[] = [
   { currency: "EUR", name: "Euro", buyFactor: 5.3105 / 5.26, sellFactor: 5.368 / 5.26 },
   { currency: "USD", name: "Dolar american", buyFactor: 4.6305 / 4.52, sellFactor: 4.768 / 4.52 },
@@ -155,13 +149,6 @@ export const REAL_OFFICES: Record<string, RealOffice[]> = {
     },
   ],
   "iasi:iasi": [
-    {
-      name: "Panda Exchange",
-      city: "Iași, Centru",
-      rates: PANDA_EXCHANGE_IASI_RATES,
-      source: "valutare.ro",
-      capturedDate: "2026-09-22",
-    },
     {
       name: "Factory Exchange",
       city: "Iași",
