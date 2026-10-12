@@ -19,6 +19,9 @@ const ACTIVE_COUNTIES: ActiveCounty[] = [
   { countyId: "ro-sv", judetSlug: "suceava", orasSlug: "suceava", label: "Suceava", x: 354.96, y: 69.39 },
   { countyId: "ro-is", judetSlug: "iasi", orasSlug: "iasi", label: "Iași", x: 454.97, y: 102.71 },
   { countyId: "ro-b", judetSlug: "bucuresti", orasSlug: "bucuresti", label: "București", x: 378.07, y: 359.13 },
+  { countyId: "ro-cj", judetSlug: "cluj", orasSlug: "cluj-napoca", label: "Cluj-Napoca", x: 211.88, y: 139.3 },
+  { countyId: "ro-tm", judetSlug: "timis", orasSlug: "timisoara", label: "Timișoara", x: 72.33, y: 239.12 },
+  { countyId: "ro-ct", judetSlug: "constanta", orasSlug: "constanta", label: "Constanța", x: 516.57, y: 376.47 },
 ];
 
 export default function RomaniaMapExplorer({

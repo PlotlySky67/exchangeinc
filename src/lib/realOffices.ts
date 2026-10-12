@@ -92,6 +92,26 @@ const MONDIAL_EXCHANGE_IASI_RATES: RealOfficeRateSpread[] = [
   { currency: "CHF", name: "Franc elvețian", buyFactor: 5.6057 / 5.73, sellFactor: 5.77 / 5.73 },
 ];
 
+const TRANSILVANIA_WU_CLUJ_RATES: RealOfficeRateSpread[] = [
+  { currency: "EUR", name: "Euro", buyFactor: 5.335 / 5.3447, sellFactor: 5.36 / 5.3447 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.74 / 4.7519, sellFactor: 4.76 / 4.7519 },
+  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.255 / 6.28, sellFactor: 6.29 / 6.28 },
+];
+
+const CSV_NARCOS_REVOLUTIEI_RATES: RealOfficeRateSpread[] = [
+  { currency: "EUR", name: "Euro", buyFactor: 5.32 / 5.3447, sellFactor: 5.35 / 5.3447 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.7 / 4.7519, sellFactor: 4.77 / 4.7519 },
+  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.17 / 6.28, sellFactor: 6.27 / 6.28 },
+  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.64 / 5.73, sellFactor: 5.7 / 5.73 },
+];
+
+const NONSTOP_GRANDPACT_RATES: RealOfficeRateSpread[] = [
+  { currency: "EUR", name: "Euro", buyFactor: 5.352 / 5.3447, sellFactor: 5.359 / 5.3447 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.758 / 4.7519, sellFactor: 4.759 / 4.7519 },
+  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.2699 / 6.28, sellFactor: 6.274 / 6.28 },
+  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.6909 / 5.73, sellFactor: 5.6989 / 5.73 },
+];
+
 // Real, manually-entered exchange office spreads (not synthetic/demo data).
 // Keyed by "judetSlug:orasSlug". Add more offices as they're supplied.
 export const REAL_OFFICES: Record<string, RealOffice[]> = {
@@ -170,6 +190,36 @@ export const REAL_OFFICES: Record<string, RealOffice[]> = {
       source: "valutare.ro",
       capturedDate: "2026-10-03",
       capturedTime: "08:38",
+    },
+  ],
+  "cluj:cluj-napoca": [
+    {
+      name: "Transilvania Exchange Western Union",
+      city: "Cluj-Napoca",
+      rates: TRANSILVANIA_WU_CLUJ_RATES,
+      source: "valutare.ro",
+      capturedDate: "2026-10-12",
+      capturedTime: "18:13",
+    },
+  ],
+  "timis:timisoara": [
+    {
+      name: "CSV Narcos Revoluției",
+      city: "Timișoara",
+      rates: CSV_NARCOS_REVOLUTIEI_RATES,
+      source: "valutare.ro",
+      capturedDate: "2026-10-12",
+      capturedTime: "08:00",
+    },
+  ],
+  "constanta:constanta": [
+    {
+      name: "Non-Stop Exchange GRANDPACT",
+      city: "Constanța",
+      rates: NONSTOP_GRANDPACT_RATES,
+      source: "valutare.ro",
+      capturedDate: "2026-10-12",
+      capturedTime: "16:43",
     },
   ],
 };
