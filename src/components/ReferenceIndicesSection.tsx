@@ -1,18 +1,21 @@
 interface RoborRow {
   label: string;
   value: number;
-  delta: number;
+  // Change vs. the previous reading. Omitted when no prior real reading
+  // exists to compare against (never fabricated).
+  delta?: number;
 }
 
 // Real published reference indices, sourced by the site owner.
 const IRCC_QUARTER = "2026T2";
 const IRCC_VALUE = 5.57;
 
-const ROBOR_DATE = "2 octombrie 2026";
+const ROBOR_DATE = "12 octombrie 2026";
 const ROBOR_ROWS: RoborRow[] = [
-  { label: "3M (3 luni)", value: 6.11, delta: 0.05 },
-  { label: "6M (6 luni)", value: 6.16, delta: 0.04 },
-  { label: "12M (12 luni)", value: 6.22, delta: 0.04 },
+  { label: "1M (1 lună)", value: 6.06 },
+  { label: "3M (3 luni)", value: 6.1, delta: -0.01 },
+  { label: "6M (6 luni)", value: 6.15, delta: -0.01 },
+  { label: "12M (12 luni)", value: 6.22, delta: 0 },
 ];
 
 function formatDelta(delta: number): string {
@@ -51,7 +54,9 @@ export default function ReferenceIndicesSection() {
           <p className="text-xs text-muted">stabilit în {ROBOR_DATE}</p>
         </div>
         {ROBOR_ROWS.map((row, i) => {
-          const up = row.delta >= 0;
+          const hasDelta = row.delta !== undefined;
+          const up = hasDelta && row.delta! > 0;
+          const down = hasDelta && row.delta! < 0;
           return (
             <div
               key={row.label}
@@ -64,11 +69,15 @@ export default function ReferenceIndicesSection() {
                 <span className="font-mono text-sm font-bold text-foreground">
                   {row.value.toFixed(2)}%
                 </span>
-                <span
-                  className={`text-xs font-bold ${up ? "text-positive" : "text-negative"}`}
-                >
-                  {formatDelta(row.delta)} {up ? "↑" : "↓"}
-                </span>
+                {hasDelta && (
+                  <span
+                    className={`text-xs font-bold ${
+                      up ? "text-positive" : down ? "text-negative" : "text-muted"
+                    }`}
+                  >
+                    {formatDelta(row.delta!)} {up ? "↑" : down ? "↓" : "="}
+                  </span>
+                )}
               </div>
             </div>
           );
