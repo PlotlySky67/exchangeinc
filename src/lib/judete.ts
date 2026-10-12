@@ -54,6 +54,16 @@ export const JUDETE: Judet[] = [
     name: "Constanța",
     orase: withSlugs(["Constanța"]),
   },
+  {
+    slug: "bacau",
+    name: "Bacău",
+    orase: withSlugs(["Bacău"]),
+  },
+  {
+    slug: "brasov",
+    name: "Brașov",
+    orase: withSlugs(["Brașov"]),
+  },
 ];
 
 export const DEFAULT_JUDET = JUDETE[0].slug;

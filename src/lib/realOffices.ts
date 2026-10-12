@@ -112,6 +112,20 @@ const NONSTOP_GRANDPACT_RATES: RealOfficeRateSpread[] = [
   { currency: "CHF", name: "Franc elvețian", buyFactor: 5.6909 / 5.73, sellFactor: 5.6989 / 5.73 },
 ];
 
+const ULTRA_EXCHANGE_BACAU_RATES: RealOfficeRateSpread[] = [
+  { currency: "EUR", name: "Euro", buyFactor: 5.27 / 5.3447, sellFactor: 5.35 / 5.3447 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.64 / 4.7519, sellFactor: 4.77 / 4.7519 },
+  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.18 / 6.28, sellFactor: 6.28 / 6.28 },
+  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.54 / 5.73, sellFactor: 5.7 / 5.73 },
+];
+
+const CANDY_EXCHANGE_BRASOV_RATES: RealOfficeRateSpread[] = [
+  { currency: "EUR", name: "Euro", buyFactor: 5.32 / 5.3447, sellFactor: 5.37 / 5.3447 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.67 / 4.7519, sellFactor: 4.75 / 4.7519 },
+  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.18 / 6.28, sellFactor: 6.26 / 6.28 },
+  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.64 / 5.73, sellFactor: 5.72 / 5.73 },
+];
+
 // Real, manually-entered exchange office spreads (not synthetic/demo data).
 // Keyed by "judetSlug:orasSlug". Add more offices as they're supplied.
 export const REAL_OFFICES: Record<string, RealOffice[]> = {
@@ -220,6 +234,26 @@ export const REAL_OFFICES: Record<string, RealOffice[]> = {
       source: "valutare.ro",
       capturedDate: "2026-10-12",
       capturedTime: "16:43",
+    },
+  ],
+  "bacau:bacau": [
+    {
+      name: "Ultra Exchange Bacău Precista BRD",
+      city: "Bacău",
+      rates: ULTRA_EXCHANGE_BACAU_RATES,
+      source: "valutare.ro",
+      capturedDate: "2026-10-12",
+      capturedTime: "11:30",
+    },
+  ],
+  "brasov:brasov": [
+    {
+      name: "SC Exchange Office Candy SRL",
+      city: "Brașov",
+      rates: CANDY_EXCHANGE_BRASOV_RATES,
+      source: "valutare.ro",
+      capturedDate: "2026-10-12",
+      capturedTime: "10:50",
     },
   ],
 };
