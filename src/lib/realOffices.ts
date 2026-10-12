@@ -35,10 +35,10 @@ export interface RealOffice {
 }
 
 const CID_EXCHANGE_RATES: RealOfficeRateSpread[] = [
-  { currency: "EUR", name: "Euro", buyFactor: 5.27 / 5.3447, sellFactor: 5.32 / 5.3447 },
-  { currency: "USD", name: "Dolar american", buyFactor: 4.65 / 4.7519, sellFactor: 4.74 / 4.7519 },
-  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.14 / 6.28, sellFactor: 6.22 / 6.28 },
-  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.64 / 5.73, sellFactor: 5.7 / 5.73 },
+  { currency: "EUR", name: "Euro", buyFactor: 5.3069 / 5.3447, sellFactor: 5.335 / 5.3447 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.74 / 4.7519, sellFactor: 4.78 / 4.7519 },
+  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.2539 / 6.28, sellFactor: 6.27 / 6.28 },
+  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.69 / 5.73, sellFactor: 5.71 / 5.73 },
 ];
 
 const BIVOLARIE_RATES: RealOfficeRateSpread[] = [
@@ -120,9 +120,9 @@ export const REAL_OFFICES: Record<string, RealOffice[]> = {
       name: "Casa CID Exchange Suceava",
       city: "Suceava",
       rates: CID_EXCHANGE_RATES,
-      source: "valutare.com",
-      capturedDate: "2026-10-03",
-      capturedTime: "13:16",
+      source: "valutare.ro",
+      capturedDate: "2026-10-12",
+      capturedTime: "13:19",
     },
   ],
   "suceava:vicovu-de-sus": [
