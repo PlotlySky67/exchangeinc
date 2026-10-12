@@ -13,11 +13,11 @@ interface BankRate {
 
 // Real EUR/RON quotes published by each bank, sourced by the site owner.
 const BANK_RATES: BankRate[] = [
-  { name: "CEC Bank", buy: 5.29, sell: 5.41, logo: "/cec-bank-logo.jpg" },
+  { name: "CEC Bank", buy: 5.27, sell: 5.39, logo: "/cec-bank-logo.jpg" },
   {
     name: "Libra Internet Bank",
-    buy: 5.28,
-    sell: 5.42,
+    buy: 5.275,
+    sell: 5.405,
     logo: "/libra-internet-bank-logo.png",
   },
   {
@@ -34,23 +34,25 @@ const BANK_RATES: BankRate[] = [
   },
   {
     name: "UniCredit Bank",
-    buy: 5.24,
-    sell: 5.46,
+    buy: 5.23,
+    sell: 5.45,
     logo: "/unicredit-bank-logo.png",
   },
   {
     name: "Patria Bank",
-    buy: 5.2715,
-    sell: 5.4255,
+    buy: 5.2665,
+    sell: 5.4205,
     logo: "/patria-bank-logo.png",
   },
-  { name: "BRD", buy: 5.263, sell: 5.428, logo: "/brd-logo.png" },
+  { name: "BRD", buy: 5.256, sell: 5.421, logo: "/brd-logo.png" },
   {
     name: "Raiffeisen Bank",
-    buy: 5.277,
-    sell: 5.4267,
+    buy: 5.2609,
+    sell: 5.4122,
     logo: "/raiffeisen-bank-logo.png",
   },
+  { name: "BCR", buy: 5.261, sell: 5.412 },
+  { name: "Exim Banca Românească", buy: 5.29, sell: 5.39 },
 ];
 
 function initials(name: string): string {
@@ -81,7 +83,7 @@ export default function BankRatesSection() {
             Curs valutar bănci EUR/RON
           </h2>
           <p className="mt-1 text-sm font-semibold uppercase tracking-wide text-brand">
-            actualizat la data de 6 octombrie 2026
+            actualizat la data de 12 octombrie 2026
           </p>
         </div>
         <div className="flex shrink-0 rounded-full border border-border bg-background p-1">
