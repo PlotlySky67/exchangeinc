@@ -13,7 +13,7 @@ interface BankRate {
 
 // Real EUR/RON quotes published by each bank, sourced by the site owner.
 const BANK_RATES: BankRate[] = [
-  { name: "CEC Bank", buy: 5.27, sell: 5.39, logo: "/cec-bank-logo.jpg" },
+  { name: "CEC Bank", buy: 5.28, sell: 5.4, logo: "/cec-bank-logo.jpg" },
   {
     name: "Libra Internet Bank",
     buy: 5.275,
@@ -22,14 +22,14 @@ const BANK_RATES: BankRate[] = [
   },
   {
     name: "Banca Transilvania",
-    buy: 5.216,
-    sell: 5.336,
+    buy: 5.245,
+    sell: 5.43,
     logo: "/banca-transilvania-logo.png",
   },
   {
     name: "Intesa Sanpaolo Bank",
-    buy: 5.211,
-    sell: 5.331,
+    buy: 5.2335,
+    sell: 5.4334,
     logo: "/intesa-sanpaolo-logo.png",
   },
   {
@@ -40,19 +40,24 @@ const BANK_RATES: BankRate[] = [
   },
   {
     name: "Patria Bank",
-    buy: 5.2665,
-    sell: 5.4205,
+    buy: 5.2163,
+    sell: 5.4692,
     logo: "/patria-bank-logo.png",
   },
   { name: "BRD", buy: 5.256, sell: 5.421, logo: "/brd-logo.png" },
   {
     name: "Raiffeisen Bank",
     buy: 5.2609,
-    sell: 5.4122,
+    sell: 5.413,
     logo: "/raiffeisen-bank-logo.png",
   },
-  { name: "BCR", buy: 5.261, sell: 5.412 },
-  { name: "Exim Banca Românească", buy: 5.29, sell: 5.39 },
+  { name: "BCR", buy: 5.248, sell: 5.419 },
+  { name: "Exim Banca Românească", buy: 5.287, sell: 5.387 },
+  { name: "TBI Bank", buy: 5.1907, sell: 5.4907 },
+  { name: "Nexent Bank", buy: 5.26, sell: 5.4 },
+  { name: "ProCredit Bank", buy: 5.1685, sell: 5.3255 },
+  { name: "BRCI", buy: 5.29, sell: 5.41 },
+  { name: "ING Bank", buy: 5.2156, sell: 5.4558 },
 ];
 
 function initials(name: string): string {
