@@ -86,10 +86,10 @@ const FACTORY_EXCHANGE_IASI_RATES: RealOfficeRateSpread[] = [
   { currency: "CHF", name: "Franc elvețian", buyFactor: 5.6205 / 5.73, sellFactor: 5.768 / 5.73 },
 ];
 const MONDIAL_EXCHANGE_IASI_RATES: RealOfficeRateSpread[] = [
-  { currency: "EUR", name: "Euro", buyFactor: 5.28 / 5.3447, sellFactor: 5.37 / 5.3447 },
-  { currency: "USD", name: "Dolar american", buyFactor: 4.625 / 4.7519, sellFactor: 4.77 / 4.7519 },
-  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.125 / 6.28, sellFactor: 6.27 / 6.28 },
-  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.6057 / 5.73, sellFactor: 5.77 / 5.73 },
+  { currency: "EUR", name: "Euro", buyFactor: 5.313 / 5.3447, sellFactor: 5.37 / 5.3447 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.67 / 4.7519, sellFactor: 4.78 / 4.7519 },
+  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.2 / 6.28, sellFactor: 6.3 / 6.28 },
+  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.6357 / 5.73, sellFactor: 5.75 / 5.73 },
 ];
 
 const TRANSILVANIA_WU_CLUJ_RATES: RealOfficeRateSpread[] = [
@@ -188,8 +188,8 @@ export const REAL_OFFICES: Record<string, RealOffice[]> = {
       city: "Iași, Centru",
       rates: MONDIAL_EXCHANGE_IASI_RATES,
       source: "valutare.ro",
-      capturedDate: "2026-10-03",
-      capturedTime: "08:38",
+      capturedDate: "2026-10-12",
+      capturedTime: "13:46",
     },
   ],
   "cluj:cluj-napoca": [
