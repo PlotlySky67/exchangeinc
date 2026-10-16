@@ -17,6 +17,7 @@ function formatDelta(delta: number): string {
 interface Row {
   code: string;
   flag: string;
+  symbol: string;
   name: string;
   value: number;
   delta: number;
@@ -44,10 +45,18 @@ export default async function DailyRateSummary() {
   const chfYesterday = chfPoints[chfPoints.length - 2]?.rate ?? chfToday;
 
   const rows: Row[] = [
-    { code: "EUR", flag: "🇪🇺", name: "Euro", value: eurToday, delta: eurToday - eurYesterday },
+    {
+      code: "EUR",
+      flag: "🇪🇺",
+      symbol: "€",
+      name: "Euro",
+      value: eurToday,
+      delta: eurToday - eurYesterday,
+    },
     {
       code: "USD",
       flag: "🇺🇸",
+      symbol: "$",
       name: "Dolar american",
       value: usdToday,
       delta: usdToday - usdYesterday,
@@ -55,6 +64,7 @@ export default async function DailyRateSummary() {
     {
       code: "GBP",
       flag: "🇬🇧",
+      symbol: "£",
       name: "Liră sterlină",
       value: gbpToday,
       delta: gbpToday - gbpYesterday,
@@ -62,6 +72,7 @@ export default async function DailyRateSummary() {
     {
       code: "CHF",
       flag: "🇨🇭",
+      symbol: "CHF",
       name: "Franc elvețian",
       value: chfToday,
       delta: chfToday - chfYesterday,
@@ -100,6 +111,7 @@ export default async function DailyRateSummary() {
             </div>
             <div className="text-right">
               <p className="font-mono text-lg font-extrabold text-foreground">
+                <span className="mr-1 text-sm font-semibold text-muted">{row.symbol}</span>
                 {row.value.toFixed(4)}
               </p>
               <p className={`text-xs font-bold ${up ? "text-positive" : "text-negative"}`}>
