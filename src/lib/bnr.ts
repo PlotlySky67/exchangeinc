@@ -33,10 +33,10 @@ function getFallbackDate(): string {
   return new Date().toISOString().slice(0, 10);
 }
 const FALLBACK_RATES: RateEntry[] = [
-  { currency: "EUR", multiplier: 1, rate: 5.34 },
-  { currency: "USD", multiplier: 1, rate: 4.77 },
-  { currency: "GBP", multiplier: 1, rate: 6.32 },
-  { currency: "CHF", multiplier: 1, rate: 5.73 },
+  { currency: "EUR", multiplier: 1, rate: 5.337 },
+  { currency: "USD", multiplier: 1, rate: 4.7571 },
+  { currency: "GBP", multiplier: 1, rate: 6.31 },
+  { currency: "CHF", multiplier: 1, rate: 5.74 },
   { currency: "JPY", multiplier: 100, rate: 2.9812 },
   { currency: "CAD", multiplier: 1, rate: 3.1854 },
   { currency: "AUD", multiplier: 1, rate: 2.8967 },
