@@ -70,12 +70,23 @@ function toArray<T>(value: T | T[] | undefined): T[] {
 const RATES_REVALIDATE_SECONDS = 300;
 const HISTORY_REVALIDATE_SECONDS = 3600;
 
-// Some bank/government servers reject requests that don't look like they
-// come from a browser (missing or non-browser User-Agent).
+// bnr.ro sits behind an Akamai WAF that actively rejects this request in
+// production (confirmed via logs: HTTP 200 with an Akamai "Request
+// Rejected" HTML block page instead of XML). A bare User-Agent isn't enough
+// to pass its bot heuristics, so this mimics a full browser navigation —
+// though Akamai can also fingerprint at the TLS layer, which a plain
+// fetch() can't spoof, so this may still not be sufficient on its own.
 const BNR_FETCH_HEADERS = {
   "User-Agent":
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
   Accept: "application/xml,text/xml,*/*",
+  "Accept-Language": "ro-RO,ro;q=0.9,en-US;q=0.8,en;q=0.7",
+  Referer: "https://www.bnr.ro/Cursul-de-schimb-3544.aspx",
+  "Sec-Fetch-Dest": "document",
+  "Sec-Fetch-Mode": "navigate",
+  "Sec-Fetch-Site": "same-origin",
+  "Sec-Fetch-User": "?1",
+  "Upgrade-Insecure-Requests": "1",
 };
 
 export async function getDailyRates(): Promise<RatesSnapshot> {
