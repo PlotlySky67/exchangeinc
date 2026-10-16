@@ -98,7 +98,18 @@ export async function getDailyRates(): Promise<RatesSnapshot> {
       }))
       .filter((r) => r.currency && Number.isFinite(r.rate));
 
-    if (!date || rates.length === 0) throw new Error("Malformed BNR daily feed");
+    if (!date || rates.length === 0) {
+      // Diagnostic-only: capture what BNR actually sent back (status,
+      // content-type, a short snippet) so a malformed-feed failure can be
+      // debugged from logs alone instead of reproduced blind — e.g. this is
+      // what a bot-protection HTML challenge page looks like vs. real XML.
+      console.error("[bnr] malformed feed details:", {
+        status: res.status,
+        contentType: res.headers.get("content-type"),
+        snippet: xml.slice(0, 300),
+      });
+      throw new Error("Malformed BNR daily feed");
+    }
 
     return { date, rates, source: "live" };
   } catch (err) {
