@@ -16,7 +16,6 @@ function formatDelta(delta: number): string {
 
 interface Row {
   code: string;
-  flag: string;
   symbol: string;
   name: string;
   value: number;
@@ -47,7 +46,6 @@ export default async function DailyRateSummary() {
   const rows: Row[] = [
     {
       code: "EUR",
-      flag: "🇪🇺",
       symbol: "€",
       name: "Euro",
       value: eurToday,
@@ -55,7 +53,6 @@ export default async function DailyRateSummary() {
     },
     {
       code: "USD",
-      flag: "🇺🇸",
       symbol: "$",
       name: "Dolar american",
       value: usdToday,
@@ -63,7 +60,6 @@ export default async function DailyRateSummary() {
     },
     {
       code: "GBP",
-      flag: "🇬🇧",
       symbol: "£",
       name: "Liră sterlină",
       value: gbpToday,
@@ -71,7 +67,6 @@ export default async function DailyRateSummary() {
     },
     {
       code: "CHF",
-      flag: "🇨🇭",
       symbol: "CHF",
       name: "Franc elvețian",
       value: chfToday,
@@ -101,8 +96,8 @@ export default async function DailyRateSummary() {
             }`}
           >
             <div className="flex items-center gap-3">
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand/10 text-lg">
-                {row.flag}
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand/10 text-base font-extrabold text-brand">
+                {row.symbol}
               </span>
               <div>
                 <p className="text-sm font-bold text-foreground">{row.name}</p>
