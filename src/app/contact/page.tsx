@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-const CONTACT_EMAIL = "contact@indicial.ro";
+const CONTACT_EMAIL = "contactindicial@gmail.com";
 
 export const metadata: Metadata = {
   title: "Contact",
