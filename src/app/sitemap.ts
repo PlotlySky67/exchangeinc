@@ -21,9 +21,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Each județ/oraș pair renders meaningfully different office listings, so
   // it's worth a distinct sitemap entry even though they share one route
   // via query params.
+  //
+  // Next.js's sitemap() renderer writes `url` straight into <loc> without
+  // XML-escaping it, so a raw "&" between query params produces invalid XML
+  // (confirmed: Google Search Console reported "couldn't fetch" because of
+  // exactly this). Escape it ourselves as &amp; — the only XML-special
+  // character these generated URLs can contain, since judet/oraș slugs are
+  // already stripped down to plain ASCII by slugify().
   const judetRoutes: MetadataRoute.Sitemap = JUDETE.flatMap((judet) =>
     judet.orase.map((oras) => ({
-      url: `${SITE_URL}/schimb-valutar-judetean?judet=${judet.slug}&oras=${oras.slug}`,
+      url: `${SITE_URL}/schimb-valutar-judetean?judet=${judet.slug}&amp;oras=${oras.slug}`,
       changeFrequency: "daily" as const,
       priority: 0.7,
     })),
