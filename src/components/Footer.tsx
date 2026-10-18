@@ -16,7 +16,7 @@ export default function Footer() {
               cursului de referință publicat de Banca Națională a României.
             </p>
             <a
-              href="https://indicial.ro"
+              href="https://www.indicial.ro"
               className="mt-3 inline-block text-sm font-medium text-brand hover:underline"
             >
               indicial.ro →

@@ -17,7 +17,9 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const SITE_URL = "https://indicial.ro";
+// Canonical domain: www.indicial.ro. The apex (indicial.ro) and plain
+// http:// are 301-redirected here by middleware.ts — keep both in sync.
+const SITE_URL = "https://www.indicial.ro";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
