@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ComingSoon from "@/components/ComingSoon";
@@ -66,6 +67,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         ) : (
           <ComingSoon />
         )}
+        <Analytics />
       </body>
     </html>
   );
