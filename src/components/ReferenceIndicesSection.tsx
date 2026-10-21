@@ -10,11 +10,11 @@ interface RoborRow {
 const IRCC_QUARTER = "2026T2";
 const IRCC_VALUE = 5.57;
 
-const ROBOR_DATE = "16 octombrie 2026";
+const ROBOR_DATE = "21 octombrie 2026";
 const ROBOR_ROWS: RoborRow[] = [
-  { label: "3M (3 luni)", value: 6.08, delta: 0 },
-  { label: "6M (6 luni)", value: 6.13, delta: -0.01 },
-  { label: "12M (12 luni)", value: 6.19, delta: 0 },
+  { label: "3M (3 luni)", value: 6.09, delta: 0 },
+  { label: "6M (6 luni)", value: 6.14, delta: 0 },
+  { label: "12M (12 luni)", value: 6.2, delta: 0.01 },
 ];
 
 function formatDelta(delta: number): string {
