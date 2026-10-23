@@ -66,12 +66,6 @@ const HOLUX_UNIRII_COPOSU_RATES: RealOfficeRateSpread[] = [
   { currency: "GBP", name: "Liră sterlină", buyFactor: 6.33 / 6.28, sellFactor: 6.365 / 6.28 },
   { currency: "CHF", name: "Franc elvețian", buyFactor: 5.735 / 5.73, sellFactor: 5.765 / 5.73 },
 ];
-const PRESTIGE_GARA_DE_NORD_RATES: RealOfficeRateSpread[] = [
-  { currency: "EUR", name: "Euro", buyFactor: 5.265 / 5.3447, sellFactor: 5.29 / 5.3447 },
-  { currency: "USD", name: "Dolar american", buyFactor: 4.51 / 4.7519, sellFactor: 4.598 / 4.7519 },
-  { currency: "GBP", name: "Liră sterlină", buyFactor: 5.99 / 6.28, sellFactor: 6.14 / 6.28 },
-  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.45 / 5.73, sellFactor: 5.648 / 5.73 },
-];
 const DIAMANT_PIATA_UNIRII_RATES: RealOfficeRateSpread[] = [
   { currency: "EUR", name: "Euro", buyFactor: 5.34 / 5.3447, sellFactor: 5.365 / 5.3447 },
   { currency: "USD", name: "Dolar american", buyFactor: 4.75 / 4.7519, sellFactor: 4.79 / 4.7519 },
@@ -167,13 +161,6 @@ export const REAL_OFFICES: Record<string, RealOffice[]> = {
       source: "valutare.ro",
       capturedDate: "2026-10-23",
       capturedTime: "15:12",
-    },
-    {
-      name: "Prestige Exchange House Gara de Nord-Grivița",
-      city: "București",
-      rates: PRESTIGE_GARA_DE_NORD_RATES,
-      source: "valutare.ro",
-      capturedDate: "2026-09-22",
     },
     {
       name: "Diamant Exchange / Piața Unirii",
