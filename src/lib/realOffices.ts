@@ -35,17 +35,17 @@ export interface RealOffice {
 }
 
 const CID_EXCHANGE_RATES: RealOfficeRateSpread[] = [
-  { currency: "EUR", name: "Euro", buyFactor: 5.3069 / 5.3447, sellFactor: 5.335 / 5.3447 },
-  { currency: "USD", name: "Dolar american", buyFactor: 4.74 / 4.7519, sellFactor: 4.78 / 4.7519 },
-  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.2539 / 6.28, sellFactor: 6.27 / 6.28 },
-  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.69 / 5.73, sellFactor: 5.71 / 5.73 },
+  { currency: "EUR", name: "Euro", buyFactor: 5.32 / 5.3447, sellFactor: 5.34 / 5.3447 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.75 / 4.7519, sellFactor: 4.78 / 4.7519 },
+  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.31 / 6.28, sellFactor: 6.33 / 6.28 },
+  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.75 / 5.73, sellFactor: 5.77 / 5.73 },
 ];
 
 const BIVOLARIE_RATES: RealOfficeRateSpread[] = [
-  { currency: "EUR", name: "Euro", buyFactor: 5.28 / 5.3447, sellFactor: 5.33 / 5.3447 },
-  { currency: "USD", name: "Dolar american", buyFactor: 4.65 / 4.7519, sellFactor: 4.75 / 4.7519 },
-  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.15 / 6.28, sellFactor: 6.25 / 6.28 },
-  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.6 / 5.73, sellFactor: 5.71 / 5.73 },
+  { currency: "EUR", name: "Euro", buyFactor: 5.32 / 5.3447, sellFactor: 5.35 / 5.3447 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.75 / 4.7519, sellFactor: 4.79 / 4.7519 },
+  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.3 / 6.28, sellFactor: 6.36 / 6.28 },
+  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.7 / 5.73, sellFactor: 5.75 / 5.73 },
 ];
 
 const ARIANA_MOSILOR_RATES: RealOfficeRateSpread[] = [
@@ -80,10 +80,10 @@ const DIAMANT_PIATA_UNIRII_RATES: RealOfficeRateSpread[] = [
 ];
 
 const MONDIAL_EXCHANGE_IASI_RATES: RealOfficeRateSpread[] = [
-  { currency: "EUR", name: "Euro", buyFactor: 5.313 / 5.3447, sellFactor: 5.37 / 5.3447 },
-  { currency: "USD", name: "Dolar american", buyFactor: 4.67 / 4.7519, sellFactor: 4.78 / 4.7519 },
-  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.2 / 6.28, sellFactor: 6.3 / 6.28 },
-  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.6357 / 5.73, sellFactor: 5.75 / 5.73 },
+  { currency: "EUR", name: "Euro", buyFactor: 5.3019 / 5.3447, sellFactor: 5.36 / 5.3447 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.725 / 4.7519, sellFactor: 4.8 / 4.7519 },
+  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.235 / 6.28, sellFactor: 6.4 / 6.28 },
+  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.7 / 5.73, sellFactor: 5.81 / 5.73 },
 ];
 
 const TRANSILVANIA_WU_CLUJ_RATES: RealOfficeRateSpread[] = [
@@ -129,8 +129,8 @@ export const REAL_OFFICES: Record<string, RealOffice[]> = {
       city: "Suceava",
       rates: CID_EXCHANGE_RATES,
       source: "valutare.ro",
-      capturedDate: "2026-10-12",
-      capturedTime: "13:19",
+      capturedDate: "2026-10-23",
+      capturedTime: "12:30",
     },
   ],
   "suceava:vicovu-de-sus": [
@@ -139,7 +139,7 @@ export const REAL_OFFICES: Record<string, RealOffice[]> = {
       city: "Vicovu de Sus",
       rates: BIVOLARIE_RATES,
       source: "Facebook",
-      capturedDate: "2026-10-03",
+      capturedDate: "2026-10-23",
     },
   ],
   "bucuresti:bucuresti": [
@@ -189,8 +189,8 @@ export const REAL_OFFICES: Record<string, RealOffice[]> = {
       city: "Iași, Centru",
       rates: MONDIAL_EXCHANGE_IASI_RATES,
       source: "valutare.ro",
-      capturedDate: "2026-10-12",
-      capturedTime: "13:46",
+      capturedDate: "2026-10-23",
+      capturedTime: "13:09",
     },
   ],
   "cluj:cluj-napoca": [
