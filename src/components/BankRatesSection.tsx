@@ -18,18 +18,6 @@ const BANK_RATES: BankRate[] = [
     logo: "/libra-internet-bank-logo.png",
   },
   {
-    name: "Banca Transilvania",
-    buy: 5.245,
-    sell: 5.43,
-    logo: "/banca-transilvania-logo.png",
-  },
-  {
-    name: "Intesa Sanpaolo Bank",
-    buy: 5.2335,
-    sell: 5.4334,
-    logo: "/intesa-sanpaolo-logo.png",
-  },
-  {
     name: "UniCredit Bank",
     buy: 5.22,
     sell: 5.44,
@@ -50,11 +38,6 @@ const BANK_RATES: BankRate[] = [
   },
   { name: "BCR", buy: 5.259, sell: 5.41 },
   { name: "Exim Banca Românească", buy: 5.286, sell: 5.386 },
-  { name: "TBI Bank", buy: 5.1907, sell: 5.4907 },
-  { name: "Nexent Bank", buy: 5.26, sell: 5.4 },
-  { name: "ProCredit Bank", buy: 5.1685, sell: 5.3255 },
-  { name: "BRCI", buy: 5.29, sell: 5.41 },
-  { name: "ING Bank", buy: 5.2156, sell: 5.4558 },
 ];
 
 function initials(name: string): string {
