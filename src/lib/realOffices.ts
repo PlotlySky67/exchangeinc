@@ -87,9 +87,10 @@ const MONDIAL_EXCHANGE_IASI_RATES: RealOfficeRateSpread[] = [
 ];
 
 const TRANSILVANIA_WU_CLUJ_RATES: RealOfficeRateSpread[] = [
-  { currency: "EUR", name: "Euro", buyFactor: 5.335 / 5.3447, sellFactor: 5.36 / 5.3447 },
-  { currency: "USD", name: "Dolar american", buyFactor: 4.74 / 4.7519, sellFactor: 4.76 / 4.7519 },
-  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.255 / 6.28, sellFactor: 6.29 / 6.28 },
+  { currency: "EUR", name: "Euro", buyFactor: 5.325 / 5.3447, sellFactor: 5.349 / 5.3447 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.73 / 4.7519, sellFactor: 4.77 / 4.7519 },
+  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.325 / 6.28, sellFactor: 6.365 / 6.28 },
+  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.735 / 5.73, sellFactor: 5.78 / 5.73 },
 ];
 
 const CSV_NARCOS_REVOLUTIEI_RATES: RealOfficeRateSpread[] = [
@@ -199,8 +200,8 @@ export const REAL_OFFICES: Record<string, RealOffice[]> = {
       city: "Cluj-Napoca",
       rates: TRANSILVANIA_WU_CLUJ_RATES,
       source: "valutare.ro",
-      capturedDate: "2026-10-12",
-      capturedTime: "18:13",
+      capturedDate: "2026-10-23",
+      capturedTime: "15:02",
     },
   ],
   "timis:timisoara": [
