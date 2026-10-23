@@ -61,10 +61,10 @@ const HOLUX_MOSILOR_241_RATES: RealOfficeRateSpread[] = [
   { currency: "CHF", name: "Franc elvețian", buyFactor: 5.53 / 5.73, sellFactor: 5.59 / 5.73 },
 ];
 const HOLUX_UNIRII_COPOSU_RATES: RealOfficeRateSpread[] = [
-  { currency: "EUR", name: "Euro", buyFactor: 5.25 / 5.3447, sellFactor: 5.284 / 5.3447 },
-  { currency: "USD", name: "Dolar american", buyFactor: 4.6 / 4.7519, sellFactor: 4.64 / 4.7519 },
-  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.065 / 6.28, sellFactor: 6.1 / 6.28 },
-  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.53 / 5.73, sellFactor: 5.59 / 5.73 },
+  { currency: "EUR", name: "Euro", buyFactor: 5.335 / 5.3447, sellFactor: 5.359 / 5.3447 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.715 / 4.7519, sellFactor: 4.785 / 4.7519 },
+  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.33 / 6.28, sellFactor: 6.365 / 6.28 },
+  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.735 / 5.73, sellFactor: 5.765 / 5.73 },
 ];
 const PRESTIGE_GARA_DE_NORD_RATES: RealOfficeRateSpread[] = [
   { currency: "EUR", name: "Euro", buyFactor: 5.265 / 5.3447, sellFactor: 5.29 / 5.3447 },
@@ -165,8 +165,8 @@ export const REAL_OFFICES: Record<string, RealOffice[]> = {
       city: "București",
       rates: HOLUX_UNIRII_COPOSU_RATES,
       source: "valutare.ro",
-      capturedDate: "2026-09-25",
-      capturedTime: "11:07",
+      capturedDate: "2026-10-23",
+      capturedTime: "15:12",
     },
     {
       name: "Prestige Exchange House Gara de Nord-Grivița",
