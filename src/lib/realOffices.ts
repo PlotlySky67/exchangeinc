@@ -49,10 +49,10 @@ const BIVOLARIE_RATES: RealOfficeRateSpread[] = [
 ];
 
 const ARIANA_MOSILOR_RATES: RealOfficeRateSpread[] = [
-  { currency: "EUR", name: "Euro", buyFactor: 5.267 / 5.3447, sellFactor: 5.285 / 5.3447 },
-  { currency: "USD", name: "Dolar american", buyFactor: 4.615 / 4.7519, sellFactor: 4.65 / 4.7519 },
-  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.075 / 6.28, sellFactor: 6.12 / 6.28 },
-  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.556 / 5.73, sellFactor: 5.599 / 5.73 },
+  { currency: "EUR", name: "Euro", buyFactor: 5.34 / 5.3447, sellFactor: 5.355 / 5.3447 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.76 / 4.7519, sellFactor: 4.785 / 4.7519 },
+  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.33 / 6.28, sellFactor: 6.369 / 6.28 },
+  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.742 / 5.73, sellFactor: 5.78 / 5.73 },
 ];
 const HOLUX_MOSILOR_241_RATES: RealOfficeRateSpread[] = [
   { currency: "EUR", name: "Euro", buyFactor: 5.26 / 5.3447, sellFactor: 5.284 / 5.3447 },
@@ -149,8 +149,8 @@ export const REAL_OFFICES: Record<string, RealOffice[]> = {
       city: "București",
       rates: ARIANA_MOSILOR_RATES,
       source: "valutare.ro",
-      capturedDate: "2026-09-25",
-      capturedTime: "11:03",
+      capturedDate: "2026-10-23",
+      capturedTime: "13:46",
     },
     {
       name: "Holux Exchange Mosilor 241",
