@@ -55,10 +55,10 @@ const ARIANA_MOSILOR_RATES: RealOfficeRateSpread[] = [
   { currency: "CHF", name: "Franc elvețian", buyFactor: 5.742 / 5.73, sellFactor: 5.78 / 5.73 },
 ];
 const HOLUX_MOSILOR_241_RATES: RealOfficeRateSpread[] = [
-  { currency: "EUR", name: "Euro", buyFactor: 5.26 / 5.3447, sellFactor: 5.284 / 5.3447 },
-  { currency: "USD", name: "Dolar american", buyFactor: 4.6 / 4.7519, sellFactor: 4.65 / 4.7519 },
-  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.065 / 6.28, sellFactor: 6.1 / 6.28 },
-  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.53 / 5.73, sellFactor: 5.59 / 5.73 },
+  { currency: "EUR", name: "Euro", buyFactor: 5.34 / 5.3447, sellFactor: 5.355 / 5.3447 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.76 / 4.7519, sellFactor: 4.785 / 4.7519 },
+  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.33 / 6.28, sellFactor: 6.355 / 6.28 },
+  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.72 / 5.73, sellFactor: 5.76 / 5.73 },
 ];
 const HOLUX_UNIRII_COPOSU_RATES: RealOfficeRateSpread[] = [
   { currency: "EUR", name: "Euro", buyFactor: 5.335 / 5.3447, sellFactor: 5.359 / 5.3447 },
@@ -151,8 +151,8 @@ export const REAL_OFFICES: Record<string, RealOffice[]> = {
       city: "București",
       rates: HOLUX_MOSILOR_241_RATES,
       source: "valutare.ro",
-      capturedDate: "2026-09-25",
-      capturedTime: "10:38",
+      capturedDate: "2026-10-23",
+      capturedTime: "14:10",
     },
     {
       name: "Holux Exchange Unirii Coposu Nr. 4",
