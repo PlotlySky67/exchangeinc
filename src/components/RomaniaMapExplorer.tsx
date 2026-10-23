@@ -22,7 +22,6 @@ const ACTIVE_COUNTIES: ActiveCounty[] = [
   { countyId: "ro-cj", judetSlug: "cluj", orasSlug: "cluj-napoca", label: "Cluj-Napoca", x: 211.88, y: 139.3 },
   { countyId: "ro-tm", judetSlug: "timis", orasSlug: "timisoara", label: "Timișoara", x: 72.33, y: 239.12 },
   { countyId: "ro-ct", judetSlug: "constanta", orasSlug: "constanta", label: "Constanța", x: 516.57, y: 376.47 },
-  { countyId: "ro-bc", judetSlug: "bacau", orasSlug: "bacau", label: "Bacău", x: 421.82, y: 176.06 },
   { countyId: "ro-bv", judetSlug: "brasov", orasSlug: "brasov", label: "Brașov", x: 326.56, y: 237.18 },
 ];
 
