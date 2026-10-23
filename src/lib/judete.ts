@@ -27,7 +27,7 @@ export const JUDETE: Judet[] = [
   {
     slug: "suceava",
     name: "Suceava",
-    orase: withSlugs(["Suceava", "Rădăuți", "Vicovu de Sus"]),
+    orase: withSlugs(["Suceava", "Vicovu de Sus"]),
   },
   {
     slug: "iasi",
