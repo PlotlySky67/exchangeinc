@@ -101,10 +101,10 @@ const CSV_NARCOS_REVOLUTIEI_RATES: RealOfficeRateSpread[] = [
 ];
 
 const NONSTOP_GRANDPACT_RATES: RealOfficeRateSpread[] = [
-  { currency: "EUR", name: "Euro", buyFactor: 5.352 / 5.3447, sellFactor: 5.359 / 5.3447 },
-  { currency: "USD", name: "Dolar american", buyFactor: 4.758 / 4.7519, sellFactor: 4.759 / 4.7519 },
-  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.2699 / 6.28, sellFactor: 6.274 / 6.28 },
-  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.6909 / 5.73, sellFactor: 5.6989 / 5.73 },
+  { currency: "EUR", name: "Euro", buyFactor: 5.3469 / 5.3447, sellFactor: 5.351 / 5.3447 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.769 / 4.7519, sellFactor: 4.77 / 4.7519 },
+  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.3409 / 6.28, sellFactor: 6.36 / 6.28 },
+  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.7489 / 5.73, sellFactor: 5.78 / 5.73 },
 ];
 
 const CANDY_EXCHANGE_BRASOV_RATES: RealOfficeRateSpread[] = [
@@ -213,8 +213,8 @@ export const REAL_OFFICES: Record<string, RealOffice[]> = {
       city: "Constanța",
       rates: NONSTOP_GRANDPACT_RATES,
       source: "valutare.ro",
-      capturedDate: "2026-10-12",
-      capturedTime: "16:43",
+      capturedDate: "2026-10-23",
+      capturedTime: "14:41",
     },
   ],
   "brasov:brasov": [
