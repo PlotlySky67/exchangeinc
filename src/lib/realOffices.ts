@@ -94,10 +94,10 @@ const TRANSILVANIA_WU_CLUJ_RATES: RealOfficeRateSpread[] = [
 ];
 
 const CSV_NARCOS_REVOLUTIEI_RATES: RealOfficeRateSpread[] = [
-  { currency: "EUR", name: "Euro", buyFactor: 5.32 / 5.3447, sellFactor: 5.35 / 5.3447 },
-  { currency: "USD", name: "Dolar american", buyFactor: 4.7 / 4.7519, sellFactor: 4.77 / 4.7519 },
-  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.17 / 6.28, sellFactor: 6.27 / 6.28 },
-  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.64 / 5.73, sellFactor: 5.7 / 5.73 },
+  { currency: "EUR", name: "Euro", buyFactor: 5.31 / 5.3447, sellFactor: 5.34 / 5.3447 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.7 / 4.7519, sellFactor: 4.75 / 4.7519 },
+  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.25 / 6.28, sellFactor: 6.33 / 6.28 },
+  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.65 / 5.73, sellFactor: 5.73 / 5.73 },
 ];
 
 const NONSTOP_GRANDPACT_RATES: RealOfficeRateSpread[] = [
@@ -210,8 +210,8 @@ export const REAL_OFFICES: Record<string, RealOffice[]> = {
       city: "Timișoara",
       rates: CSV_NARCOS_REVOLUTIEI_RATES,
       source: "valutare.ro",
-      capturedDate: "2026-10-12",
-      capturedTime: "08:00",
+      capturedDate: "2026-10-23",
+      capturedTime: "08:03",
     },
   ],
   "constanta:constanta": [
