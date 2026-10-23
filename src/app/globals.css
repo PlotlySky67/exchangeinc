@@ -1,16 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f6f8fb;
-  --foreground: #111827;
+  --background: #f5f7fa;
+  --foreground: #0f172a;
   --surface: #ffffff;
-  --border: #eceff5;
-  --muted: #6b7280;
-  --brand: #4f46e5;
-  --brand-dark: #3730a3;
-  --accent: #d99a2b;
-  --positive: #16a34a;
-  --negative: #dc2626;
+  --border: #e2e8f0;
+  --muted: #64748b;
+  /* Institutional navy — the color most associated with trust in finance
+     (banks, PayPal, Revolut) — replacing the indigo that read more
+     "tech startup" than "financial institution". */
+  --brand: #1e3a66;
+  --brand-dark: #0f2142;
+  --accent: #b8860b;
+  --positive: #15803d;
+  --negative: #b91c1c;
 }
 
 @theme inline {
@@ -30,14 +33,14 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0b0e17;
-    --foreground: #f1f3f9;
-    --surface: #161b2c;
-    --border: #262c42;
-    --muted: #949cb8;
-    --brand: #818cf8;
-    --brand-dark: #a5b4fc;
-    --accent: #e8b656;
+    --background: #0a0e1a;
+    --foreground: #eef2f8;
+    --surface: #131a2b;
+    --border: #233049;
+    --muted: #94a3b8;
+    --brand: #5b84c4;
+    --brand-dark: #8fb0dd;
+    --accent: #d4a94f;
     --positive: #4ade80;
     --negative: #f87171;
   }

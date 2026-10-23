@@ -90,9 +90,24 @@ export default function RealOfficeTable({
         </tbody>
       </table>
       {office.source && (
-        <p className="border-t border-border px-4 py-2 text-xs text-muted sm:px-5">
-          sursa: {office.source}
-        </p>
+        <div className="flex items-center justify-between gap-3 border-t border-border px-4 py-2 sm:px-5">
+          <p className="text-xs text-muted">sursa: {office.source}</p>
+          <span className="flex shrink-0 items-center gap-1 text-xs font-semibold text-positive">
+            <svg
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              className="h-3.5 w-3.5"
+              aria-hidden="true"
+            >
+              <path
+                fillRule="evenodd"
+                d="M16.704 5.29a1 1 0 010 1.415l-7.5 7.5a1 1 0 01-1.414 0l-3.5-3.5a1 1 0 111.414-1.414l2.793 2.793 6.793-6.793a1 1 0 011.414 0z"
+                clipRule="evenodd"
+              />
+            </svg>
+            verificat manual
+          </span>
+        </div>
       )}
     </div>
   );

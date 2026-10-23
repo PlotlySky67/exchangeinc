@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { getHistory } from "@/lib/bnr";
 
 function formatRomanianDate(dateStr: string): string {
@@ -79,9 +80,31 @@ export default async function DailyRateSummary() {
   return (
     <div className="overflow-hidden rounded-2xl border border-border bg-surface shadow-sm">
       <div className="px-5 py-4 sm:px-6">
-        <p className="text-xs font-extrabold tracking-wide text-brand uppercase">
-          Curs oficial BNR
-        </p>
+        <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
+          <p className="text-xs font-extrabold tracking-wide text-brand uppercase">
+            Curs oficial BNR
+          </p>
+          <Link
+            href="https://www.bnr.ro/Cursul-de-schimb-3544.aspx"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1 rounded-full border border-border bg-background px-2.5 py-1 text-[11px] font-semibold text-muted transition-colors hover:text-brand"
+          >
+            <svg
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              className="h-3 w-3"
+              aria-hidden="true"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z"
+                clipRule="evenodd"
+              />
+            </svg>
+            sursă oficială bnr.ro
+          </Link>
+        </div>
         <p className="mt-0.5 text-sm text-muted">
           {latestDate ? `comunicat ${formatRomanianDate(latestDate)}` : ""}
         </p>
