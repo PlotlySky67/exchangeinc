@@ -73,10 +73,17 @@ const PRESTIGE_GARA_DE_NORD_RATES: RealOfficeRateSpread[] = [
   { currency: "CHF", name: "Franc elvețian", buyFactor: 5.45 / 5.73, sellFactor: 5.648 / 5.73 },
 ];
 const DIAMANT_PIATA_UNIRII_RATES: RealOfficeRateSpread[] = [
-  { currency: "EUR", name: "Euro", buyFactor: 5.32 / 5.3447, sellFactor: 5.43 / 5.3447 },
-  { currency: "USD", name: "Dolar american", buyFactor: 4.65 / 4.7519, sellFactor: 4.76 / 4.7519 },
-  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.1 / 6.28, sellFactor: 6.24 / 6.28 },
-  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.53 / 5.73, sellFactor: 5.69 / 5.73 },
+  { currency: "EUR", name: "Euro", buyFactor: 5.34 / 5.3447, sellFactor: 5.365 / 5.3447 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.75 / 4.7519, sellFactor: 4.79 / 4.7519 },
+  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.26 / 6.28, sellFactor: 6.35 / 6.28 },
+  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.67 / 5.73, sellFactor: 5.75 / 5.73 },
+];
+
+const INNOVA_UNIRII_RATES: RealOfficeRateSpread[] = [
+  { currency: "EUR", name: "Euro", buyFactor: 5.34 / 5.3447, sellFactor: 5.353 / 5.3447 },
+  { currency: "USD", name: "Dolar american", buyFactor: 4.76 / 4.7519, sellFactor: 4.785 / 4.7519 },
+  { currency: "GBP", name: "Liră sterlină", buyFactor: 6.33 / 6.28, sellFactor: 6.36 / 6.28 },
+  { currency: "CHF", name: "Franc elvețian", buyFactor: 5.74 / 5.73, sellFactor: 5.78 / 5.73 },
 ];
 
 const MONDIAL_EXCHANGE_IASI_RATES: RealOfficeRateSpread[] = [
@@ -173,8 +180,16 @@ export const REAL_OFFICES: Record<string, RealOffice[]> = {
       city: "București",
       rates: DIAMANT_PIATA_UNIRII_RATES,
       source: "valutare.ro",
-      capturedDate: "2026-10-02",
-      capturedTime: "14:32",
+      capturedDate: "2026-10-23",
+      capturedTime: "11:22",
+    },
+    {
+      name: "Innova Unirii",
+      city: "București",
+      rates: INNOVA_UNIRII_RATES,
+      source: "valutare.ro",
+      capturedDate: "2026-10-23",
+      capturedTime: "12:57",
     },
   ],
   "iasi:iasi": [
