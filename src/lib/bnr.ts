@@ -1,10 +1,17 @@
 import { XMLParser } from "fast-xml-parser";
+import * as cheerio from "cheerio";
 
 // Official public data feeds published by the National Bank of Romania (BNR).
 // Docs: https://www.bnr.ro/Cursul-de-schimb-3544.aspx
 const BNR_DAILY_URL = "https://www.bnr.ro/nbrfxrates.xml";
 const BNR_YEARLY_URL = (year: number) =>
   `https://www.bnr.ro/files/xml/years/nbrfxrates${year}.xml`;
+
+// Fallback source when bnr.ro's own feed is blocked (see BNR_FETCH_HEADERS
+// comment below) — a simple HTML <table> mirroring the same official BNR
+// rate, confirmed working by hand (scrape-valutare.js against this exact
+// URL successfully returned real rates: EUR/USD/GBP/CHF + more).
+const CURSBNR_FALLBACK_URL = "https://www.cursbnr.ro/curs-bnr-azi";
 
 export interface RateEntry {
   currency: string;
@@ -109,44 +116,95 @@ const BNR_FETCH_HEADERS = {
   "Upgrade-Insecure-Requests": "1",
 };
 
+async function fetchFromBnrDirect(): Promise<RatesSnapshot> {
+  const res = await fetch(BNR_DAILY_URL, {
+    headers: BNR_FETCH_HEADERS,
+    next: { revalidate: RATES_REVALIDATE_SECONDS, tags: ["bnr-rates"] },
+  });
+  if (!res.ok) throw new Error(`BNR daily feed responded ${res.status}`);
+  const xml = await res.text();
+  const doc = parser.parse(xml);
+  const cube = doc?.DataSet?.Body?.Cube;
+  const date: string | undefined = cube?.["@_date"];
+  const rawRates = toArray(cube?.Rate);
+  const rates: RateEntry[] = rawRates
+    .map((r: Record<string, unknown>) => ({
+      currency: String(r["@_currency"] ?? ""),
+      multiplier: Number(r["@_multiplier"] ?? 1),
+      rate: Number(r["#text"]),
+    }))
+    .filter((r) => r.currency && Number.isFinite(r.rate));
+
+  if (!date || rates.length === 0) {
+    // Diagnostic-only: capture what BNR actually sent back (status,
+    // content-type, a short snippet) so a malformed-feed failure can be
+    // debugged from logs alone instead of reproduced blind — e.g. this is
+    // what a bot-protection HTML challenge page looks like vs. real XML.
+    console.error("[bnr] malformed feed details:", {
+      status: res.status,
+      contentType: res.headers.get("content-type"),
+      snippet: xml.slice(0, 300),
+    });
+    throw new Error("Malformed BNR daily feed");
+  }
+
+  return { date, rates, source: "live" };
+}
+
+// A table row's first cell looks like "EUR" or "100HUF" (BNR quotes some
+// currencies per 100 units). Splits that back into multiplier + code.
+function parseCurrencyCell(cell: string): { currency: string; multiplier: number } | null {
+  const match = cell.trim().match(/^(\d+)?([A-Z]{3})$/);
+  if (!match) return null;
+  return { currency: match[2], multiplier: match[1] ? Number(match[1]) : 1 };
+}
+
+// Fallback for when bnr.ro's own WAF blocks the request (see
+// BNR_FETCH_HEADERS comment): cursbnr.ro republishes the same official BNR
+// rate in a plain HTML table, which — unlike bnr.ro itself — has been
+// confirmed reachable. Still the real BNR rate, just mirrored, so this
+// counts as "live", not "fallback".
+async function fetchFromCursBnr(): Promise<RatesSnapshot> {
+  const res = await fetch(CURSBNR_FALLBACK_URL, {
+    headers: BNR_FETCH_HEADERS,
+    next: { revalidate: RATES_REVALIDATE_SECONDS, tags: ["bnr-rates"] },
+  });
+  if (!res.ok) throw new Error(`cursbnr.ro responded ${res.status}`);
+  const html = await res.text();
+  const $ = cheerio.load(html);
+  const rates: RateEntry[] = [];
+
+  $("table tr").each((_, row) => {
+    const cells = $(row)
+      .find("td")
+      .map((_, td) => $(td).text().trim())
+      .get();
+    if (cells.length < 2) return;
+    const parsed = parseCurrencyCell(cells[0]);
+    const rate = Number(cells[1].replace(",", "."));
+    if (parsed && Number.isFinite(rate)) {
+      rates.push({ currency: parsed.currency, multiplier: parsed.multiplier, rate });
+    }
+  });
+
+  if (rates.length === 0) throw new Error("No rates found in cursbnr.ro table");
+  return { date: getFallbackDate(), rates, source: "live" };
+}
+
 export async function getDailyRates(): Promise<RatesSnapshot> {
   try {
-    const res = await fetch(BNR_DAILY_URL, {
-      headers: BNR_FETCH_HEADERS,
-      next: { revalidate: RATES_REVALIDATE_SECONDS, tags: ["bnr-rates"] },
-    });
-    if (!res.ok) throw new Error(`BNR daily feed responded ${res.status}`);
-    const xml = await res.text();
-    const doc = parser.parse(xml);
-    const cube = doc?.DataSet?.Body?.Cube;
-    const date: string | undefined = cube?.["@_date"];
-    const rawRates = toArray(cube?.Rate);
-    const rates: RateEntry[] = rawRates
-      .map((r: Record<string, unknown>) => ({
-        currency: String(r["@_currency"] ?? ""),
-        multiplier: Number(r["@_multiplier"] ?? 1),
-        rate: Number(r["#text"]),
-      }))
-      .filter((r) => r.currency && Number.isFinite(r.rate));
-
-    if (!date || rates.length === 0) {
-      // Diagnostic-only: capture what BNR actually sent back (status,
-      // content-type, a short snippet) so a malformed-feed failure can be
-      // debugged from logs alone instead of reproduced blind — e.g. this is
-      // what a bot-protection HTML challenge page looks like vs. real XML.
-      console.error("[bnr] malformed feed details:", {
-        status: res.status,
-        contentType: res.headers.get("content-type"),
-        snippet: xml.slice(0, 300),
-      });
-      throw new Error("Malformed BNR daily feed");
-    }
-
-    return { date, rates, source: "live" };
+    return await fetchFromBnrDirect();
   } catch (err) {
-    console.error("[bnr] getDailyRates failed, using fallback:", err);
-    return fallbackSnapshot();
+    console.error("[bnr] direct BNR fetch failed, trying cursbnr.ro mirror:", err);
   }
+
+  try {
+    return await fetchFromCursBnr();
+  } catch (err) {
+    console.error("[bnr] cursbnr.ro mirror also failed, using hardcoded fallback:", err);
+  }
+
+  return fallbackSnapshot();
 }
 
 export async function getRate(currency: string): Promise<RateEntry | undefined> {
